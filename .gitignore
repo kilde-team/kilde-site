@@ -6,3 +6,6 @@ node_modules/
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# Screenshots saved into the folder by the Claude desktop app
+Claude outputs/
