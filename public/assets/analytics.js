@@ -1,10 +1,10 @@
 /*
- * kilde.site — Google Analytics 4 (cookieless configuration)
+ * kilde.site -- Google Analytics 4 (cookieless configuration)
  *
  * Privacy notes:
  *  - Consent Mode denies analytics_storage, so GA falls back to cookieless pings:
  *    no _ga / _ga_<id> cookies and no localStorage are written. This is the lever
- *    that actually works — client_storage:'none' alone was verified against the
+ *    that actually works -- client_storage:'none' alone was verified against the
  *    live site and GA still set both _ga cookies, so it is kept only as a belt.
  *  - Every advertising storage purpose is denied, Google Signals and ad
  *    personalization are off, and ads data is redacted.
@@ -17,7 +17,7 @@
 
   var GA_MEASUREMENT_ID = 'G-0SRWK1ZCSC';
 
-  // Not configured yet — do nothing.
+  // Not configured yet -- do nothing.
   if (!/^G-[A-Z0-9]+$/.test(GA_MEASUREMENT_ID) || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
 
   // Respect Do Not Track / Global Privacy Control.
@@ -34,7 +34,7 @@
   window.gtag = gtag;
 
   // Every storage purpose is denied. analytics_storage in particular is what
-  // keeps GA cookieless — see the note at the top of this file.
+  // keeps GA cookieless -- see the note at the top of this file.
   gtag('consent', 'default', {
     ad_storage: 'denied',
     ad_user_data: 'denied',

@@ -8,3 +8,9 @@
 
 /assets/*
   Cache-Control: public, max-age=86400, must-revalidate
+
+# The analytics config has no content hash in its filename, so a long cache
+# would mean a change to the tracking setup (or switching it off) takes a day
+# to reach returning visitors. Keep it short.
+/assets/analytics.js
+  Cache-Control: public, max-age=300, must-revalidate
