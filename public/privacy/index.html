@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — kilde</title>
-<meta name="description" content="How kilde handles your data: recordings stay on your Mac, there is no account, no telemetry and no analytics.">
+<meta name="description" content="How kilde handles your data: recordings stay on your Mac, and the app has no account, no telemetry and no analytics.">
 <link rel="canonical" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
@@ -14,10 +14,11 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Privacy Policy — kilde">
-<meta property="og:description" content="Recordings stay on your Mac. No account, no telemetry, no analytics.">
+<meta property="og:description" content="Recordings stay on your Mac. The kilde app has no account, no telemetry and no analytics.">
 <meta property="og:url" content="https://kilde.site/privacy/">
 <meta property="og:image" content="https://kilde.site/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<script src="/assets/analytics.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -45,8 +46,10 @@
 
     <p class="summary">
       <strong>In short:</strong> kilde runs entirely on your Mac. Your recordings are written to your
-      own disk and are never sent to us or anyone else. kilde has no account, no telemetry and no
-      analytics, and this website sets no cookies and runs no tracking scripts.
+      own disk and are never sent to us or anyone else. The kilde application has no account, no
+      telemetry and no analytics. This website uses Google Analytics to count page views, configured
+      so that it stores <strong>no cookies</strong> on your device and cannot recognise you across
+      visits.
     </p>
 
     <div class="toc">
@@ -151,9 +154,38 @@
 
     <h2 id="site">4. This website</h2>
     <p>
-      This site is a set of static pages. It sets <strong>no cookies</strong>, uses no local storage,
-      embeds no advertising or analytics scripts, and loads no third-party fonts or trackers.
+      This site is a set of static pages. It sets <strong>no cookies</strong>, writes nothing to local
+      storage, shows no advertising, and loads no third-party fonts.
     </p>
+    <h3>Audience measurement</h3>
+    <p>
+      To understand how many people visit the site and which pages are useful, this website loads
+      <a href="https://marketingplatform.google.com/about/analytics/">Google Analytics 4</a>. It is
+      deliberately configured in a privacy-preserving way:
+    </p>
+    <ul>
+      <li>Client-side storage is disabled, so <strong>no analytics cookies and no local storage entries are created</strong>.</li>
+      <li>Because there is no identifier, we cannot link your visits together or recognise you on a return visit.</li>
+      <li>Google Signals, advertising features and ad personalisation are switched off, and ads data redaction is enabled. Your data is not used for advertising.</li>
+      <li>IP addresses are anonymised by Google and are not available to us.</li>
+      <li>The script is not loaded at all if your browser sends a Do Not Track or Global Privacy Control signal.</li>
+    </ul>
+    <p>
+      What we receive is aggregate, non-identifying: page URL and title, referring site, approximate
+      country or city derived from the IP address, device type, browser and language. We use it only
+      to decide what to document and improve. It is never sold or shared for advertising. Google
+      processes this data as described in
+      <a href="https://policies.google.com/privacy">Google's privacy policy</a>; see also
+      <a href="https://support.google.com/analytics/answer/6004245">how Google Analytics uses data</a>.
+    </p>
+    <p>
+      You can opt out entirely by enabling Do Not Track or Global Privacy Control in your browser, by
+      installing the
+      <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out add-on</a>, or by
+      blocking <code>googletagmanager.com</code> with any content blocker. Nothing on this site
+      depends on analytics, so blocking it does not affect how the site works.
+    </p>
+    <h3>Hosting</h3>
     <p>
       The site is hosted on <a href="https://www.cloudflare.com/">Cloudflare</a>. Like any web host,
       Cloudflare processes technical request data — such as your IP address, the requested URL, the
@@ -179,14 +211,22 @@
         GitHub. Homebrew's own behavior, including any analytics it performs, is governed by the
         <a href="https://docs.brew.sh/Analytics">Homebrew project</a>, not by kilde.
       </li>
+      <li>
+        <strong>Google Analytics</strong> — used on this website only, in the cookieless configuration
+        described in <a href="#site">section 4</a>. The kilde application itself never contacts Google.
+        Processing is governed by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+      </li>
     </ul>
     <p>The kilde project does not receive personal data from these services beyond what any public repository owner can see, such as the GitHub account name attached to an issue or a pull request you choose to submit.</p>
 
     <h2 id="rights">6. Your choices and rights</h2>
     <p>
-      Because kilde collects nothing, there is no personal data held by the project for you to
-      access, correct, export or erase. The data kilde produces is on your own machine and under
-      your control, and you can remove it at any time.
+      Because the kilde application collects nothing, there is no personal data held by the project
+      for you to access, correct, export or erase. The data kilde produces is on your own machine and
+      under your control, and you can remove it at any time. Website measurement is aggregate and
+      contains no identifier that could be traced back to you, so there is nothing for us to look up
+      on request — but you can stop it being collected at any time using the opt-out options in
+      <a href="#site">section 4</a>.
     </p>
     <p>
       If you contact the project — for example by opening a GitHub issue — the content of that

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>プライバシーポリシー — kilde</title>
-<meta name="description" content="kilde のデータの取り扱い。録画ファイルは Mac の中だけに保存され、アカウント・テレメトリ・アナリティクスは一切ありません。">
+<meta name="description" content="kilde のデータの取り扱い。録画ファイルは Mac の中だけに保存され、アプリにはアカウント・テレメトリ・アナリティクスが一切ありません。">
 <link rel="canonical" href="https://kilde.site/ja/privacy/">
 <link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
@@ -14,10 +14,11 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="プライバシーポリシー — kilde">
-<meta property="og:description" content="録画ファイルは Mac の中だけに。アカウントもテレメトリもアナリティクスもありません。">
+<meta property="og:description" content="録画ファイルは Mac の中だけに。kilde アプリにはアカウントもテレメトリもアナリティクスもありません。">
 <meta property="og:url" content="https://kilde.site/ja/privacy/">
 <meta property="og:image" content="https://kilde.site/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<script src="/assets/analytics.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へスキップ</a>
@@ -45,9 +46,10 @@
 
     <p class="summary">
       <strong>要点:</strong> kilde はお使いの Mac の中だけで動作します。録画したファイルはご自身の
-      ディスクに書き出され、私たちにも第三者にも送信されません。アカウント・テレメトリ・
-      アナリティクスは一切なく、本ウェブサイトも Cookie を設定せず、トラッキングスクリプトも
-      使用していません。
+      ディスクに書き出され、私たちにも第三者にも送信されません。kilde アプリにはアカウント・
+      テレメトリ・アナリティクスが一切ありません。本ウェブサイトはページビューの集計のために
+      Google アナリティクスを利用していますが、<strong>Cookie を一切保存しない設定</strong>で
+      運用しており、再訪問した利用者を識別することはできません。
     </p>
 
     <div class="toc">
@@ -154,9 +156,37 @@
     <h2 id="site">4. 本ウェブサイト</h2>
     <p>
       本サイトは静的なページのみで構成されています。<strong>Cookie を設定せず</strong>、
-      ローカルストレージも使わず、広告・アナリティクスのスクリプトも、外部フォントや
-      トラッカーの読み込みもありません。
+      ローカルストレージにも書き込まず、広告の配信や外部フォントの読み込みもありません。
     </p>
+    <h3>アクセス解析について</h3>
+    <p>
+      どのページが役に立っているかを把握するため、本ウェブサイトは
+      <a href="https://marketingplatform.google.com/intl/ja/about/analytics/">Google アナリティクス 4</a>
+      を読み込んでいます。プライバシーに配慮した以下の設定で運用しています。
+    </p>
+    <ul>
+      <li>クライアント側のストレージを無効化しているため、<strong>解析用の Cookie もローカルストレージも作成されません</strong>。</li>
+      <li>識別子を持たないため、複数の訪問を結び付けたり、再訪問した利用者を特定したりすることはできません。</li>
+      <li>Google シグナル・広告機能・広告のパーソナライズはすべて無効化し、広告データのリダクションを有効にしています。取得した情報が広告目的で使われることはありません。</li>
+      <li>IP アドレスは Google 側で匿名化され、私たちが参照することはできません。</li>
+      <li>ブラウザが Do Not Track または Global Privacy Control のシグナルを送信している場合、スクリプト自体を読み込みません。</li>
+    </ul>
+    <p>
+      私たちが受け取るのは、ページの URL とタイトル、参照元サイト、IP アドレスから推定されたおおまかな
+      国や都市、端末の種別、ブラウザ、言語といった、個人を特定しない統計情報のみです。これらはドキュメントや
+      サイトの改善方針を決めるためだけに利用し、販売したり広告目的で共有したりすることはありません。
+      Google による処理については
+      <a href="https://policies.google.com/privacy?hl=ja">Google のプライバシーポリシー</a>および
+      <a href="https://support.google.com/analytics/answer/6004245?hl=ja">Google アナリティクスのデータ使用について</a>
+      をご参照ください。
+    </p>
+    <p>
+      解析を完全に停止したい場合は、ブラウザで Do Not Track や Global Privacy Control を有効にするか、
+      <a href="https://tools.google.com/dlpage/gaoptout?hl=ja">Google アナリティクス オプトアウト アドオン</a>
+      を導入するか、コンテンツブロッカーで <code>googletagmanager.com</code> をブロックしてください。
+      本サイトの機能は解析に依存していないため、ブロックしても表示や動作に影響はありません。
+    </p>
+    <h3>ホスティング</h3>
     <p>
       本サイトは <a href="https://www.cloudflare.com/">Cloudflare</a> でホスティングしています。
       一般的なホスティング事業者と同様に、Cloudflare はページの配信とサービスの保護のため、
@@ -184,6 +214,12 @@
         ダウンロードします。Homebrew 自体の挙動 (アナリティクスを含む) は kilde ではなく
         <a href="https://docs.brew.sh/Analytics">Homebrew プロジェクト</a>の定めるところによります。
       </li>
+      <li>
+        <strong>Google アナリティクス</strong> — 本ウェブサイトのアクセス解析にのみ利用しており、
+        <a href="#site">第 4 条</a>に記載の Cookie を使用しない設定で運用しています。kilde アプリ本体が
+        Google に接続することはありません。取り扱いは
+        <a href="https://policies.google.com/privacy?hl=ja">Google のプライバシーポリシー</a>に従います。
+      </li>
     </ul>
     <p>
       kilde プロジェクトがこれらのサービスから受け取る個人情報は、公開リポジトリの管理者が
@@ -193,9 +229,11 @@
 
     <h2 id="rights">6. 利用者の選択と権利</h2>
     <p>
-      kilde は情報を収集しないため、プロジェクト側に開示・訂正・利用停止・削除の対象となる
+      kilde アプリは情報を収集しないため、プロジェクト側に開示・訂正・利用停止・削除の対象となる
       個人情報は保有していません。kilde が生成するデータは利用者ご自身の端末上にあり、
-      いつでも削除できます。
+      いつでも削除できます。ウェブサイトのアクセス解析は統計情報のみで、利用者にたどり着ける
+      識別子を含まないため、個別に照会できるデータは存在しません。収集そのものを停止したい場合は
+      <a href="#site">第 4 条</a>のオプトアウト手段をご利用ください。
     </p>
     <p>
       GitHub の Issue などでプロジェクトに連絡した場合、その内容は公開され、リポジトリが
