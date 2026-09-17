@@ -3,7 +3,7 @@
  *
  * Privacy notes:
  *  - client_storage: 'none'  -> gtag writes no _ga / _gid cookies and no localStorage.
- *  - Consent Mode defaults deny every storage purpose, so GA sends cookieless pings.
+ *  - Consent Mode denies every advertising storage purpose.
  *  - Google Signals and ad personalization are switched off; ads data is redacted.
  *  - Trade-off: with no client identifier, returning visitors are counted as new
  *    users. Session and user counts are therefore inflated; page views are accurate.
@@ -29,11 +29,14 @@
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
 
+  // Advertising storage is refused outright. analytics_storage is left alone on
+  // purpose: client_storage:'none' below already guarantees that nothing is
+  // written to the device, and denying it here would push GA into cookieless-ping
+  // mode, where a low-traffic site's reports are modeled rather than measured.
   gtag('consent', 'default', {
     ad_storage: 'denied',
     ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: 'denied'
+    ad_personalization: 'denied'
   });
   gtag('set', 'ads_data_redaction', true);
   gtag('set', 'url_passthrough', false);
