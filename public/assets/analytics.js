@@ -2,11 +2,15 @@
  * kilde.site — Google Analytics 4 (cookieless configuration)
  *
  * Privacy notes:
- *  - client_storage: 'none'  -> gtag writes no _ga / _gid cookies and no localStorage.
- *  - Consent Mode denies every advertising storage purpose.
- *  - Google Signals and ad personalization are switched off; ads data is redacted.
- *  - Trade-off: with no client identifier, returning visitors are counted as new
- *    users. Session and user counts are therefore inflated; page views are accurate.
+ *  - Consent Mode denies analytics_storage, so GA falls back to cookieless pings:
+ *    no _ga / _ga_<id> cookies and no localStorage are written. This is the lever
+ *    that actually works — client_storage:'none' alone was verified against the
+ *    live site and GA still set both _ga cookies, so it is kept only as a belt.
+ *  - Every advertising storage purpose is denied, Google Signals and ad
+ *    personalization are off, and ads data is redacted.
+ *  - Trade-off: with no identifier, returning visitors count as new users, and
+ *    GA reports user/session metrics as modeled rather than measured. Page and
+ *    event counts still arrive.
  */
 (function () {
   'use strict';
@@ -29,14 +33,13 @@
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
 
-  // Advertising storage is refused outright. analytics_storage is left alone on
-  // purpose: client_storage:'none' below already guarantees that nothing is
-  // written to the device, and denying it here would push GA into cookieless-ping
-  // mode, where a low-traffic site's reports are modeled rather than measured.
+  // Every storage purpose is denied. analytics_storage in particular is what
+  // keeps GA cookieless — see the note at the top of this file.
   gtag('consent', 'default', {
     ad_storage: 'denied',
     ad_user_data: 'denied',
-    ad_personalization: 'denied'
+    ad_personalization: 'denied',
+    analytics_storage: 'denied'
   });
   gtag('set', 'ads_data_redaction', true);
   gtag('set', 'url_passthrough', false);
