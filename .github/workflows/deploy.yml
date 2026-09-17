@@ -28,4 +28,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Pin to the version in package.json / package-lock.json. Without this
+          # the action installs its own (older) default, which lagged behind the
+          # `[assets]` config this project uses.
+          wranglerVersion: "4.133.0"
           command: deploy
