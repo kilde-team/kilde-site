@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — kilde</title>
+<meta name="description" content="How kilde handles your data: recordings stay on your Mac, there is no account, no telemetry and no analytics.">
+<link rel="canonical" href="https://kilde.site/privacy/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/privacy/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Privacy Policy — kilde">
+<meta property="og:description" content="Recordings stay on your Mac. No account, no telemetry, no analytics.">
+<meta property="og:url" content="https://kilde.site/privacy/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/#features">Features</a>
+      <a href="/#install">Install</a>
+      <a href="https://github.com/takezou621/kilde">GitHub</a>
+      <a class="lang-switch" href="/ja/privacy/" hreflang="ja" lang="ja">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="legal">
+  <div class="wrap">
+    <a class="back" href="/">← Back to kilde</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: September 17, 2026</p>
+
+    <p class="summary">
+      <strong>In short:</strong> kilde runs entirely on your Mac. Your recordings are written to your
+      own disk and are never sent to us or anyone else. kilde has no account, no telemetry and no
+      analytics, and this website sets no cookies and runs no tracking scripts.
+    </p>
+
+    <div class="toc">
+      <b>Contents</b>
+      <ol>
+        <li><a href="#scope">Scope of this policy</a></li>
+        <li><a href="#app">The kilde application</a></li>
+        <li><a href="#permissions">macOS permissions</a></li>
+        <li><a href="#site">This website</a></li>
+        <li><a href="#third-party">Third-party services</a></li>
+        <li><a href="#rights">Your choices and rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+
+    <h2 id="scope">1. Scope of this policy</h2>
+    <p>
+      This policy explains how personal data is handled in connection with <strong>kilde</strong>,
+      an open-source screen and audio recorder for macOS, and with this website
+      (<code>kilde.site</code>). It covers two separate things:
+    </p>
+    <ul>
+      <li>the kilde command-line tool and menu bar application that you install and run on your own Mac, and</li>
+      <li>the website you are reading now.</li>
+    </ul>
+    <p>
+      kilde is distributed under the <a href="https://github.com/takezou621/kilde/blob/main/LICENSE">MIT License</a>.
+      This policy describes the software as it is published by the kilde project; if you build or
+      modify it yourself, or obtain it from a third party, the behavior described here may not apply.
+    </p>
+
+    <h2 id="app">2. The kilde application</h2>
+
+    <h3>No data is collected</h3>
+    <p>
+      kilde does not collect, transmit or sell any personal data. It has <strong>no user account,
+      no sign-in, no telemetry, no crash reporting and no analytics</strong>. The application does
+      not contact a kilde server, because there is no kilde server.
+    </p>
+
+    <h3>What stays on your Mac</h3>
+    <table>
+      <thead>
+        <tr><th>Data</th><th>Where it lives</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Recordings (video and audio files)</td>
+          <td>The output path you choose, or your configured output directory</td>
+          <td>They are the product of the tool. They are written directly to your local disk.</td>
+        </tr>
+        <tr>
+          <td>Settings</td>
+          <td><code>~/.kilde/config.json</code> (or the directory set via <code>KILDE_CONFIG_DIR</code>)</td>
+          <td>Persistent recording defaults such as output directory, audio sources, codec and hotkey.</td>
+        </tr>
+        <tr>
+          <td>Monitor-mode state</td>
+          <td><code>monitor-state.json</code> in the same directory</td>
+          <td>Lets kilde restore your audio device configuration after a monitored recording.</td>
+        </tr>
+        <tr>
+          <td>Recent recordings shown in the menu bar app</td>
+          <td>Read live from your output directory</td>
+          <td>Displayed in the panel so you can reveal a file in Finder. Nothing is copied elsewhere.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      You control all of this. Deleting a recording, editing the configuration with
+      <code>kilde config</code>, or removing the <code>~/.kilde</code> directory removes the data
+      from your machine.
+    </p>
+
+    <h3>Recordings may contain personal data</h3>
+    <p>
+      A screen or audio recording can capture whatever is visible or audible at the time — faces,
+      voices, names, documents, messages and other people's contributions to a meeting. kilde never
+      sees or receives that content, but <strong>you</strong> become responsible for it once it is on
+      your disk, including for obtaining any consent the law or your organization requires before
+      recording. See the <a href="/terms/">Terms of Service</a> for more on that responsibility.
+    </p>
+
+    <h2 id="permissions">3. macOS permissions</h2>
+    <p>
+      macOS, not kilde, controls access to capture. kilde asks the system for the permissions it
+      needs, and macOS asks you:
+    </p>
+    <ul>
+      <li><strong>Screen &amp; System Audio Recording</strong> — required to capture a display or a window and the sound the system is producing.</li>
+      <li><strong>Microphone</strong> — required only when you record a microphone or another input device.</li>
+      <li><strong>Notifications</strong> — optional; used by the menu bar app to tell you a recording finished.</li>
+      <li><strong>Launch at login</strong> — optional; registered through Apple's <code>SMAppService</code> when you enable it in the menu bar app.</li>
+    </ul>
+    <p>
+      These permissions are used only to perform the recording you asked for. You can review or
+      revoke any of them at any time in <strong>System Settings → Privacy &amp; Security</strong>.
+      Running <code>kilde doctor</code> shows which permissions are currently granted.
+    </p>
+
+    <h2 id="site">4. This website</h2>
+    <p>
+      This site is a set of static pages. It sets <strong>no cookies</strong>, uses no local storage,
+      embeds no advertising or analytics scripts, and loads no third-party fonts or trackers.
+    </p>
+    <p>
+      The site is hosted on <a href="https://www.cloudflare.com/">Cloudflare</a>. Like any web host,
+      Cloudflare processes technical request data — such as your IP address, the requested URL, the
+      time of the request, and your browser's user-agent string — in order to deliver the page and to
+      protect the service from abuse. That processing is governed by
+      <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>. We do not
+      use this data to identify or profile visitors.
+    </p>
+
+    <h2 id="third-party">5. Third-party services</h2>
+    <p>
+      Some things you may do around kilde take you to services operated by other companies, each
+      with its own privacy policy:
+    </p>
+    <ul>
+      <li>
+        <strong>GitHub</strong> — the source code, releases, issues and documentation are hosted on
+        GitHub. Downloading a release, filing an issue or opening a pull request is subject to
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.
+      </li>
+      <li>
+        <strong>Homebrew</strong> — installing via <code>brew</code> downloads release artifacts from
+        GitHub. Homebrew's own behavior, including any analytics it performs, is governed by the
+        <a href="https://docs.brew.sh/Analytics">Homebrew project</a>, not by kilde.
+      </li>
+    </ul>
+    <p>The kilde project does not receive personal data from these services beyond what any public repository owner can see, such as the GitHub account name attached to an issue or a pull request you choose to submit.</p>
+
+    <h2 id="rights">6. Your choices and rights</h2>
+    <p>
+      Because kilde collects nothing, there is no personal data held by the project for you to
+      access, correct, export or erase. The data kilde produces is on your own machine and under
+      your control, and you can remove it at any time.
+    </p>
+    <p>
+      If you contact the project — for example by opening a GitHub issue — the content of that
+      message is public and is retained by GitHub for as long as the repository exists. Ask via the
+      same channel if you would like something you posted removed.
+    </p>
+
+    <h2 id="children">7. Children</h2>
+    <p>
+      kilde is a developer tool and is not directed at children. No data is knowingly collected from
+      anyone, including children.
+    </p>
+
+    <h2 id="changes">8. Changes to this policy</h2>
+    <p>
+      This policy may change as the software changes. The current version is always published at
+      this address, with the date at the top updated. Material changes will be noted in the project's
+      release notes on GitHub.
+    </p>
+
+    <h2 id="contact">9. Contact</h2>
+    <p>
+      Questions about privacy can be raised as an issue at
+      <a href="https://github.com/takezou621/kilde/issues">github.com/takezou621/kilde/issues</a>.
+      Please do not include sensitive personal data in a public issue.
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 kilde · Released under the MIT License</span>
+      <span>
+        <a href="/">Home</a> ·
+        <a href="/terms/">Terms of Service</a> ·
+        <a href="/ja/privacy/" hreflang="ja" lang="ja">日本語</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kilde — Screen and system audio recorder for macOS</title>
+<meta name="description" content="kilde is an open-source macOS screen recorder that captures system audio QuickTime Player cannot — as a single-command CLI and a menu bar app.">
+<link rel="canonical" href="https://kilde.site/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kilde — Screen and system audio recorder for macOS">
+<meta property="og:description" content="Record the screen together with the system audio QuickTime Player cannot capture. Open source, CLI and menu bar app.">
+<meta property="og:url" content="https://kilde.site/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/","codeRepository":"https://github.com/takezou621/kilde","description":"An open-source screen and audio recorder for macOS that records the screen together with system audio.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/takezou621/kilde">GitHub</a>
+      <a class="lang-switch" href="/ja/" hreflang="ja" lang="ja">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Open source · macOS</span>
+    <h1>Record your screen with the audio macOS keeps to itself.</h1>
+    <p class="lede">
+      kilde records your screen together with the <strong>system audio that QuickTime Player's
+      screen recorder cannot capture</strong> — as a single-command CLI, and as a menu bar app.
+      No virtual audio driver required.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#install">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Install
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/takezou621/kilde">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.4 5 18.4 5.3 18.4 5.3c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+    <p class="hero-note">macOS 14 or later · Apple Silicon (arm64) · MIT licensed</p>
+
+    <div class="terminal">
+      <div class="terminal-bar"><i></i><i></i><i></i><span>zsh — kilde</span></div>
+<pre><span class="c"># Check permissions and the environment first</span>
+<span class="p">$</span> kilde doctor
+
+<span class="c"># Screen + system audio. Ctrl+C stops it and finalizes the file safely</span>
+<span class="p">$</span> kilde rec demo.mov
+
+<span class="c"># A meeting: pick a window, mix the other participants and your mic</span>
+<span class="p">$</span> kilde rec <span class="o">--preset meeting</span> meeting.mov
+
+<span class="c"># Audio only, no extra driver needed</span>
+<span class="p">$</span> kilde rec <span class="o">--no-video</span> memo.m4a</pre>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Everything a recording should keep</h2>
+      <p>kilde uses native ScreenCaptureKit, so the sound coming out of your Mac lands in the file
+        alongside the picture — with no setup and no virtual audio device.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Screen and system audio, together</h3>
+        <p>Record the display and everything you hear in one command, using native ScreenCaptureKit capture. Zero setup.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></div>
+        <h3>Microphone and other inputs</h3>
+        <p>Capture a mic or a device such as BlackHole at the same time. Mixed into one track by default, or kept apart with <code>--audio-tracks separate</code>.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18"/></svg></div>
+        <h3>One window, one app's sound</h3>
+        <p>Capture a single window and scope system audio to its app — notification chimes and other apps stay out of the recording.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg></div>
+        <h3>Audio-only mode</h3>
+        <p><code>--no-video</code> records sound alone, straight to M4A. No additional driver required.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Ctrl+C is safe</h3>
+        <p>Stopping a recording — with Ctrl+C, SIGTERM or SIGHUP — always finalizes the output file. A source you cannot open again is no source at all.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg></div>
+        <h3>Global hotkey</h3>
+        <p>Start and stop from any app with a shortcut such as <code>cmd+shift+r</code>, set on the command line, in the config file, or in the menu bar app.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Meeting presets</h3>
+        <p><code>--preset meeting</code> prompts for a Zoom, Google Meet or Teams window, then mixes the other participants' audio and your microphone into one track.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></div>
+        <h3>Region, HDR and codecs</h3>
+        <p>Record part of the screen with <code>--region</code>, choose H.264, HEVC or ProRes, set the frame rate, and capture HDR on macOS 15 or later.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></div>
+        <h3>Menu bar app</h3>
+        <p>The same engine behind a menu bar icon: elapsed time, per-source level meters, completion notifications, recent recordings, and launch at login.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Install</h2>
+      <p>Homebrew is the quickest route. Release binaries are Apple Silicon builds; Intel Macs are not supported at this time.</p>
+    </div>
+    <div class="install-grid">
+
+      <div class="snippet">
+        <h3>Homebrew</h3>
+<pre><span class="p">$</span> brew tap takezou621/kilde
+<span class="c"># one-time, newer Homebrew only</span>
+<span class="p">$</span> brew trust --formula takezou621/kilde/kilde
+<span class="p">$</span> brew install kilde
+
+<span class="c"># or, directly from the tap</span>
+<span class="p">$</span> brew install takezou621/kilde/kilde</pre>
+      </div>
+
+      <div class="snippet">
+        <h3>Release binary</h3>
+<pre><span class="c"># Download kilde-&lt;version&gt;-macos.zip from Releases</span>
+<span class="p">$</span> unzip kilde-*-macos.zip
+<span class="p">$</span> sudo cp release/kilde /usr/local/bin/
+
+<span class="c"># Then check permissions</span>
+<span class="p">$</span> kilde doctor</pre>
+      </div>
+
+    </div>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn btn-ghost" href="https://github.com/takezou621/kilde/releases">Latest releases</a>
+      <a class="btn btn-ghost" href="https://github.com/takezou621/kilde#readme">Full documentation</a>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Requirements</h2>
+      <p>kilde is built on macOS-native capture APIs, which sets a floor on what it can run on.</p>
+    </div>
+    <ul class="req-list">
+      <li><strong>macOS 14 or later.</strong> Runtime testing is currently performed on macOS 26 on Apple Silicon.</li>
+      <li><strong>Apple Silicon (arm64).</strong> Release binaries are arm64 builds; Intel Macs are not supported at this time.</li>
+      <li><strong>Screen recording permission</strong>, and microphone permission when you record one. <code>kilde doctor</code> checks the environment and prompts for anything missing.</li>
+      <li><strong>HDR capture</strong> additionally needs macOS 15 or later, an HDR display, and HEVC. Where any of that is missing, kilde records SDR and tells you why.</li>
+      <li><strong>Building from source</strong> requires a toolchain with the macOS 26 SDK. The recording engine lives in a private repository, so public source builds are not available at this time.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="name">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Why "kilde"</h2>
+    </div>
+    <div class="story">
+      <p><em>kilde</em> is the Danish and Norwegian word for <strong>source</strong> — literally a spring,
+        where water rises from the ground, and by extension the source of a piece of information,
+        as in a journalist's or a scholar's sources.</p>
+      <p>More and more knowledge is now created in online meetings and on screens. In an era when AI
+        can transcribe, summarize and search recordings, those recordings — the video, the audio, the
+        screen — are valuable sources of information in their own right, not byproducts to discard
+        once the meeting is over.</p>
+      <p>kilde is named for the thing it exists to keep: the source. The same conviction is why kilde
+        is built so that stopping a recording — even with Ctrl+C — always leaves a finalized, playable
+        file.</p>
+      <p class="pull">A source you cannot open again is no source at all.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">An open-source screen and audio recorder for macOS.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Product</b>
+          <a href="#features">Features</a>
+          <a href="#install">Install</a>
+          <a href="https://github.com/takezou621/kilde/releases">Releases</a>
+        </div>
+        <div>
+          <b>Project</b>
+          <a href="https://github.com/takezou621/kilde">GitHub</a>
+          <a href="https://github.com/takezou621/kilde#readme">Documentation</a>
+          <a href="https://github.com/takezou621/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>Legal</b>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="https://github.com/takezou621/kilde/blob/main/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · Released under the MIT License</span>
+      <span><a href="/ja/" hreflang="ja" lang="ja">日本語</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

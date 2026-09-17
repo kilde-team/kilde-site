@@ -1,0 +1,12 @@
+{
+  "name": "kilde-site",
+  "private": true,
+  "description": "Website for kilde — an open-source screen and audio recorder for macOS",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

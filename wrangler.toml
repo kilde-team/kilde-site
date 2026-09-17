@@ -1,0 +1,11 @@
+name = "kilde-site"
+compatibility_date = "2025-09-01"
+
+# Static-only Worker (Workers Static Assets). No `main` entry point is needed:
+# every request is served straight from ./public by Cloudflare's asset server.
+[assets]
+directory = "./public"
+# Pretty URLs: /privacy -> /privacy/index.html
+html_handling = "auto-trailing-slash"
+# Unknown paths render the custom 404 page.
+not_found_handling = "404-page"
