@@ -1,0 +1,43 @@
+public/assets/mac-app-store-badge-en-black.svg
+  s_3b5532545d6ab6::t_77361155e14df2 1-51
+public/assets/styles.css
+  s_3b5532545d6ab6::t_33d141fa6705d2 234-240,245
+  s_3b5532545d6ab6::t_9d8a851bd0f1a6 241-244
+public/index.html
+  s_3b5532545d6ab6::t_1d7dbeb52dc32c 24
+  s_3b5532545d6ab6::t_7434e1b3682ea6 163-164,169-180,183,185,189
+  s_3b5532545d6ab6::t_7f93ba33f65692 58-66
+  s_3b5532545d6ab6::t_aa3250a5da8324 168
+public/_headers
+  s_3b5532545d6ab6::t_e23c710457bd85 21-37
+public/ja/index.html
+  s_3b5532545d6ab6::t_aa3250a5da8324 164
+  s_3b5532545d6ab6::t_5c39b96e4e3e0c 54-62
+  s_3b5532545d6ab6::t_5108915c9be6a5 159-160,165-176,179,181,185
+public/assets/mac-app-store-badge-ja-black.svg
+  s_3b5532545d6ab6::t_77361155e14df2 1-38
+public/sitemap.xml
+  s_3b5532545d6ab6::t_96f142014f42a6 6,14
+README.md
+  s_3b5532545d6ab6::t_643733366cfd9f 37-40
+public/assets/mac-app-store-badge-en-white.svg
+  s_3b5532545d6ab6::t_77361155e14df2 1-49
+public/assets/mac-app-store-badge-ja-white.svg
+  s_3b5532545d6ab6::t_77361155e14df2 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fded3211e2313ff59dee05513df93436d61a9a88",
+  "prompts": {},
+  "sessions": {
+    "s_3b5532545d6ab6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69fb3d1c-2a25-45cf-9f24-068f955e3bb6",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
