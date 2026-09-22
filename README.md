@@ -38,6 +38,9 @@ public/            # everything served, verbatim
                    # Apple's official Mac App Store badge, served verbatim
                    # (downloaded from toolbox.marketingtools.apple.com). Pages
                    # pick black/white via <picture> and prefers-color-scheme.
+    menu-bar-app.png
+                   # the menu bar app's capture panel, cropped from the App
+                   # Store screenshots in the kilde repository (docs/appstore/)
 wrangler.toml      # static-only Worker: no `main`, just [assets]
 .github/workflows/deploy.yml
 ```
