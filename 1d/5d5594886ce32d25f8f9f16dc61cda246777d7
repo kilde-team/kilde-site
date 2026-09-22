@@ -1,0 +1,27 @@
+public/assets/styles.css
+  s_3b5532545d6ab6::t_8e45c989db70bf 185-203
+README.md
+  s_3b5532545d6ab6::t_79de6ef792225a 41-43
+public/sitemap.xml
+  s_3b5532545d6ab6::t_9e743b06e1c097 6,14
+public/ja/index.html
+  s_3b5532545d6ab6::t_097c949f1da014 85-89
+public/index.html
+  s_3b5532545d6ab6::t_b9da5ff00cbc0e 89-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1d5d5594886ce32d25f8f9f16dc61cda246777d7",
+  "prompts": {},
+  "sessions": {
+    "s_3b5532545d6ab6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69fb3d1c-2a25-45cf-9f24-068f955e3bb6",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
