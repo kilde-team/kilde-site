@@ -41,6 +41,10 @@ public/            # everything served, verbatim
     menu-bar-app.png
                    # the menu bar app's capture panel, cropped from the App
                    # Store screenshots in the kilde repository (docs/appstore/)
+    menu-bar-app-en.png
+                   # the English counterpart, rendered from the kilde
+                   # repository's screenshot tools (docs/appstore/tools/) —
+                   # the app's own UI is Japanese-only today
 wrangler.toml      # static-only Worker: no `main`, just [assets]
 .github/workflows/deploy.yml
 ```
