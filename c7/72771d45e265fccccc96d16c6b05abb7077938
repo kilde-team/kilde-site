@@ -1,0 +1,23 @@
+public/ja/index.html
+  s_3b5532545d6ab6::t_a4ed501f3f8bb3 71-75
+README.md
+  s_3b5532545d6ab6::t_6b7647727f587b 44-47
+public/index.html
+  s_3b5532545d6ab6::t_3bcaa05d775b15 75-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c772771d45e265fccccc96d16c6b05abb7077938",
+  "prompts": {},
+  "sessions": {
+    "s_3b5532545d6ab6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69fb3d1c-2a25-45cf-9f24-068f955e3bb6",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
