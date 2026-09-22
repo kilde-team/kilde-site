@@ -231,6 +231,18 @@ section:last-of-type { border-bottom: 0; }
 .snippet .c { color: #5b6879; }
 .snippet .p { color: #58c4f0; user-select: none; }
 
+/* Apple's official Mac App Store badge. It is displayed at 44px tall —
+   Apple's minimum is 40px — and the surrounding 12px+ paddings and gaps keep
+   the clear space the badge guidelines require (a quarter of its height). */
+.store-badge { display: inline-flex; }
+.store-badge img { display: block; height: 44px; width: auto; }
+.snippet .store-desc { margin: 0 0 16px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.65; }
+.store-note { margin: 12px 0 0; font-size: 0.8rem; color: var(--text-faint); }
+/* The store card holds the badge artwork instead of code, so it gets the page's
+   card background: light scheme shows the black badge, dark the white one, and
+   each needs a surface that contrasts with it. */
+.snippet--store { background: var(--bg-elev); border-color: var(--border); }
+
 /* requirements */
 
 .req-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-width: 62ch; }

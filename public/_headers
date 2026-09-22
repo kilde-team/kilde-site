@@ -18,6 +18,23 @@
 /assets/favicon.svg
   Cache-Control: public, max-age=86400, must-revalidate
 
+# Apple's official "Download on the Mac App Store" badge artwork, downloaded
+# from toolbox.marketingtools.apple.com and served verbatim (guidelines forbid
+# modifying it). One file per storefront language and per badge color: the
+# black badge renders on light backgrounds, the white one on dark, and pages
+# switch between them with a <picture> element.
+/assets/mac-app-store-badge-en-black.svg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/assets/mac-app-store-badge-en-white.svg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/assets/mac-app-store-badge-ja-black.svg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/assets/mac-app-store-badge-ja-white.svg
+  Cache-Control: public, max-age=86400, must-revalidate
+
 # The analytics config has no content hash in its filename, so a long cache
 # would mean a change to the tracking setup (or switching it off) takes a day
 # to reach returning visitors. Keep it short.

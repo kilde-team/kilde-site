@@ -34,6 +34,10 @@ public/            # everything served, verbatim
     styles.css     # the single stylesheet for every page
     favicon.svg
     og.png         # 1200x630 social card
+    mac-app-store-badge-{en,ja}-{black,white}.svg
+                   # Apple's official Mac App Store badge, served verbatim
+                   # (downloaded from toolbox.marketingtools.apple.com). Pages
+                   # pick black/white via <picture> and prefers-color-scheme.
 wrangler.toml      # static-only Worker: no `main`, just [assets]
 .github/workflows/deploy.yml
 ```
