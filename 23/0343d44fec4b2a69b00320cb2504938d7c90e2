@@ -1,0 +1,35 @@
+README.md
+  s_f26ef99180242a::t_0cfa8dc3bac68d 3,97
+public/404.html
+  s_f26ef99180242a::t_16cd4faefbe15c 20
+public/index.html
+  s_f26ef99180242a::t_b1eba511e048a7 24,40,68,209-210,269,273-275,281
+public/ja/index.html
+  s_f26ef99180242a::t_36f1801a460332 36,64,205-206,263,267-269,275
+public/ja/privacy/index.html
+  s_f26ef99180242a::t_339f655b041ab2 7,35,45,49-51,82,90,92-94,97-127,261,264-269,279-283,310
+public/ja/terms/index.html
+  s_f26ef99180242a::t_a401244795438d 35,85,197
+public/privacy/index.html
+  s_f26ef99180242a::t_c03b7bfadc3e69 7,17,35,45,49-51,82,89,91-93,96-126,258-264,271-275,303
+public/sitemap.xml
+  s_f26ef99180242a::t_b700c6d19b3ff9 20,22
+public/terms/index.html
+  s_f26ef99180242a::t_cc10a86b6c65a6 35,83,195
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "230343d44fec4b2a69b00320cb2504938d7c90e2",
+  "prompts": {},
+  "sessions": {
+    "s_f26ef99180242a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_f26ef99180242a",
+        "model": "unknown"
+      },
+      "human_author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
