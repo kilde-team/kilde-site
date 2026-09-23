@@ -1,0 +1,21 @@
+public/privacy/index.html
+  s_9b3f29c8629884::t_eadb2ee4325499 137-138
+public/ja/privacy/index.html
+  s_9b3f29c8629884::t_bdb8ec6f6cfbdd 138-139
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cbd04174fae4ca550f9521d10eda032f3817cd48",
+  "prompts": {},
+  "sessions": {
+    "s_9b3f29c8629884": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f6e2aa4e-0667-4664-b3d5-4cbdb1b81a6e",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
