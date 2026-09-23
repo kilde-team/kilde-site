@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>プライバシーポリシー — kilde</title>
-<meta name="description" content="kilde のデータの取り扱い。録画ファイルは Mac の中だけに保存され、アプリにはアカウント・テレメトリ・アナリティクスが一切ありません。">
+<meta name="description" content="kilde のデータの取り扱い。録画ファイルは Mac の中だけに保存され、CLI は何も送信しません。メニューバーアプリは Firebase Analytics で匿名の利用統計のみを計測します。">
 <link rel="canonical" href="https://kilde.site/ja/privacy/">
 <link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
@@ -32,7 +32,7 @@
     <nav class="nav">
       <a href="/ja/#features">特徴</a>
       <a href="/ja/#install">インストール</a>
-      <a href="https://github.com/takezou621/kilde">GitHub</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
       <a class="lang-switch" href="/privacy/" hreflang="en" lang="en">English</a>
     </nav>
   </div>
@@ -42,12 +42,13 @@
   <div class="wrap">
     <a class="back" href="/ja/">← kilde のトップへ</a>
     <h1>プライバシーポリシー</h1>
-    <p class="updated">最終更新日: 2026年9月17日</p>
+    <p class="updated">最終更新日: 2026年9月23日</p>
 
     <p class="summary">
       <strong>要点:</strong> kilde はお使いの Mac の中だけで動作します。録画したファイルはご自身の
-      ディスクに書き出され、私たちにも第三者にも送信されません。kilde アプリにはアカウント・
-      テレメトリ・アナリティクスが一切ありません。本ウェブサイトはページビューの集計のために
+      ディスクに書き出され、私たちにも第三者にも送信されません。メニューバーアプリは Google の
+      Firebase Analytics で起動回数やバージョンなどの匿名の利用統計のみを計測し、録画の内容や設定は
+      送信しません。<code>kilde</code> コマンドラインは一切通信しません。本ウェブサイトはページビューの集計のために
       Google アナリティクスを利用していますが、<strong>Cookie を一切保存しない設定</strong>で
       運用しており、再訪問した利用者を識別することはできません。
     </p>
@@ -78,7 +79,7 @@
       <li>いまご覧になっている本ウェブサイト</li>
     </ul>
     <p>
-      kilde は <a href="https://github.com/takezou621/kilde/blob/main/LICENSE">MIT ライセンス</a>
+      kilde は <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT ライセンス</a>
       で配布されています。本ポリシーは kilde プロジェクトが公開しているソフトウェアについての
       説明であり、ご自身でビルド・改変したもの、または第三者から入手したものについては、
       ここに記載した挙動が当てはまらない場合があります。
@@ -86,12 +87,43 @@
 
     <h2 id="app">2. kilde アプリケーション</h2>
 
-    <h3>収集する情報はありません</h3>
+    <h3>録画の内容と設定は収集しません</h3>
     <p>
-      kilde は個人情報を収集・送信・販売しません。<strong>アカウント、サインイン、テレメトリ、
-      クラッシュレポート、アナリティクスのいずれも存在しません</strong>。kilde のサーバーは
-      存在しないため、アプリがサーバーと通信することもありません。
+      kilde が録画の内容やあなたの設定を収集・送信・販売することはありません。
+      <strong>アカウント、サインイン、広告、クラッシュレポートはいずれも存在せず</strong>、
+      通信先となる kilde のサーバーもありません。
     </p>
+
+    <h3 id="app-analytics">メニューバーアプリの利用統計</h3>
+    <p>
+      メニューバーアプリ (Mac App Store 版・直接配布版とも) は、アプリの利用状況を把握するために
+      Google の <a href="https://firebase.google.com/products/analytics?hl=ja">Firebase Analytics</a>
+      を利用しています。バージョン 0.3.0 以前には含まれていません。
+    </p>
+    <ul>
+      <li><strong>送信されるもの:</strong> 起動回数や利用頻度、アプリのバージョン、macOS のバージョン、
+        デバイスの種類、IP アドレスから Google が推定する大まかな地域などの利用統計です。これらは
+        Firebase が生成するランダムなアプリインスタンス ID に紐づけられますが、氏名・メールアドレス・
+        Apple ID・広告識別子ではありません。</li>
+      <li><strong>送信されないもの:</strong> 録画の内容 (映像・音声・ファイル名・保存先) と、
+        あなたの設定 (ホットキー・保存先・音声ソースなど)。</li>
+      <li><strong>取り扱い:</strong> データは Google のサーバーに送信され、
+        <a href="https://policies.google.com/privacy?hl=ja">Google のプライバシーポリシー</a>に従って
+        処理されます。開発者が見られるのは集計された統計のみです。広告機能は無効にしており、
+        広告には利用されません。</li>
+      <li><code>kilde</code> コマンドラインには解析機能がなく、何も送信しません。</li>
+    </ul>
+
+    <h3 id="app-network">その他の通信</h3>
+    <ul>
+      <li><strong>Mac App Store 版:</strong> 上記の利用統計のほか、アップデートは App Store を通じて配信されます。</li>
+      <li><strong>直接配布版のメニューバーアプリ</strong> (GitHub Releases の <code>kilde-&lt;version&gt;-macos.zip</code>):
+        アップデート確認のため、自動更新ライブラリ Sparkle が GitHub から更新情報を取得します。一般的な
+        Web 通信と同じく IP アドレスやアプリのバージョンが GitHub に伝わりますが、開発者が受け取ることは
+        ありません。自動確認を行うかどうかは Sparkle の確認ダイアログで選べます。</li>
+      <li><strong>コマンドライン:</strong> ネットワーク通信を行いません。Homebrew で入れた場合、更新は
+        <code>brew upgrade</code> を実行したときだけ行われます。</li>
+    </ul>
 
     <h3>Mac の中に保存されるもの</h3>
     <table>
@@ -226,9 +258,14 @@
       </li>
       <li>
         <strong>Google アナリティクス</strong> — 本ウェブサイトのアクセス解析にのみ利用しており、
-        <a href="#site">第 4 条</a>に記載の Cookie を使用しない設定で運用しています。kilde アプリ本体が
-        Google に接続することはありません。取り扱いは
+        <a href="#site">第 4 条</a>に記載の Cookie を使用しない設定で運用しています。取り扱いは
         <a href="https://policies.google.com/privacy?hl=ja">Google のプライバシーポリシー</a>に従います。
+      </li>
+      <li>
+        <strong>Firebase Analytics (Google)</strong> — メニューバーアプリの匿名の利用統計の計測に
+        利用しています (<a href="#app-analytics">第 2 条</a>参照)。取り扱いは
+        <a href="https://policies.google.com/privacy?hl=ja">Google のプライバシーポリシー</a>および
+        <a href="https://firebase.google.com/support/privacy?hl=ja">Firebase のプライバシー情報</a>に従います。
       </li>
     </ul>
     <p>
@@ -239,8 +276,11 @@
 
     <h2 id="rights">6. 利用者の選択と権利</h2>
     <p>
-      kilde アプリは情報を収集しないため、プロジェクト側に開示・訂正・利用停止・削除の対象となる
-      個人情報は保有していません。kilde が生成するデータは利用者ご自身の端末上にあり、
+      録画の内容と設定は Mac の外に出ず、開発者が Firebase で見られる利用統計も集計値で個人に
+      たどり着けないため、プロジェクト側に開示・訂正・利用停止・削除の対象となる個人情報は
+      保有していません。メニューバーアプリに利用統計を送らせたくない場合は、何も送信しない
+      <code>kilde</code> コマンドラインを使うか、ファイアウォールでアプリの外向き通信を遮断してください。
+      kilde が生成するデータは利用者ご自身の端末上にあり、
       いつでも削除できます。ウェブサイトのアクセス解析は統計情報のみで、利用者にたどり着ける
       識別子を含まないため、個別に照会できるデータは存在しません。収集そのものを停止したい場合は
       <a href="#site">第 4 条</a>のオプトアウト手段をご利用ください。
@@ -267,7 +307,7 @@
     <h2 id="contact">9. お問い合わせ</h2>
     <p>
       プライバシーに関するお問い合わせは
-      <a href="https://github.com/takezou621/kilde/issues">github.com/takezou621/kilde/issues</a>
+      <a href="https://github.com/kilde-team/kilde/issues">github.com/kilde-team/kilde/issues</a>
       の Issue としてお寄せください。
     </p>
   </div>

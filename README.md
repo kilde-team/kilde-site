@@ -1,6 +1,6 @@
 # kilde-site
 
-The website for [**kilde**](https://github.com/takezou621/kilde) — an open-source screen
+The website for [**kilde**](https://github.com/kilde-team/kilde) — an open-source screen
 and audio recorder for macOS.
 
 A hand-written static site (no build step, no framework, no JavaScript), deployed to
@@ -94,5 +94,5 @@ six HTML pages, plus `robots.txt` and `sitemap.xml`.
 
 ## License
 
-Site content and code: [MIT](https://github.com/takezou621/kilde/blob/main/LICENSE),
+Site content and code: [MIT](https://github.com/kilde-team/kilde/blob/main/LICENSE),
 matching the kilde project.

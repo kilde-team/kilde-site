@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — kilde</title>
-<meta name="description" content="How kilde handles your data: recordings stay on your Mac, and the app has no account, no telemetry and no analytics.">
+<meta name="description" content="How kilde handles your data: recordings stay on your Mac, the command-line tool sends nothing, and the menu bar app measures anonymous usage with Firebase Analytics.">
 <link rel="canonical" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
@@ -14,7 +14,7 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Privacy Policy — kilde">
-<meta property="og:description" content="Recordings stay on your Mac. The kilde app has no account, no telemetry and no analytics.">
+<meta property="og:description" content="Recordings stay on your Mac. The menu bar app sends only anonymous usage statistics; the CLI sends nothing.">
 <meta property="og:url" content="https://kilde.site/privacy/">
 <meta property="og:image" content="https://kilde.site/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@
     <nav class="nav">
       <a href="/#features">Features</a>
       <a href="/#install">Install</a>
-      <a href="https://github.com/takezou621/kilde">GitHub</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
       <a class="lang-switch" href="/ja/privacy/" hreflang="ja" lang="ja">日本語</a>
     </nav>
   </div>
@@ -42,12 +42,13 @@
   <div class="wrap">
     <a class="back" href="/">← Back to kilde</a>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: September 17, 2026</p>
+    <p class="updated">Last updated: September 23, 2026</p>
 
     <p class="summary">
       <strong>In short:</strong> kilde runs entirely on your Mac. Your recordings are written to your
-      own disk and are never sent to us or anyone else. The kilde application has no account, no
-      telemetry and no analytics. This website uses Google Analytics to count page views, configured
+      own disk and are never sent to us or anyone else. The menu bar app measures anonymous usage
+      statistics (such as launches, app and macOS version) with Google's Firebase Analytics, and never
+      your recordings or settings; the <code>kilde</code> command-line tool sends nothing at all. This website uses Google Analytics to count page views, configured
       so that it stores <strong>no cookies</strong> on your device and cannot recognise you across
       visits.
     </p>
@@ -78,19 +79,50 @@
       <li>the website you are reading now.</li>
     </ul>
     <p>
-      kilde is distributed under the <a href="https://github.com/takezou621/kilde/blob/main/LICENSE">MIT License</a>.
+      kilde is distributed under the <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT License</a>.
       This policy describes the software as it is published by the kilde project; if you build or
       modify it yourself, or obtain it from a third party, the behavior described here may not apply.
     </p>
 
     <h2 id="app">2. The kilde application</h2>
 
-    <h3>No data is collected</h3>
+    <h3>Your recordings and settings are never collected</h3>
     <p>
-      kilde does not collect, transmit or sell any personal data. It has <strong>no user account,
-      no sign-in, no telemetry, no crash reporting and no analytics</strong>. The application does
-      not contact a kilde server, because there is no kilde server.
+      kilde never collects, transmits or sells your recordings or your settings. It has
+      <strong>no user account, no sign-in, no advertising and no crash reporting</strong>, and there
+      is no kilde server for it to contact.
     </p>
+
+    <h3 id="app-analytics">Usage analytics in the menu bar app</h3>
+    <p>
+      The menu bar app (both the Mac App Store version and the directly distributed version) uses
+      Google's <a href="https://firebase.google.com/products/analytics">Firebase Analytics</a> to
+      measure how the app is used. Versions 0.3.0 and earlier do not include it.
+    </p>
+    <ul>
+      <li><strong>What is sent:</strong> usage statistics such as app launches and how often the app is
+        used, the app version, the macOS version, the device model, and a coarse region that Google
+        estimates from your IP address. Firebase associates these with a random app-instance
+        identifier that it generates; it is not your name, email, Apple ID or an advertising identifier.</li>
+      <li><strong>What is never sent:</strong> the content of your recordings (video, audio, file names,
+        save locations) and your settings (hotkeys, output directory, audio sources and so on).</li>
+      <li><strong>Who sees it:</strong> the data is sent to Google's servers and processed under
+        <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The developer only
+        sees aggregated statistics. Advertising features are disabled and the data is not used for
+        advertising.</li>
+      <li>The <code>kilde</code> command-line tool contains no analytics and sends nothing.</li>
+    </ul>
+
+    <h3 id="app-network">Other network access</h3>
+    <ul>
+      <li><strong>Mac App Store version:</strong> apart from the analytics above, updates are delivered by the App Store.</li>
+      <li><strong>Directly distributed menu bar app</strong> (the <code>kilde-&lt;version&gt;-macos.zip</code> on
+        GitHub Releases): to check for updates, the Sparkle update framework downloads the update feed from
+        GitHub. As with any web request, GitHub receives your IP address and the app version; the developer
+        does not. Sparkle asks whether to check automatically, and you can decline.</li>
+      <li><strong>Command-line tool:</strong> makes no network connections. When installed with Homebrew,
+        updates happen only when you run <code>brew upgrade</code>.</li>
+    </ul>
 
     <h3>What stays on your Mac</h3>
     <table>
@@ -223,16 +255,24 @@
       </li>
       <li>
         <strong>Google Analytics</strong> — used on this website only, in the cookieless configuration
-        described in <a href="#site">section 4</a>. The kilde application itself never contacts Google.
-        Processing is governed by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+        described in <a href="#site">section 4</a>. Processing is governed by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+      </li>
+      <li>
+        <strong>Firebase Analytics (Google)</strong> — used by the menu bar app to measure anonymous
+        usage, as described in <a href="#app-analytics">section 2</a>. Processing is governed by
+        <a href="https://policies.google.com/privacy">Google's privacy policy</a> and
+        <a href="https://firebase.google.com/support/privacy">Firebase's privacy information</a>.
       </li>
     </ul>
     <p>The kilde project does not receive personal data from these services beyond what any public repository owner can see, such as the GitHub account name attached to an issue or a pull request you choose to submit.</p>
 
     <h2 id="rights">6. Your choices and rights</h2>
     <p>
-      Because the kilde application collects nothing, there is no personal data held by the project
-      for you to access, correct, export or erase. The data kilde produces is on your own machine and
+      The kilde project holds no personal data about you that could be accessed, corrected, exported
+      or erased: your recordings and settings never leave your Mac, and the app usage statistics the
+      developer sees in Firebase are aggregated and cannot be traced back to an individual. If you do
+      not want the menu bar app to send usage statistics, use the <code>kilde</code> command-line tool,
+      which sends nothing, or block the app's outbound connections with a firewall. The data kilde produces is on your own machine and
       under your control, and you can remove it at any time. Website measurement is aggregate and
       contains no identifier that could be traced back to you, so there is nothing for us to look up
       on request — but you can stop it being collected at any time using the opt-out options in
@@ -260,7 +300,7 @@
     <h2 id="contact">9. Contact</h2>
     <p>
       Questions about privacy can be raised as an issue at
-      <a href="https://github.com/takezou621/kilde/issues">github.com/takezou621/kilde/issues</a>.
+      <a href="https://github.com/kilde-team/kilde/issues">github.com/kilde-team/kilde/issues</a>.
       Please do not include sensitive personal data in a public issue.
     </p>
   </div>
