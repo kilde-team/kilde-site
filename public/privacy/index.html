@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — kilde</title>
-<meta name="description" content="How kilde handles your data: recordings stay on your Mac, the command-line tool sends nothing, and the menu bar app measures anonymous usage with Firebase Analytics.">
+<meta name="description" content="How kilde handles your data: recordings and transcripts stay on your Mac, the command-line tool sends nothing of yours, and the menu bar app measures anonymous usage with Firebase Analytics.">
 <link rel="canonical" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
@@ -46,9 +46,13 @@
 
     <p class="summary">
       <strong>In short:</strong> kilde runs entirely on your Mac. Your recordings are written to your
-      own disk and are never sent to us or anyone else. The menu bar app measures anonymous usage
+      own disk and are never sent to us or anyone else. Transcription (macOS 26 or later) runs on
+      your Mac too — your audio and the transcript text are never sent anywhere; the only connection
+      it adds is a one-time download of the transcription language model from Apple the first time
+      you transcribe a language. The menu bar app measures anonymous usage
       statistics (such as launches, app and macOS version) with Google's Firebase Analytics, and never
-      your recordings or settings; the <code>kilde</code> command-line tool sends nothing at all. This website uses Google Analytics to count page views, configured
+      your recordings or settings; apart from that model download, the <code>kilde</code> command-line
+      tool sends nothing at all. This website uses Google Analytics to count page views, configured
       so that it stores <strong>no cookies</strong> on your device and cannot recognise you across
       visits.
     </p>
@@ -93,6 +97,24 @@
       is no kilde server for it to contact.
     </p>
 
+    <h3 id="app-transcription">Transcription runs on your Mac (macOS 26 or later)</h3>
+    <p>
+      The transcription feature writes a recording's audio to text as sidecar files (markdown, SRT,
+      VTT, plain text or JSON) next to the recording. It runs <strong>entirely on your Mac, using
+      the speech recognition built into macOS</strong>:
+    </p>
+    <ul>
+      <li><strong>Neither your audio nor the transcript text is ever sent</strong> — not to kilde,
+        not to Apple, not to anyone.</li>
+      <li>The transcript is written only to sidecar files next to the recording.</li>
+      <li>No separate Speech recognition permission is needed.</li>
+      <li>If the language model for the language you transcribe is not on your Mac yet, kilde
+        downloads it from Apple the first time you use that language. That download transfers only
+        the model itself — your audio and transcript text are not sent (as with any network request,
+        your IP address reaches Apple, which handles it under
+        <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>).</li>
+    </ul>
+
     <h3 id="app-analytics">Usage analytics in the menu bar app</h3>
     <p>
       The menu bar app (both the Mac App Store version and the directly distributed version) uses
@@ -120,8 +142,15 @@
         GitHub Releases): to check for updates, the Sparkle update framework downloads the update feed from
         GitHub. As with any web request, GitHub receives your IP address and the app version; the developer
         does not. Sparkle asks whether to check automatically, and you can decline.</li>
-      <li><strong>Command-line tool:</strong> makes no network connections. When installed with Homebrew,
-        updates happen only when you run <code>brew upgrade</code>.</li>
+      <li><strong>Transcription language models</strong> (all distribution channels, macOS 26 or
+        later): transcription runs on device, but if the model for the language you transcribe is
+        not on your Mac yet, kilde downloads it from Apple the first time you use that language.
+        Only the model itself is transferred — your audio and transcript text are not sent (your
+        IP address reaches Apple, which handles it under
+        <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>).</li>
+      <li><strong>Command-line tool:</strong> apart from the transcription language-model download
+        above, makes no network connections. When installed with Homebrew, updates happen only when
+        you run <code>brew upgrade</code>.</li>
     </ul>
 
     <h3>What stays on your Mac</h3>
@@ -149,6 +178,11 @@
           <td>Recent recordings shown in the menu bar app</td>
           <td>Read live from your output directory</td>
           <td>Displayed in the panel so you can reveal a file in Finder. Nothing is copied elsewhere.</td>
+        </tr>
+        <tr>
+          <td>Transcripts (macOS 26 or later)</td>
+          <td>Sidecar files (markdown/SRT/VTT/text/JSON) next to the recording</td>
+          <td>Written by the on-device transcription feature. Sent nowhere.</td>
         </tr>
       </tbody>
     </table>
@@ -262,6 +296,13 @@
         usage, as described in <a href="#app-analytics">section 2</a>. Processing is governed by
         <a href="https://policies.google.com/privacy">Google's privacy policy</a> and
         <a href="https://firebase.google.com/support/privacy">Firebase's privacy information</a>.
+      </li>
+      <li>
+        <strong>Apple</strong> — on macOS 26 or later, the transcription feature downloads its
+        language models from Apple the first time a language is used (all distribution channels).
+        Your audio and the transcript text are not sent; see
+        <a href="#app-transcription">section 2</a>. Apple's handling is governed by
+        <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.
       </li>
     </ul>
     <p>The kilde project does not receive personal data from these services beyond what any public repository owner can see, such as the GitHub account name attached to an issue or a pull request you choose to submit.</p>
