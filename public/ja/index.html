@@ -43,6 +43,8 @@
 
 <section class="hero">
   <div class="wrap">
+  <div class="hero-grid">
+  <div class="hero-copy">
     <span class="eyebrow">オープンソース · macOS</span>
     <h1>macOS が渡してくれない音まで、画面と一緒に録る。</h1>
     <p class="lede">
@@ -66,12 +68,14 @@
         GitHub で見る
       </a>
     </div>
-    <p class="hero-note">macOS 14 以降 · Apple Silicon (arm64) · MIT ライセンス</p>
+    <p class="hero-note">macOS 14 以降 · Apple silicon (arm64) · MIT ライセンス</p>
+  </div>
 
     <figure class="hero-shot">
-      <img src="/assets/menu-bar-app.png" alt="kilde のメニューバーアプリ。ディスプレイを選び、システム音声とマイクを録音対象にできる" width="439" height="580" loading="lazy">
+      <img src="/assets/menu-bar-app.png" alt="kilde のメニューバーアプリ。ディスプレイを選び、システム音声とマイクを録音対象にできる" width="439" height="580">
       <figcaption>メニューバーアプリ: 収録対象を選び、システム音声とマイクをミックスして録画を開始。</figcaption>
     </figure>
+  </div>
 
     <div class="terminal">
       <div class="terminal-bar"><i></i><i></i><i></i><span>zsh — kilde</span></div>
@@ -162,7 +166,7 @@
     <div class="section-head">
       <h2>インストール</h2>
       <p>メニューバーアプリは Mac App Store から入手できます。CLI は Homebrew またはリリースバイナリで。
-        いずれも Apple Silicon ビルドで、現時点で Intel Mac は非対応です。</p>
+        いずれも Apple silicon ビルドで、現時点で Intel Mac は非対応です。</p>
     </div>
     <div class="install-grid">
 
@@ -201,7 +205,7 @@
       </div>
 
     </div>
-    <div class="cta-row" style="margin-top:28px">
+    <div class="cta-row cta-row--after">
       <a class="btn btn-ghost" href="https://github.com/kilde-team/kilde/releases">最新のリリース</a>
       <a class="btn btn-ghost" href="https://github.com/kilde-team/kilde/blob/main/README.ja.md">ドキュメント</a>
     </div>
@@ -215,8 +219,8 @@
       <p>kilde は macOS ネイティブのキャプチャ API を土台にしているため、動作環境に条件があります。</p>
     </div>
     <ul class="req-list">
-      <li><strong>macOS 14 以降。</strong>動作検証は macOS 26 / Apple Silicon で行っています。</li>
-      <li><strong>Apple Silicon (arm64)。</strong>リリースバイナリは arm64 ビルドで、現時点で Intel Mac は非対応です。</li>
+      <li><strong>macOS 14 以降。</strong>動作検証は macOS 26 / Apple silicon で行っています。</li>
+      <li><strong>Apple silicon (arm64)。</strong>リリースバイナリは arm64 ビルドで、現時点で Intel Mac は非対応です。</li>
       <li><strong>画面収録の権限</strong>、マイクを録る場合はマイクの権限。<code>kilde doctor</code> が環境を確認し、不足している権限を促します。</li>
       <li><strong>HDR 収録</strong>には、さらに macOS 15 以降・HDR ディスプレイ・HEVC が必要です。いずれかが欠ける場合は理由を示したうえで SDR で録画します。</li>
       <li><strong>ソースからのビルド</strong>には macOS 26 SDK を含むツールチェーンが必要です。録画エンジンは private リポジトリのため、現時点で公開ソースからのビルドはできません。</li>
