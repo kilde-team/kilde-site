@@ -44,7 +44,9 @@ public/            # everything served, verbatim
     menu-bar-app-en.png
                    # the English counterpart, rendered from the kilde
                    # repository's screenshot tools (docs/appstore/tools/) —
-                   # the app's own UI is Japanese-only today
+                   # a stand-in for a real capture; the current App Store
+                   # build is Japanese-only, but en/zh-Hans/ko/es
+                   # localization has landed in the kilde repository (#138)
 wrangler.toml      # static-only Worker: no `main`, just [assets]
 .github/workflows/deploy.yml
 ```
