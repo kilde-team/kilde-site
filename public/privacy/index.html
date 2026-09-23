@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — kilde</title>
-<meta name="description" content="How kilde handles your data: recordings and transcripts stay on your Mac, the command-line tool sends nothing of yours, and the menu bar app measures anonymous usage with Firebase Analytics.">
+<meta name="description" content="How kilde handles your data: recordings and transcripts stay on your Mac, the only data the command-line tool ever transfers is Apple's transcription language model, and the menu bar app measures anonymous usage with Firebase Analytics.">
 <link rel="canonical" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
@@ -14,7 +14,7 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Privacy Policy — kilde">
-<meta property="og:description" content="Recordings stay on your Mac. The menu bar app sends only anonymous usage statistics; the CLI sends nothing.">
+<meta property="og:description" content="Recordings stay on your Mac. The menu bar app sends only anonymous usage statistics; the CLI's only connection is Apple's transcription language-model download.">
 <meta property="og:url" content="https://kilde.site/privacy/">
 <meta property="og:image" content="https://kilde.site/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -48,8 +48,9 @@
       <strong>In short:</strong> kilde runs entirely on your Mac. Your recordings are written to your
       own disk and are never sent to us or anyone else. Transcription (macOS 26 or later) runs on
       your Mac too — your audio and the transcript text are never sent anywhere; the only connection
-      it adds is a one-time download of the transcription language model from Apple the first time
-      you transcribe a language. The menu bar app measures anonymous usage
+      it adds is downloading the transcription language model from Apple when that language's model
+      is not yet on your Mac (the system manages these models and may remove unused ones, so the
+      download can happen more than once). The menu bar app measures anonymous usage
       statistics (such as launches, app and macOS version) with Google's Firebase Analytics, and never
       your recordings or settings; apart from that model download, the <code>kilde</code> command-line
       tool sends nothing at all. This website uses Google Analytics to count page views, configured
@@ -108,8 +109,9 @@
         not to Apple, not to anyone.</li>
       <li>The transcript is written only to sidecar files next to the recording.</li>
       <li>No separate Speech recognition permission is needed.</li>
-      <li>If the language model for the language you transcribe is not on your Mac yet, kilde
-        downloads it from Apple the first time you use that language. That download transfers only
+      <li>If the language model for the language you transcribe is not on your Mac, kilde
+        downloads it from Apple. The system manages these models and may remove one that has not
+        been used in a while, so this download can happen more than once. It transfers only
         the model itself — your audio and transcript text are not sent (as with any network request,
         your IP address reaches Apple, which handles it under
         <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>).</li>
@@ -144,8 +146,9 @@
         does not. Sparkle asks whether to check automatically, and you can decline.</li>
       <li><strong>Transcription language models</strong> (all distribution channels, macOS 26 or
         later): transcription runs on device, but if the model for the language you transcribe is
-        not on your Mac yet, kilde downloads it from Apple the first time you use that language.
-        Only the model itself is transferred — your audio and transcript text are not sent (your
+        not on your Mac, kilde downloads it from Apple. The system manages these models and may
+        remove unused ones, so this can happen more than once. Only the model itself is transferred
+        — your audio and transcript text are not sent (your
         IP address reaches Apple, which handles it under
         <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>).</li>
       <li><strong>Command-line tool:</strong> apart from the transcription language-model download
@@ -189,7 +192,8 @@
     <p>
       You control all of this. Deleting a recording, editing the configuration with
       <code>kilde config</code>, or removing the <code>~/.kilde</code> directory removes the data
-      from your machine.
+      from your machine. Transcripts are separate sidecar files next to the recording, so delete
+      them along with the recording if you no longer need them.
     </p>
 
     <h3>Recordings may contain personal data</h3>
@@ -299,8 +303,8 @@
       </li>
       <li>
         <strong>Apple</strong> — on macOS 26 or later, the transcription feature downloads its
-        language models from Apple the first time a language is used (all distribution channels).
-        Your audio and the transcript text are not sent; see
+        language models from Apple whenever a language's model is not on the Mac
+        (all distribution channels). Your audio and the transcript text are not sent; see
         <a href="#app-transcription">section 2</a>. Apple's handling is governed by
         <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.
       </li>
@@ -312,8 +316,9 @@
       The kilde project holds no personal data about you that could be accessed, corrected, exported
       or erased: your recordings and settings never leave your Mac, and the app usage statistics the
       developer sees in Firebase are aggregated and cannot be traced back to an individual. If you do
-      not want the menu bar app to send usage statistics, use the <code>kilde</code> command-line tool,
-      which sends nothing, or block the app's outbound connections with a firewall. The data kilde produces is on your own machine and
+      not want the menu bar app to send usage statistics, use the <code>kilde</code> command-line
+      tool — it does no analytics and its only network connection is the transcription
+      language-model download — or block the app's outbound connections with a firewall. The data kilde produces is on your own machine and
       under your control, and you can remove it at any time. Website measurement is aggregate and
       contains no identifier that could be traced back to you, so there is nothing for us to look up
       on request — but you can stop it being collected at any time using the opt-out options in
