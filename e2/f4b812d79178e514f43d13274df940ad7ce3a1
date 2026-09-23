@@ -1,0 +1,29 @@
+public/index.html
+  s_ffddbbe6971e57::t_c115f974dede5e 24,55-56,75,173,226-227
+public/ja/index.html
+  s_ffddbbe6971e57::t_afe27f8f5107da 71,169,222-223
+public/ja/privacy/index.html
+  s_ffddbbe6971e57::t_810d1439e71cac 45
+public/ja/terms/index.html
+  s_ffddbbe6971e57::t_7e6acbd6b43e38 45,181-182
+public/privacy/index.html
+  s_ffddbbe6971e57::t_6f22f4717c876a 45,179
+public/terms/index.html
+  s_ffddbbe6971e57::t_f0b2f3ccc797f9 45,143,178-179
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e2f4b812d79178e514f43d13274df940ad7ce3a1",
+  "prompts": {},
+  "sessions": {
+    "s_ffddbbe6971e57": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f384dc57-294e-4c47-bd2c-ab8775dd4a85",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
