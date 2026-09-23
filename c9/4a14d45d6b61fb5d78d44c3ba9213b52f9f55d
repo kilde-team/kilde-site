@@ -1,0 +1,19 @@
+README.md
+  s_3b5532545d6ab6::t_2c9e28d3852464 47-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c94a14d45d6b61fb5d78d44c3ba9213b52f9f55d",
+  "prompts": {},
+  "sessions": {
+    "s_3b5532545d6ab6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69fb3d1c-2a25-45cf-9f24-068f955e3bb6",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
