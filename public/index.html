@@ -21,7 +21,7 @@
 <meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source screen and audio recorder for macOS that records the screen together with system audio.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source screen and audio recorder for macOS that records the screen together with system audio.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <script src="/assets/analytics.js" defer></script>
 </head>
@@ -47,11 +47,13 @@
 
 <section class="hero">
   <div class="wrap">
+  <div class="hero-grid">
+  <div class="hero-copy">
     <span class="eyebrow">Open source · macOS</span>
     <h1>Record your screen with the audio macOS keeps to itself.</h1>
     <p class="lede">
-      kilde records your screen together with the <strong>system audio that QuickTime Player's
-      screen recorder cannot capture</strong> — as a single-command CLI, and as a menu bar app.
+      kilde records your screen together with the <strong>system audio that the screen recorder in
+      QuickTime Player cannot capture</strong> — as a single-command CLI, and as a menu bar app.
       No virtual audio driver required.
     </p>
     <div class="cta-row">
@@ -70,12 +72,14 @@
         View on GitHub
       </a>
     </div>
-    <p class="hero-note">macOS 14 or later · Apple Silicon (arm64) · MIT licensed</p>
+    <p class="hero-note">macOS 14 or later · Apple silicon (arm64) · MIT licensed</p>
+  </div>
 
     <figure class="hero-shot">
-      <img src="/assets/menu-bar-app-en.png" alt="The kilde menu bar app: a display is selected and system audio is mixed with the microphone" width="441" height="513" loading="lazy">
+      <img src="/assets/menu-bar-app-en.png" alt="The kilde menu bar app: a display is selected and system audio is mixed with the microphone" width="441" height="513">
       <figcaption>The menu bar app: pick what to record, mix system audio and your mic, and start.</figcaption>
     </figure>
+  </div>
 
     <div class="terminal">
       <div class="terminal-bar"><i></i><i></i><i></i><span>zsh — kilde</span></div>
@@ -166,7 +170,7 @@
     <div class="section-head">
       <h2>Install</h2>
       <p>The menu bar app comes from the Mac App Store. The CLI installs with Homebrew or a release
-        binary. All builds are Apple Silicon; Intel Macs are not supported at this time.</p>
+        binary. All builds are Apple silicon; Intel Macs are not supported at this time.</p>
     </div>
     <div class="install-grid">
 
@@ -205,7 +209,7 @@
       </div>
 
     </div>
-    <div class="cta-row" style="margin-top:28px">
+    <div class="cta-row cta-row--after">
       <a class="btn btn-ghost" href="https://github.com/kilde-team/kilde/releases">Latest releases</a>
       <a class="btn btn-ghost" href="https://github.com/kilde-team/kilde#readme">Full documentation</a>
     </div>
@@ -219,8 +223,8 @@
       <p>kilde is built on macOS-native capture APIs, which sets a floor on what it can run on.</p>
     </div>
     <ul class="req-list">
-      <li><strong>macOS 14 or later.</strong> Runtime testing is currently performed on macOS 26 on Apple Silicon.</li>
-      <li><strong>Apple Silicon (arm64).</strong> Release binaries are arm64 builds; Intel Macs are not supported at this time.</li>
+      <li><strong>macOS 14 or later.</strong> Runtime testing is currently performed on macOS 26 on Apple silicon.</li>
+      <li><strong>Apple silicon (arm64).</strong> Release binaries are arm64 builds; Intel Macs are not supported at this time.</li>
       <li><strong>Screen recording permission</strong>, and microphone permission when you record one. <code>kilde doctor</code> checks the environment and prompts for anything missing.</li>
       <li><strong>HDR capture</strong> additionally needs macOS 15 or later, an HDR display, and HEVC. Where any of that is missing, kilde records SDR and tells you why.</li>
       <li><strong>Building from source</strong> requires a toolchain with the macOS 26 SDK. The recording engine lives in a private repository, so public source builds are not available at this time.</li>
