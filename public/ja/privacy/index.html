@@ -14,7 +14,7 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="プライバシーポリシー — kilde">
-<meta property="og:description" content="録画ファイルは Mac の中だけに。kilde アプリにはアカウントもテレメトリもアナリティクスもありません。">
+<meta property="og:description" content="録画ファイルは Mac の中だけに。メニューバーアプリが送るのは匿名の利用統計とクラッシュレポートだけで、CLI の通信は Apple の文字起こし言語モデルのダウンロードだけです。">
 <meta property="og:url" content="https://kilde.site/ja/privacy/">
 <meta property="og:image" content="https://kilde.site/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -325,6 +325,13 @@
         <a href="https://firebase.google.com/support/privacy?hl=ja">Firebase のプライバシー情報</a>に従います。
       </li>
       <li>
+        <strong>Firebase Crashlytics (Google)</strong> — メニューバーアプリのクラッシュレポートの送信に
+        利用しています (<a href="#app-crash-reports">第 2 条</a>参照)。クラッシュレポートと、それに
+        結び付くインストールごとの識別子は、Google のもとで 90 日間保持されたあと削除されます。取り扱いは
+        <a href="https://policies.google.com/privacy?hl=ja">Google のプライバシーポリシー</a>および
+        <a href="https://firebase.google.com/support/privacy?hl=ja">Firebase のプライバシー情報</a>に従います。
+      </li>
+      <li>
         <strong>Apple</strong> — macOS 26 以降で、文字起こし機能は言語のモデルがまだ Mac に無い
         ときに Apple から言語モデルをダウンロードします (すべての配布形態)。音声と書き起こしテキストは
         送信されません (<a href="#app-transcription">第 2 条</a>参照)。Apple 側の取り扱いは
@@ -340,8 +347,13 @@
     <h2 id="rights">6. 利用者の選択と権利</h2>
     <p>
       録画の内容と設定は Mac の外に出ず、開発者が Firebase で見られる利用統計も集計値で個人に
-      たどり着けないため、プロジェクト側に開示・訂正・利用停止・削除の対象となる個人情報は
-      保有していません。メニューバーアプリに利用統計を送らせたくない場合は、解析を行わない
+      たどり着けません。Firebase Crashlytics のクラッシュレポートは 1 件ごとのレポートですが、
+      結び付くのはアプリのインストールごとに割り当てられるランダムな識別子だけで、氏名・メール
+      アドレス・Apple アカウントとは結び付かないため、開発者にはどなたの Mac から届いたかが
+      わからず、同じ理由で特定の Mac からのレポートを個別に探し出すこともできません。クラッシュ
+      レポートは 90 日後に自動で削除されます。このため、プロジェクト側に開示・訂正・利用停止・
+      削除の対象となる個人情報は保有していません。メニューバーアプリに利用統計やクラッシュ
+      レポートを送らせたくない場合は、利用統計もクラッシュレポートも送らない
       <code>kilde</code> コマンドラインを使うか (通信は文字起こし言語モデルのダウンロードのみ)、
       ファイアウォールでアプリの外向き通信を遮断してください。
       kilde が生成するデータは利用者ご自身の端末上にあり、
