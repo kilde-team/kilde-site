@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — kilde</title>
-<meta name="description" content="How kilde handles your data: recordings and transcripts stay on your Mac, the only data the command-line tool ever transfers is Apple's transcription language model, and the menu bar app measures anonymous usage with Firebase Analytics.">
+<meta name="description" content="How kilde handles your data: recordings and transcripts stay on your Mac, the only data the command-line tool ever transfers is Apple's transcription language model, the menu bar app measures anonymous usage with Firebase Analytics, and it sends crash reports with Firebase Crashlytics.">
 <link rel="canonical" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
@@ -42,7 +42,7 @@
   <div class="wrap">
     <a class="back" href="/">← Back to kilde</a>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: September 24, 2026</p>
+    <p class="updated">Last updated: September 25, 2026</p>
 
     <p class="summary">
       <strong>In short:</strong> kilde runs entirely on your Mac. Your recordings are written to your
@@ -51,8 +51,8 @@
       it adds is downloading the transcription language model from Apple when that language's model
       is not yet on your Mac (the system manages these models and may remove unused ones, so the
       download can happen more than once). The menu bar app measures anonymous usage
-      statistics (such as launches, app and macOS version) with Google's Firebase Analytics, and never
-      your recordings or settings; apart from that model download, the <code>kilde</code> command-line
+      statistics (such as launches, app and macOS version) with Google's Firebase Analytics and sends
+      a crash report with Firebase Crashlytics when it crashes, and never your recordings or settings; apart from that model download, the <code>kilde</code> command-line
       tool sends nothing at all. This website uses Google Analytics to count page views, configured
       so that it stores <strong>no cookies</strong> on your device and cannot recognise you across
       visits.
@@ -94,7 +94,7 @@
     <h3>Your recordings and settings are never collected</h3>
     <p>
       kilde never collects, transmits or sells your recordings or your settings. It has
-      <strong>no user account, no sign-in, no advertising and no crash reporting</strong>, and there
+      <strong>no user account, no sign-in and no advertising</strong>, and there
       is no kilde server for it to contact.
     </p>
 
@@ -134,13 +134,33 @@
         <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The developer only
         sees aggregated statistics. Advertising features are disabled and the data is not used for
         advertising.</li>
-      <li>The <code>kilde</code> command-line tool contains no analytics and sends nothing apart from
+      <li>The <code>kilde</code> command-line tool contains no analytics or crash reporting and sends nothing apart from
         transcription language-model downloads from Apple.</li>
+    </ul>
+
+    <h3 id="app-crash-reports">Crash reports in the menu bar app</h3>
+    <p>
+      When the menu bar app (both the Mac App Store version and the directly distributed version)
+      terminates unexpectedly, it sends a crash report with Google's
+      <a href="https://firebase.google.com/products/crashlytics">Firebase Crashlytics</a> so that
+      the developer can find and fix the bug. Versions 0.5.0 and earlier do not include it.
+    </p>
+    <ul>
+      <li><strong>What is sent:</strong> the stack trace at the time of the crash (where in the app
+        it crashed), the app and macOS versions, the device model, device state such as free memory
+        and disk space, the time of the crash, and a random identifier assigned to each installation
+        of the app.</li>
+      <li><strong>When:</strong> the report is sent the next time you launch the app after a crash.</li>
+      <li><strong>What is never sent:</strong> the content of your recordings, file names, save
+        locations and your settings.</li>
+      <li><strong>Who sees it:</strong> the report is sent to Google's servers and processed under
+        <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The developer uses
+        it only to fix bugs.</li>
     </ul>
 
     <h3 id="app-network">Other network access</h3>
     <ul>
-      <li><strong>Mac App Store version:</strong> apart from the analytics above, updates are delivered by the App Store.</li>
+      <li><strong>Mac App Store version:</strong> apart from the analytics and crash reports above, updates are delivered by the App Store.</li>
       <li><strong>Directly distributed menu bar app</strong> (the <code>kilde-&lt;version&gt;-macos.zip</code> on
         GitHub Releases): to check for updates, the Sparkle update framework downloads the update feed from
         GitHub. As with any web request, GitHub receives your IP address and the app version; the developer
