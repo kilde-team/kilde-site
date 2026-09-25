@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>プライバシーポリシー — kilde</title>
-<meta name="description" content="kilde のデータの取り扱い。録画と文字起こしは Mac の中だけに保存され、CLI がやり取りするのは Apple の文字起こし言語モデルだけです。メニューバーアプリは Firebase Analytics で匿名の利用統計のみを計測します。">
+<meta name="description" content="kilde のデータの取り扱い。録画と文字起こしは Mac の中だけに保存され、CLI がやり取りするのは Apple の文字起こし言語モデルだけです。メニューバーアプリは Firebase Analytics で匿名の利用統計を計測し、クラッシュ時は Firebase Crashlytics でクラッシュレポートを送信します。">
 <link rel="canonical" href="https://kilde.site/ja/privacy/">
 <link rel="alternate" hreflang="en" href="https://kilde.site/privacy/">
 <link rel="alternate" hreflang="ja" href="https://kilde.site/ja/privacy/">
@@ -42,7 +42,7 @@
   <div class="wrap">
     <a class="back" href="/ja/">← kilde のトップへ</a>
     <h1>プライバシーポリシー</h1>
-    <p class="updated">最終更新日: 2026年9月24日</p>
+    <p class="updated">最終更新日: 2026年9月25日</p>
 
     <p class="summary">
       <strong>要点:</strong> kilde はお使いの Mac の中だけで動作します。録画したファイルはご自身の
@@ -52,8 +52,8 @@
       だけです (モデルはシステムが管理しており、しばらく使われないものは削除されることがあるため、
       ダウンロードが再び起こることもあります)。
       メニューバーアプリは Google の
-      Firebase Analytics で起動回数やバージョンなどの匿名の利用統計のみを計測し、録画の内容や設定は
-      送信しません。<code>kilde</code> コマンドラインは言語モデルのダウンロードを除いて一切通信しません。本ウェブサイトはページビューの集計のために
+      Firebase Analytics で起動回数やバージョンなどの匿名の利用統計を計測し、クラッシュしたときは
+      Firebase Crashlytics でクラッシュレポートを送信します。録画の内容や設定は送信しません。<code>kilde</code> コマンドラインは言語モデルのダウンロードを除いて一切通信しません。本ウェブサイトはページビューの集計のために
       Google アナリティクスを利用していますが、<strong>Cookie を一切保存しない設定</strong>で
       運用しており、再訪問した利用者を識別することはできません。
     </p>
@@ -95,7 +95,7 @@
     <h3>録画の内容と設定は収集しません</h3>
     <p>
       kilde が録画の内容やあなたの設定を収集・送信・販売することはありません。
-      <strong>アカウント、サインイン、広告、クラッシュレポートはいずれも存在せず</strong>、
+      <strong>アカウント、サインイン、広告はいずれも存在せず</strong>、
       通信先となる kilde のサーバーもありません。
     </p>
 
@@ -135,13 +135,31 @@
         <a href="https://policies.google.com/privacy?hl=ja">Google のプライバシーポリシー</a>に従って
         処理されます。開発者が見られるのは集計された統計のみです。広告機能は無効にしており、
         広告には利用されません。</li>
-      <li><code>kilde</code> コマンドラインには解析機能がなく、Apple からの文字起こし言語モデルの
+      <li><code>kilde</code> コマンドラインには解析機能もクラッシュレポートもなく、Apple からの文字起こし言語モデルの
         ダウンロードを除き、何も送信しません。</li>
+    </ul>
+
+    <h3 id="app-crash-reports">メニューバーアプリのクラッシュレポート</h3>
+    <p>
+      メニューバーアプリ (Mac App Store 版・直接配布版とも) は、異常終了 (クラッシュ) したときに、
+      開発者が不具合を見つけて直すために Google の
+      <a href="https://firebase.google.com/products/crashlytics">Firebase Crashlytics</a>
+      でクラッシュレポートを送信します。0.5.0 以前のバージョンには含まれていません。
+    </p>
+    <ul>
+      <li><strong>送信されるもの:</strong> クラッシュ時のスタックトレース (アプリのどこで落ちたか)、
+        アプリと macOS のバージョン、デバイスの種類、空きメモリ・ディスク容量などの端末状態、
+        クラッシュの日時、アプリのインストールごとに割り振られるランダムな ID。</li>
+      <li><strong>送信のタイミング:</strong> クラッシュした後、次にアプリを起動したとき。</li>
+      <li><strong>送信されないもの:</strong> 録画の内容、ファイル名、保存先、あなたの設定。</li>
+      <li><strong>取り扱い:</strong> レポートは Google のサーバーに送信され、
+        <a href="https://policies.google.com/privacy">Google のプライバシーポリシー</a>に従って
+        処理されます。開発者は不具合の修正のためにのみ利用します。</li>
     </ul>
 
     <h3 id="app-network">その他の通信</h3>
     <ul>
-      <li><strong>Mac App Store 版:</strong> 上記の利用統計のほか、アップデートは App Store を通じて配信されます。</li>
+      <li><strong>Mac App Store 版:</strong> 上記の利用統計とクラッシュレポートのほか、アップデートは App Store を通じて配信されます。</li>
       <li><strong>直接配布版のメニューバーアプリ</strong> (GitHub Releases の <code>kilde-&lt;version&gt;-macos.zip</code>):
         アップデート確認のため、自動更新ライブラリ Sparkle が GitHub から更新情報を取得します。一般的な
         Web 通信と同じく IP アドレスやアプリのバージョンが GitHub に伝わりますが、開発者が受け取ることは
