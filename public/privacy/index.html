@@ -325,7 +325,8 @@
       <li>
         <strong>Firebase Crashlytics (Google)</strong> — used by the menu bar app to send crash
         reports, as described in <a href="#app-crash-reports">section 2</a>. Google keeps crash
-        reports and their associated installation identifiers for 90 days before deleting them.
+        reports and their associated installation identifiers for 90 days and then starts removing
+        them from its live and backup systems.
         Processing is governed by
         <a href="https://policies.google.com/privacy">Google's privacy policy</a> and
         <a href="https://firebase.google.com/support/privacy">Firebase's privacy information</a>.
@@ -348,8 +349,8 @@
       reports in Firebase Crashlytics are individual reports, but they are linked only to a random
       identifier assigned to each installation of the app — never to your name, email address or
       Apple Account — so the developer cannot tell whose Mac a report came from, and for the same
-      reason cannot single out the reports from your Mac on request. Crash reports are deleted
-      automatically after 90 days. If you do not want the menu bar app to send usage statistics or
+      reason cannot single out the reports from your Mac on request. After 90 days, Google
+      automatically starts removing crash reports from its systems. If you do not want the menu bar app to send usage statistics or
       crash reports, use the <code>kilde</code> command-line tool — it sends neither usage
       statistics nor crash reports, and its only network connection is the transcription
       language-model download — or block the app's outbound connections with a firewall. The data kilde produces is on your own machine and
