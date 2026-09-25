@@ -14,7 +14,7 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Privacy Policy — kilde">
-<meta property="og:description" content="Recordings stay on your Mac. The menu bar app sends only anonymous usage statistics; the CLI's only connection is Apple's transcription language-model download.">
+<meta property="og:description" content="Recordings stay on your Mac. The menu bar app sends only anonymous usage statistics and crash reports; the CLI's only connection is Apple's transcription language-model download.">
 <meta property="og:url" content="https://kilde.site/privacy/">
 <meta property="og:image" content="https://kilde.site/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -323,6 +323,14 @@
         <a href="https://firebase.google.com/support/privacy">Firebase's privacy information</a>.
       </li>
       <li>
+        <strong>Firebase Crashlytics (Google)</strong> — used by the menu bar app to send crash
+        reports, as described in <a href="#app-crash-reports">section 2</a>. Google keeps crash
+        reports and their associated installation identifiers for 90 days before deleting them.
+        Processing is governed by
+        <a href="https://policies.google.com/privacy">Google's privacy policy</a> and
+        <a href="https://firebase.google.com/support/privacy">Firebase's privacy information</a>.
+      </li>
+      <li>
         <strong>Apple</strong> — on macOS 26 or later, the transcription feature downloads its
         language models from Apple whenever a language's model is not on the Mac
         (all distribution channels). Your audio and the transcript text are not sent; see
@@ -336,9 +344,14 @@
     <p>
       The kilde project holds no personal data about you that could be accessed, corrected, exported
       or erased: your recordings and settings never leave your Mac, and the app usage statistics the
-      developer sees in Firebase are aggregated and cannot be traced back to an individual. If you do
-      not want the menu bar app to send usage statistics, use the <code>kilde</code> command-line
-      tool — it does no analytics and its only network connection is the transcription
+      developer sees in Firebase are aggregated and cannot be traced back to an individual. Crash
+      reports in Firebase Crashlytics are individual reports, but they are linked only to a random
+      identifier assigned to each installation of the app — never to your name, email address or
+      Apple Account — so the developer cannot tell whose Mac a report came from, and for the same
+      reason cannot single out the reports from your Mac on request. Crash reports are deleted
+      automatically after 90 days. If you do not want the menu bar app to send usage statistics or
+      crash reports, use the <code>kilde</code> command-line tool — it sends neither usage
+      statistics nor crash reports, and its only network connection is the transcription
       language-model download — or block the app's outbound connections with a firewall. The data kilde produces is on your own machine and
       under your control, and you can remove it at any time. Website measurement is aggregate and
       contains no identifier that could be traced back to you, so there is nothing for us to look up
