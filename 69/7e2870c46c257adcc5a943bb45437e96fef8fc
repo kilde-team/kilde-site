@@ -1,0 +1,16 @@
+docs/demo-video/README.md
+  h_33284c2ec569b2 55-56,61-64,73,75-76,79,88-90,95-96
+docs/demo-video/storyboard.md
+  h_33284c2ec569b2 15-18,25,58-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "697e2870c46c257adcc5a943bb45437e96fef8fc",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
