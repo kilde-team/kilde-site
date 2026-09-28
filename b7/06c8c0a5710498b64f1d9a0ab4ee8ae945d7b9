@@ -1,0 +1,34 @@
+README.md
+  h_33284c2ec569b2 14,18,28,31,58-77,115
+public/assets/styles.css
+  h_33284c2ec569b2 588-681
+public/compare/index.html
+  h_33284c2ec569b2 1-261
+public/index.html
+  h_33284c2ec569b2 40,274
+public/ja/compare/index.html
+  h_33284c2ec569b2 1-261
+public/ja/index.html
+  h_33284c2ec569b2 36,268
+public/ja/privacy/index.html
+  h_33284c2ec569b2 35
+public/ja/terms/index.html
+  h_33284c2ec569b2 35
+public/privacy/index.html
+  h_33284c2ec569b2 35
+public/sitemap.xml
+  h_33284c2ec569b2 20-35
+public/terms/index.html
+  h_33284c2ec569b2 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b706c8c0a5710498b64f1d9a0ab4ee8ae945d7b9",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
