@@ -1,0 +1,22 @@
+README.md
+  h_33284c2ec569b2 131-133
+public/compare/index.html
+  h_33284c2ec569b2 89,126,165-167
+public/ja/compare/index.html
+  h_33284c2ec569b2 88,125,165-167
+public/ja/record-without-notification-sounds/index.html
+  h_33284c2ec569b2 70-72
+public/record-without-notification-sounds/index.html
+  h_33284c2ec569b2 69-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "accf55cb8d0cc6e5da4db12dc5c3d88fea109563",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
