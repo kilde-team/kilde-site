@@ -1,0 +1,24 @@
+docs/demo-video/README.md
+  h_33284c2ec569b2 1-92
+docs/demo-video/captions/demo-en.srt
+  h_33284c2ec569b2 1-31
+docs/demo-video/captions/demo-en.vtt
+  h_33284c2ec569b2 1-25
+docs/demo-video/captions/demo-ja.srt
+  h_33284c2ec569b2 1-31
+docs/demo-video/captions/demo-ja.vtt
+  h_33284c2ec569b2 1-25
+docs/demo-video/storyboard.md
+  h_33284c2ec569b2 1-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "26d41fe745e3423f09e5611dd6d4e028c393f282",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
