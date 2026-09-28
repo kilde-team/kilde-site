@@ -1,0 +1,16 @@
+public/compare/index.html
+  h_33284c2ec569b2 99,177-178,204
+public/ja/compare/index.html
+  h_33284c2ec569b2 98,177,204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3e63f278a0e74f9da7a0d742a059155216b8bba7",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
