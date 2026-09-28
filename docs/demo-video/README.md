@@ -43,8 +43,10 @@
 ## 埋め込み計画 (動画完成後の別 PR で実施)
 
 サイトは JavaScript を使わない方針なので、遅延読み込みは
-`preload="none"` + poster 画像で実現する (issue の受け入れ条件
-«モバイルでも読み込みが重くない» はこれで満たす。JS 追加はしない):
+`preload="none"` + poster 画像で試みる (JS 追加はしない)。ただし
+`preload` はブラウザへのヒントで、事前読み込みを完全には防げないため、
+これはベストエフォートである。公開後にモバイルブラウザでの転送量を
+実測して、受け入れ条件 «モバイルでも読み込みが重くない» を判定する:
 
 ```html
 <video controls preload="none" poster="/assets/demo/demo-poster.jpg"
@@ -87,6 +89,7 @@ say -v Samantha -o meeting-en.aiff \
 
 - [ ] kilde.site のトップに日英の動画が載っている → 動画完成後、
       埋め込み PR (上の計画どおり) で満たす
-- [ ] モバイルでも読み込みが重くない → `preload="none"` + poster、
-      かつ mp4 を 8 MB 以下に保つ
+- [ ] モバイルでも読み込みが重くない → `preload="none"` + poster と
+      mp4 8 MB 目安はベストエフォート。**公開後にモバイルブラウザでの
+      転送量を実測して初めて満たす**
 - この PR 自体は台本と字幕の提供まで。動画の完成・埋め込みは後続
