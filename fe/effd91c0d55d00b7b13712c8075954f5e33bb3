@@ -1,0 +1,14 @@
+public/ja/record-without-notification-sounds/index.html
+  h_33284c2ec569b2 100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "feeffd91c0d55d00b7b13712c8075954f5e33bb3",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
