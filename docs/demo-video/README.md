@@ -52,13 +52,16 @@
 <video controls preload="none" poster="/assets/demo/demo-poster.jpg"
        width="960" height="540">
   <source src="/assets/demo/demo-60s.mp4" type="video/mp4">
-  <track kind="subtitles" src="/assets/demo/captions-ja.vtt" srclang="ja" label="日本語" default>
-  <track kind="subtitles" src="/assets/demo/captions-en.vtt" srclang="en" label="English">
+  <track kind="subtitles" src="/assets/demo/demo-ja.vtt" srclang="ja" label="日本語" default>
+  <track kind="subtitles" src="/assets/demo/demo-en.vtt" srclang="en" label="English">
 </video>
 ```
 
 - 配置: `public/assets/demo/` (mp4 / poster / vtt)。字幕は**このリポジトリの
-  captions/*.vtt をコピー**する (サイトから編集用 SRT は配信しない)
+  captions/*.vtt をコピー**する (サイトから編集用 SRT は配信しない)。
+  絵コンテのとおり収録後に SRT の時刻を調整したら、**同じ時刻を VTT にも
+  反映してから**コピーする — このリポジトリの captions は撮影前の初期版で、
+  そのままコピーすると完成動画とずれる
 - トップページ (日英両方) の features セクション直後に 1 箇所。
   日本語トップは ja 字幕を default、英語トップは en 字幕を default にする
 - poster は動画の冒頭フレーム (締めカードではなく操作が見えるフレーム) から
@@ -67,11 +70,13 @@
 
 ## デモ音源の台本 (say)
 
-会議の「相手」の音。スピーカーから鳴らして、システム音声として録る。
+会議の「相手」の音。**撮影中にスピーカーから鳴らして**、システム音声として録る。
 日本語版は Kyoko、英語版は (実機にあれば) Samantha 等の英語ボイス。
+`say -o` はファイルに書き出すだけで**再生しない** — 収録中は `afplay` で
+鳴らすこと (収録前に書き出して確認し、本番で再生する二段構え)。
 
 ```sh
-# 日本語 (進行同期の想定、約 15 秒)
+# 日本語 (進行同期の想定、約 15 秒)。先に書き出して確認する
 say -v Kyoko -o meeting-ja.aiff \
   "進行同期を始めます。サイトの比較ページ、来週の月曜に公開します。"
 say -v Kyoko -o meeting-ja-2.aiff \
@@ -80,10 +85,15 @@ say -v Kyoko -o meeting-ja-2.aiff \
 # 英語版の撮影用
 say -v Samantha -o meeting-en.aiff \
   "Let's start the sync. The comparison page ships next Monday."
+
+# 本番 (収録中): kilde が録り始めたらスピーカーで再生する
+afplay meeting-ja.aiff
 ```
 
 自分の声はマイクから実際に話す (「はい、デモ動画の絵コンテはできています」など、
 字幕と内容がずれない短い返答 1〜2 回でよい)。
+なお kilde 側の収録は**画面全体 + システム音声**で行う (絵コンテの
+«共通の画面構成» 参照 — ウィンドウ収録にすると say の音が録れない)。
 
 ## 完了の定義 (issue #1 の受け入れ条件との対応)
 
