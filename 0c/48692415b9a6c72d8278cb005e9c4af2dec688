@@ -1,0 +1,21 @@
+docs/demo-video/README.md
+  s_3f07bb04ac0ce4::t_4c26bae6ca825a 38
+docs/demo-video/storyboard.md
+  s_3f07bb04ac0ce4::t_047dbaa14bf87b 59-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0c48692415b9a6c72d8278cb005e9c4af2dec688",
+  "prompts": {},
+  "sessions": {
+    "s_3f07bb04ac0ce4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e7c1-d468-7912-bb73-5794e549718b",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
