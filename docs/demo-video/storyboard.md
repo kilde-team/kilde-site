@@ -30,7 +30,7 @@ kilde-site#1 の撮影台本。**この表が撮影と編集の正本**で、字
 | 7 | 0:44–0:52 | 最近の録画 / 検索 | 全文検索で言葉を探して該当箇所へジャンプ | 録画は、探せる資産になる。 | Every recording becomes searchable. |
 | 8 | 0:52–1:00 | 締めカード | ロゴ + kilde.site / Mac App Store | すべて手元で。— kilde | All on your Mac. — kilde |
 
-## App Store プレビュー 30 秒版 (beat 1–5 を詰めて再編集)
+## App Store プレビュー 30 秒版 (beat 1〜5 と締めカード (beat 8) を詰めて再編集)
 
 App Store のプレビューは **15–30 秒**のため、60 秒版をそのまま使えない。
 次の配分で別編集する (字幕は captions/ の 60 秒版を使い回さず、
@@ -49,7 +49,8 @@ App Store のプレビューは **15–30 秒**のため、60 秒版をそのま
 
 - Product Hunt のギャラリーには 60 秒版をそのまま使う
   (字幕は英語版を選択。日本語版は kilde.site の日本語トップ用)
-- Show HN は本文の最初に 60 秒版を貼る (docs/launch/show-hn.md の指定どおり)
+- Show HN は本文の最初に 60 秒版を貼る (投稿文案は kilde リポジトリの
+  docs/launch/show-hn.md — このリポジトリではない点に注意)
 
 ## 撮影上の注意 (審査と品質)
 
