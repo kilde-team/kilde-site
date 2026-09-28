@@ -715,9 +715,7 @@ section:last-of-type { border-bottom: 0; }
 .guide h2 {
   margin: 52px 0 16px; font-size: 1.28rem; font-weight: 660;
   letter-spacing: -0.02em; line-height: 1.35;
-  padding-top: 28px; border-top: 1px solid var(--border);
 }
-.guide h2:first-of-type { border-top: 0; padding-top: 0; }
 :lang(ja) .guide h2 { letter-spacing: -0.01em; }
 .guide .section-head { max-width: 62ch; margin-bottom: 18px; }
 .guide .section-head p { margin: 0; color: var(--text-dim); font-size: 1.02rem; }
