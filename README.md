@@ -11,9 +11,11 @@ Cloudflare with [Workers Static Assets](https://developers.cloudflare.com/worker
 | Path | Page |
 |---|---|
 | `/` | Top page (English) |
+| `/compare/` | Comparison with QuickTime Player / OBS Studio / Audio Hijack / Granola (English) |
 | `/privacy/` | Privacy Policy (English) |
 | `/terms/` | Terms of Service (English) |
 | `/ja/` | トップページ (日本語) |
+| `/ja/compare/` | QuickTime Player / OBS Studio / Audio Hijack / Granola との比較 (日本語) |
 | `/ja/privacy/` | プライバシーポリシー (日本語) |
 | `/ja/terms/` | 利用規約 (日本語) |
 | `/404.html` | Not-found page, served by `not_found_handling` |
@@ -23,9 +25,10 @@ Cloudflare with [Workers Static Assets](https://developers.cloudflare.com/worker
 ```
 public/            # everything served, verbatim
   index.html
+  compare/index.html
   privacy/index.html
   terms/index.html
-  ja/…
+  ja/…             # includes ja/compare/index.html
   404.html
   robots.txt
   sitemap.xml
@@ -52,7 +55,27 @@ wrangler.toml      # static-only Worker: no `main`, just [assets]
 ```
 
 There is no templating: each page carries its own header and footer. When you change the
-navigation or the footer, change it in all six pages.
+navigation or the footer, change it in all eight pages (the two legal pages have a
+minimal footer — the navigation is the part that must stay in sync everywhere).
+
+## Keeping the comparison page current
+
+`/compare/` and `/ja/compare/` state other vendors' prices and features with links to
+their official pages and a confirmation date. That page is only honest while the facts
+are fresh, so re-check it **every six months (in April and October)**:
+
+1. Open every link in the pages' "Sources" section (they are the vendors' official pages).
+2. Check each table cell against what the vendor's page says. Prices drift the most;
+   feature claims must stay describable from the vendor's own words — never from review
+   sites or assumptions.
+3. Move the confirmation date (the `updated` chip, the "Confirmed" spans, and the
+   `<lastmod>` entries in `public/sitemap.xml`) to the day you re-checked — **even when
+   nothing changed**, the date is what records that the page was re-verified. Update the
+   cells themselves only where a fact changed, and note what changed in the pull request.
+4. Ship through a pull request as usual.
+
+If a vendor disappears or a source link rots, drop that row/column instead of leaving an
+unverifiable claim on the page.
 
 ## Local preview
 
@@ -90,7 +113,7 @@ repository secrets:
 The site's canonical URLs assume `https://kilde.site/`. After the first deploy, attach the
 domain in **Workers & Pages → kilde-site → Settings → Domains & Routes**. If a different
 domain is used, update the `canonical`, `hreflang`, `og:url` and `og:image` values in the
-six HTML pages, plus `robots.txt` and `sitemap.xml`.
+eight HTML pages, plus `robots.txt` and `sitemap.xml`.
 
 ## License
 
