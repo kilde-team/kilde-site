@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>通知音を録り込まない Mac の画面収録 — kilde</title>
+<meta name="description" content="録画の途中に鳴る通知音で台無しになる前に。収録するウィンドウを 1 つに絞れば、音声もそのアプリにスコープされ、他のアプリの通知音や再生音はファイルに入りません。kilde は仮想オーディオドライバなしで画面とシステム音声を収録できます。">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/ja/record-without-notification-sounds/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/record-without-notification-sounds/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-without-notification-sounds/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/record-without-notification-sounds/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通知音を録り込まない Mac の画面収録 — kilde">
+<meta property="og:description" content="録るアプリを 1 つに絞れば、音声もそのアプリだけ。通知のチャイムも他アプリの音もファイルに入りません。kilde は 1 ウィンドウとその音を、仮想オーディオドライバなしで収録します。">
+<meta property="og:url" content="https://kilde.site/ja/record-without-notification-sounds/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/ja/record-without-notification-sounds/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"収録するアプリに音声をスコープでき、通知音など他アプリの音をファイルに入れずに済む、オープンソースの macOS 録画・録音ツール。","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/ja/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/ja/#features">特徴</a>
+      <a href="/ja/#install">インストール</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/record-without-notification-sounds/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/ja/">← kilde トップへ</a>
+    <h1>通知音をファイルに入れない</h1>
+    <p class="updated">アプリ単位の音声スコープ — 他アプリの音は入りません</p>
+
+    <p class="summary">
+      録画の途中に届いたメッセージのチャイムは、必要な一言の真上に着地します。kilde なら
+      <strong>1 つのウィンドウと、そのアプリの音だけ</strong>を収録できます。音声が収録対象の
+      アプリに追従するので、通知のチャイムも他のアプリの再生音もファイルに入りません。
+      ミュートのお作法も、仮想オーディオドライバも要りません。
+    </p>
+
+    <div class="section-head">
+      <h2>1 つのアプリの映像と音を収録する</h2>
+    </div>
+    <ol class="guide-steps">
+      <li><strong>ウィンドウを選ぶ。</strong> メニューバーアプリなら収録したいウィンドウを
+        選びます。CLI なら名前で指定します:
+        <code>kilde rec --window "Keynote" demo.mov</code> (タイトルや bundleID の部分一致)。
+        音声をアプリ単位に絞れるのはウィンドウ収録です。<code>--display</code> や
+        <code>--region</code> は画面全体の収録で他アプリの音も入り、<code>--exclude-app</code> は
+        指定した 1 アプリの映像と音を除外するだけです。</li>
+      <li><strong>音声はアプリに追従。</strong> 1 つのウィンドウを収録するとき、音声はそのアプリに
+        スコープされます — メッセージの着信音も、他アプリの音楽も、カレンダーのチャイムも
+        ファイルには入りません。</li>
+      <li><strong>安全に停止。</strong> Ctrl+C や停止ボタンでもファイルは必ずファイナライズ
+        されます。</li>
+    </ol>
+    <p class="note">
+      正直な補足です: 収録対象のアプリ自身が鳴らす音は、そのまま録れます — 会議アプリ自身の
+      入室チャイムはテイクに入ります。また音声のみの収録 (<code>--no-video</code>) はシステム音声を
+      全体で拾うため、アプリ単位のスコープは効きません。
+    </p>
+
+    <div class="section-head">
+      <h2>音のスコープで抑えられないもの: 画面に映るもの</h2>
+    </div>
+    <p>
+      ファイルに入らないはずのチャイムでも、バナーが画面に映れば<em>映像</em>として残ります。
+      画面を収録してバナーが見える構図なら、収録前に集中モードをオンにしてください —
+      macOS がその間、バナーとその音を抑えてくれます。音の面は kilde が既に閉じているので、
+      これで映像側も閉じます。
+    </p>
+
+    <div class="section-head">
+      <h2>なぜ道具が要るのか</h2>
+    </div>
+    <p>
+      標準の画面収録はマイクしか録れず、デスクトップ全体の収録は通知音も含めて Mac の音を
+      すべて拾います。kilde が macOS ネイティブのキャプチャフレームワーク ScreenCaptureKit の上に立つのは、
+      アプリ単位の音声がそこで初めて可能になるからです。しかも無料・オープンソース・MIT ライセンス。
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-ja-white.svg">
+          <img src="/assets/mac-app-store-badge-ja-black.svg" alt="Mac App Store からダウンロード" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/ja/#install">CLI をインストール</a>
+      <a class="btn btn-ghost" href="/ja/record-system-audio-mac/">システム音声の録り方を見る</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/ja/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">macOS 向けオープンソースの画面・音声録音ツール。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>プロダクト</b>
+          <a href="/ja/#features">特徴</a>
+          <a href="/ja/#install">インストール</a>
+          <a href="/ja/compare/">比較</a>
+          <a href="https://github.com/kilde-team/kilde/releases">リリース</a>
+        </div>
+        <div>
+          <b>プロジェクト</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/README.ja.md">ドキュメント</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>規約</b>
+          <a href="/ja/privacy/">プライバシーポリシー</a>
+          <a href="/ja/terms/">利用規約</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT ライセンス</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · MIT License のもとで公開</span>
+      <span><a href="/record-without-notification-sounds/" hreflang="en" lang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

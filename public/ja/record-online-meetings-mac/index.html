@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mac でオンライン会議を録る — 相手の声と自分の声を 1 つのファイルに — kilde</title>
+<meta name="description" content="Zoom・Google Meet・Teams の会議を Mac で録るなら、相手の声 (システム音声) と自分の声 (マイク) を 1 つのファイルに。会議にボットは入らず、録音は手元に残ります。Ctrl+C でも必ずファイナライズ。">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/ja/record-online-meetings-mac/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/record-online-meetings-mac/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-online-meetings-mac/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/record-online-meetings-mac/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac でオンライン会議を録る — 相手の声と自分の声を 1 つのファイルに — kilde">
+<meta property="og:description" content="会議の相手の声と自分の声を 1 ファイルに、ボットなしで。Zoom・Google Meet・Teams など、使っている会議アプリをそのまま録れます。">
+<meta property="og:url" content="https://kilde.site/ja/record-online-meetings-mac/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/ja/record-online-meetings-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"オンライン会議の相手の声 (システム音声) と自分の声 (マイク) を 1 つのファイルに録る、オープンソースの macOS 録画・録音ツール。会議にボットは入りません。","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/ja/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/ja/#features">特徴</a>
+      <a href="/ja/#install">インストール</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/record-online-meetings-mac/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/ja/">← kilde トップへ</a>
+    <h1>オンライン会議を、両方の声ごと録る</h1>
+    <p class="updated">相手と自分を 1 つのファイルに — 会議にボットは入らない</p>
+
+    <p class="summary">
+      会議の録音は、<strong>両方の声</strong>が揃ってこそ役に立ちます。相手が話したこと (Mac が
+      再生している音) と、自分が話したこと (マイク)。kilde は両方を 1 つのファイルに収めます。
+      使うのは今の会議アプリのまま — Zoom、Google Meet、Microsoft Teams、音が出るものなら他の
+      アプリでも。呼びかけに応えて会議に入ってくるボットはいません。
+    </p>
+
+    <div class="section-head">
+      <h2>3 ステップで会議を録る</h2>
+    </div>
+    <ol class="guide-steps">
+      <li><strong>普段どおり会議に参加。</strong> kilde は手元の Mac を録るだけで、音声は
+        Mac 側で拾われます。会議サービスに余計な参加者が現れることはありません。</li>
+      <li><strong>meeting プリセットで開始。</strong>
+        <code>kilde rec --preset meeting meeting.mov</code> が会議のウィンドウを選べる状態で
+        起動し、そのウィンドウを、相手の音声とマイクを 1 つのトラックにミックスしながら収録します。
+        メニューバーアプリなら会議のウィンドウを選んで録画開始。</li>
+      <li><strong>会議の終わりで停止。</strong> Ctrl+C でも停止ボタンでも、ファイルは必ず
+        ファイナライズされて再生可能なまま。長い会議は <code>--duration 90m</code> で上限を
+        付けられます。</li>
+    </ol>
+
+    <div class="section-head">
+      <h2>会議録音で効くディテール</h2>
+    </div>
+    <p>
+      <strong>デスクトップ全体ではなく、会議のウィンドウ。</strong> 収録対象を会議のウィンドウに
+      絞れるので、ほかの作業画面は映り込みません。音声もそのアプリにスコープできるので、他アプリの
+      通知音などは入らずに済みます。
+    </p>
+    <p>
+      <strong>声はまとめて、または分けて。</strong> 既定では両方の声を 1 つのトラックにミックスし、
+      そのまま共有できます。<code>--audio-tracks separate</code> でトラックを分けると、あとで
+      文字起こしするときにきれいに扱えます。
+    </p>
+    <p>
+      <strong>文字起こしも、欲しければ。</strong> macOS 26 以降なら、録音を手元の Mac で文字起こし
+      できます — オンデバイス処理で、アップロードはされません。Markdown・SRT・WebVTT・テキスト・
+      JSON で出力。詳細は <a href="/ja/transcribe-meetings-without-a-bot/">ボットなしの文字起こし</a> へ。
+    </p>
+
+    <div class="section-head">
+      <h2>標準の画面収録ではだめなのか</h2>
+    </div>
+    <p>
+      標準の収録はマイクしか録れないため、相手の声がファイルに入りません。
+      <a href="/ja/record-system-audio-mac/">かいつんで言えば</a>、kilde はシステム音声を仮想
+      オーディオドライバなしでネイティブに収録できる道具で、会議録音に必要なのはまさにそこです。
+      無料・オープンソース・MIT ライセンス。
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-ja-white.svg">
+          <img src="/assets/mac-app-store-badge-ja-black.svg" alt="Mac App Store からダウンロード" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/ja/#install">CLI をインストール</a>
+      <a class="btn btn-ghost" href="/ja/transcribe-meetings-without-a-bot/">会議を文字起こしする</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/ja/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">macOS 向けオープンソースの画面・音声録音ツール。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>プロダクト</b>
+          <a href="/ja/#features">特徴</a>
+          <a href="/ja/#install">インストール</a>
+          <a href="/ja/compare/">比較</a>
+          <a href="https://github.com/kilde-team/kilde/releases">リリース</a>
+        </div>
+        <div>
+          <b>プロジェクト</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/README.ja.md">ドキュメント</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>規約</b>
+          <a href="/ja/privacy/">プライバシーポリシー</a>
+          <a href="/ja/terms/">利用規約</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT ライセンス</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · MIT License のもとで公開</span>
+      <span><a href="/record-online-meetings-mac/" hreflang="en" lang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -33,6 +33,70 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/compare/"/>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://kilde.site/record-system-audio-mac/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/record-system-audio-mac/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-system-audio-mac/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-system-audio-mac/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kilde.site/ja/record-system-audio-mac/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/record-system-audio-mac/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-system-audio-mac/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-system-audio-mac/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kilde.site/record-online-meetings-mac/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/record-online-meetings-mac/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-online-meetings-mac/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-online-meetings-mac/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kilde.site/ja/record-online-meetings-mac/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/record-online-meetings-mac/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-online-meetings-mac/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-online-meetings-mac/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kilde.site/transcribe-meetings-without-a-bot/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/transcribe-meetings-without-a-bot/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/transcribe-meetings-without-a-bot/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/transcribe-meetings-without-a-bot/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kilde.site/ja/transcribe-meetings-without-a-bot/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/transcribe-meetings-without-a-bot/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/transcribe-meetings-without-a-bot/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/transcribe-meetings-without-a-bot/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kilde.site/record-without-notification-sounds/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/record-without-notification-sounds/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-without-notification-sounds/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-without-notification-sounds/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kilde.site/ja/record-without-notification-sounds/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/record-without-notification-sounds/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-without-notification-sounds/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-without-notification-sounds/"/>
+    <priority>0.7</priority>
+  </url>
   <url><loc>https://kilde.site/privacy/</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
   <url><loc>https://kilde.site/terms/</loc><lastmod>2026-09-17</lastmod><priority>0.5</priority></url>
   <url><loc>https://kilde.site/ja/privacy/</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>

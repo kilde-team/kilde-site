@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mac でシステム音声を録る方法 — 画面といっしょに、音だけでも — kilde</title>
+<meta name="description" content="macOS 標準の画面収録はマイクしか録れず、Mac が再生している音はファイルに入りません。QuickTime でシステム音声が録れない悩みを、仮想オーディオドライバなし・ワンコマンドで解決する方法を紹介します。">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/ja/record-system-audio-mac/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/record-system-audio-mac/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-system-audio-mac/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/record-system-audio-mac/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac でシステム音声を録る方法 — 画面といっしょに、音だけでも — kilde">
+<meta property="og:description" content="標準の画面収録はマイクのみ。kilde なら ScreenCaptureKit ネイティブの取り込みで、Mac が再生している音を画面つきでも音声だけでもワンコマンドで録れます。仮想オーディオドライバは不要です。">
+<meta property="og:url" content="https://kilde.site/ja/record-system-audio-mac/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/ja/record-system-audio-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"macOS 標準の画面収録では録れないシステム音声を、仮想オーディオドライバなしで収録するオープンソースの macOS 録画・録音ツール。","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/ja/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/ja/#features">特徴</a>
+      <a href="/ja/#install">インストール</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/record-system-audio-mac/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/ja/">← kilde トップへ</a>
+    <h1>Mac が再生している音を録る</h1>
+    <p class="updated">仮想オーディオドライバ不要のシステム音声収録</p>
+
+    <p class="summary">
+      <strong>先に結論:</strong> 会議の相手の声・動画の音・アプリの音楽など「Mac から出ている音」を
+      録りたいなら、macOS 標準の画面収録は使えません — 録れるのはマイクだけだからです。
+      <strong>kilde</strong> なら、システム音声をネイティブに収録できます。画面といっしょでも、
+      音声だけでも、ワンコマンドで。仮想オーディオドライバ (Soundflower や BlackHole) の
+      インストールも不要です。
+    </p>
+
+    <div class="section-head">
+      <h2>なぜ標準の収録は無音になるのか</h2>
+    </div>
+    <p>
+      macOS の画面収録で選べる音声は<strong>マイク</strong>だけです。スピーカーから出ている音 —
+      通話の相手の声、再生中の動画の音 — は入力として現れず、ファイルに入りません。代わりに
+      マイクで部屋の音を拾うと、エコーやキーボード音が混ざり、相手の声はくぐもります。
+    </p>
+    <p>
+      従来の回避策は Soundflower や BlackHole といった仮想オーディオドライバを挟んでシステム音を
+      入力に回すもので、確かに動きます。ただセットアップと経路の調整が必要で、macOS を更新する
+      たびに「まだ動くか」の不安がつきまといます。
+    </p>
+
+    <div class="section-head">
+      <h2>kilde でシステム音声を録る</h2>
+    </div>
+    <ol class="guide-steps">
+      <li><strong>インストール。</strong> メニューバーアプリは
+        <a href="https://apps.apple.com/app/id6812783176" rel="noopener">Mac App Store</a> から。
+        CLI は <a href="/ja/#install">Homebrew またはリリースバイナリ</a> で入ります。</li>
+      <li><strong>環境チェック。</strong> <code>kilde doctor</code> が画面収録の権限などを確認し、
+        足りないものは案内してくれます。</li>
+      <li><strong>収録。</strong> <code>kilde rec demo.mov</code> で、画面と Mac が再生している音を
+        1 つのファイルに収録します。メニューバーアプリならディスプレイを選んで録画開始。</li>
+      <li><strong>安全に停止。</strong> Ctrl+C (やメニューバーの停止ボタン) でもファイルは必ず
+        ファイナライズされます — 書きかけの録画が残ることはありません。</li>
+    </ol>
+
+    <div class="section-head">
+      <h2>音だけを録る</h2>
+    </div>
+    <p>
+      あとで文字起こししたい会議の音声や講義・インタビューなど、映像が要らない場合は
+      音声のみの収録を:
+    </p>
+    <p><code>kilde rec --no-video meeting.m4a</code></p>
+    <p>
+      システム音声の M4A が得られます (マイクをミックスするのも、
+      <code>--audio-tracks separate</code> でトラックを分けるのも自由です)。
+    </p>
+
+    <div class="section-head">
+      <h2>ドライバのインストールが要らない理由</h2>
+    </div>
+    <p>
+      kilde は ScreenCaptureKit — macOS が標準の画面収録に使うのと同じフレームワーク — の上に
+      作られています。Mac が再生している音をソースで拾うので、経路の設定もデバイスの作成もなく、
+      macOS を更新しても壊れる仕組みがありません。無料・オープンソース・MIT ライセンスです。
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-ja-white.svg">
+          <img src="/assets/mac-app-store-badge-ja-black.svg" alt="Mac App Store からダウンロード" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/ja/#install">CLI をインストール</a>
+      <a class="btn btn-ghost" href="/ja/compare/">他ツールとの比較を見る</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/ja/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">macOS 向けオープンソースの画面・音声録音ツール。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>プロダクト</b>
+          <a href="/ja/#features">特徴</a>
+          <a href="/ja/#install">インストール</a>
+          <a href="/ja/compare/">比較</a>
+          <a href="https://github.com/kilde-team/kilde/releases">リリース</a>
+        </div>
+        <div>
+          <b>プロジェクト</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/README.ja.md">ドキュメント</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>規約</b>
+          <a href="/ja/privacy/">プライバシーポリシー</a>
+          <a href="/ja/terms/">利用規約</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT ライセンス</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · MIT License のもとで公開</span>
+      <span><a href="/record-system-audio-mac/" hreflang="en" lang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
