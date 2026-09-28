@@ -1,0 +1,18 @@
+README.md
+  h_33284c2ec569b2 71-74
+public/compare/index.html
+  h_33284c2ec569b2 95,179-181
+public/ja/compare/index.html
+  h_33284c2ec569b2 94,179-181
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "46d95e754d8e633add520bcca254832ea06e9d18",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
