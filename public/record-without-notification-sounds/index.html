@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Record your Mac without notification sounds ruining the take</title>
+<meta name="description" content="A perfect recording ruined by a notification chime? Capture one window or app and scope the audio to it — chimes and sounds from other apps stay out of the recording. kilde records the screen and system audio without a virtual audio driver.">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/record-without-notification-sounds/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/record-without-notification-sounds/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-without-notification-sounds/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/record-without-notification-sounds/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Record your Mac without notification sounds ruining the take">
+<meta property="og:description" content="Scope the recording's audio to one app — notification chimes and other apps' sounds stay out. kilde captures a single window with its own sound, no virtual audio driver.">
+<meta property="og:url" content="https://kilde.site/record-without-notification-sounds/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/record-without-notification-sounds/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source macOS recorder that can scope a recording's audio to a single app, keeping notification chimes and other apps out of the file.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/#features">Features</a>
+      <a href="/#install">Install</a>
+      <a href="/compare/">Compare</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/ja/record-without-notification-sounds/" hreflang="ja" lang="ja">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/">← Back to kilde</a>
+    <h1>Keep notification chimes out of the recording</h1>
+    <p class="updated">Per-app audio capture — sounds from other apps stay out</p>
+
+    <p class="summary">
+      A message arrives mid-recording and its chime lands right on top of the sentence you needed.
+      kilde can record <strong>one window with only that app's sound</strong>: the audio follows the
+      app you capture, so notification chimes and everything else playing on your Mac stay out of
+      the file — no muting discipline required, no virtual audio driver.
+    </p>
+
+    <div class="section-head">
+      <h2>Record one app's picture and sound</h2>
+    </div>
+    <ol class="guide-steps">
+      <li><strong>Pick the window.</strong> In the menu bar app, choose the window you want. From
+        the CLI, name it: <code>kilde rec --window "Keynote" demo.mov</code> (a title or bundle-ID
+        partial match). Whole screen is fine too — <code>--display</code> or
+        <code>--region</code> — and <code>--exclude-app</code> keeps a specific app's picture and
+        sound out of a full-screen capture.</li>
+      <li><strong>The audio follows the app.</strong> When a single window is captured, its
+        audio is scoped to that app — a message ping, music from another app, or a calendar chime
+        never reaches the file.</li>
+      <li><strong>Stop safely.</strong> Ctrl+C or the stop button always finalizes the file.</li>
+    </ol>
+    <p class="note">
+      The flip side, stated honestly: sounds the captured app itself plays are exactly what you
+      asked for, so they do come in — if the meeting app plays its own join chime, that is in the
+      take. Audio-only recordings (<code>--no-video</code>) capture system audio as a whole, and
+      there the per-app scoping does not apply.
+    </p>
+
+    <div class="section-head">
+      <h2>The part audio scoping cannot cover: what is on screen</h2>
+    </div>
+    <p>
+      A chime you have kept out of the file can still flash across the <em>picture</em>. If the
+      screen is being recorded and banners are visible, turn on a Focus mode before you start —
+      macOS then holds banners and their sounds back for the duration. Sound-wise kilde already has
+      you covered; this closes the visual half.
+    </p>
+
+    <div class="section-head">
+      <h2>Why this needs a tool like kilde</h2>
+    </div>
+    <p>
+      The built-in screen recorder captures the microphone only, and a whole-desktop capture takes
+      every sound your Mac plays, chimes included. kilde sits on ScreenCaptureKit, macOS's native
+      capture framework, which is what makes per-app audio possible at all — and it costs nothing:
+      free, open source, MIT-licensed.
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-en-white.svg">
+          <img src="/assets/mac-app-store-badge-en-black.svg" alt="Download on the Mac App Store" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/#install">Install the CLI</a>
+      <a class="btn btn-ghost" href="/record-system-audio-mac/">Record system audio instead</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">An open-source screen and audio recorder for macOS.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Product</b>
+          <a href="/#features">Features</a>
+          <a href="/#install">Install</a>
+          <a href="/compare/">Compare</a>
+          <a href="https://github.com/kilde-team/kilde/releases">Releases</a>
+        </div>
+        <div>
+          <b>Project</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde#readme">Documentation</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>Legal</b>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · Released under the MIT License</span>
+      <span><a href="/ja/record-without-notification-sounds/" hreflang="ja" lang="ja">日本語</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

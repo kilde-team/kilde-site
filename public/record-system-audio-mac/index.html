@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to record system audio on a Mac — with the screen, or alone</title>
+<meta name="description" content="The screen recorder built into macOS captures the microphone only — the sound your Mac plays never reaches the file. Here is how to record system audio on a Mac, with the screen or audio alone, without installing a virtual audio driver.">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/record-system-audio-mac/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/record-system-audio-mac/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-system-audio-mac/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/record-system-audio-mac/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to record system audio on a Mac — with the screen, or alone">
+<meta property="og:description" content="The built-in screen recorder captures the microphone only. Record the sound your Mac actually plays with kilde — native ScreenCaptureKit capture, no virtual audio driver, one command.">
+<meta property="og:url" content="https://kilde.site/record-system-audio-mac/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/record-system-audio-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source macOS recorder that captures system audio with the screen, or audio alone, with no virtual audio driver.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/#features">Features</a>
+      <a href="/#install">Install</a>
+      <a href="/compare/">Compare</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/ja/record-system-audio-mac/" hreflang="ja" lang="ja">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/">← Back to kilde</a>
+    <h1>Record the sound your Mac plays</h1>
+    <p class="updated">System audio capture with no virtual audio driver</p>
+
+    <p class="summary">
+      <strong>Quick wins first:</strong> if you want the sound your Mac plays — a meeting's other
+      participants, a video, an app's music — in your recording, the screen recorder built into
+      macOS cannot do it: its recordings carry the microphone only. <strong>kilde</strong> records
+      system audio natively, with the screen or as audio alone, in one command and without
+      installing a virtual audio driver.
+    </p>
+
+    <div class="section-head">
+      <h2>Why the built-in recorder stays silent</h2>
+    </div>
+    <p>
+      When you record the screen on macOS, the audio choice you are offered is a
+      <strong>microphone</strong>. The sound coming out of your speakers — the other side of a call,
+      the video you are watching — is never an input there, so it never reaches the file. Recording
+      the room with a mic instead picks up echo and keyboard noise instead of clean app audio.
+    </p>
+    <p>
+      The classic workaround is a virtual audio driver (Soundflower, BlackHole) that pipes system
+      sound into an input. It works, but it adds setup, routing puzzles, and a kernel of doubt every
+      time macOS updates.
+    </p>
+
+    <div class="section-head">
+      <h2>Record system audio with kilde</h2>
+    </div>
+    <ol class="guide-steps">
+      <li><strong>Install kilde.</strong> The menu bar app comes from the
+        <a href="https://apps.apple.com/app/id6812783176" rel="noopener">Mac App Store</a>; the CLI
+        installs with <a href="/#install">Homebrew or a release binary</a>.</li>
+      <li><strong>Check the environment.</strong> Run <code>kilde doctor</code> — it verifies screen
+        recording permission and prompts for anything missing.</li>
+      <li><strong>Record.</strong> <code>kilde rec demo.mov</code> captures the screen with the sound
+        your Mac plays, in one file. From the menu bar app, pick the display and press record.</li>
+      <li><strong>Stop safely.</strong> Ctrl+C (or the menu bar stop button) always finalizes the
+        file — a half-written recording is never left behind.</li>
+    </ol>
+
+    <div class="section-head">
+      <h2>Audio alone, no screen</h2>
+    </div>
+    <p>
+      Only need the sound — a meeting's audio to transcribe later, a lecture, an interview? Record
+      audio alone:
+    </p>
+    <p><code>kilde rec --no-video meeting.m4a</code></p>
+    <p>
+      You get an M4A with the system audio (your microphone can be mixed in, or kept on a separate
+      track with <code>--audio-tracks separate</code>).
+    </p>
+
+    <div class="section-head">
+      <h2>Why there is no driver to install</h2>
+    </div>
+    <p>
+      kilde is built on ScreenCaptureKit — the same macOS framework the system's own screen capture
+      uses. It taps the audio your Mac plays at the source, so there is nothing to route, no device
+      to create, and nothing that breaks when you update macOS. Free, open source, and MIT-licensed.
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-en-white.svg">
+          <img src="/assets/mac-app-store-badge-en-black.svg" alt="Download on the Mac App Store" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/#install">Install the CLI</a>
+      <a class="btn btn-ghost" href="/compare/">How kilde compares</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">An open-source screen and audio recorder for macOS.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Product</b>
+          <a href="/#features">Features</a>
+          <a href="/#install">Install</a>
+          <a href="/compare/">Compare</a>
+          <a href="https://github.com/kilde-team/kilde/releases">Releases</a>
+        </div>
+        <div>
+          <b>Project</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde#readme">Documentation</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>Legal</b>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · Released under the MIT License</span>
+      <span><a href="/ja/record-system-audio-mac/" hreflang="ja" lang="ja">日本語</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

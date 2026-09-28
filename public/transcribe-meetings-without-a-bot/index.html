@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transcribe a meeting without a bot joining the call (macOS)</title>
+<meta name="description" content="Meeting transcription without sending a bot into your call: kilde records the meeting's audio on your Mac and transcribes it on-device — nothing is uploaded, and no extra participant ever appears. Markdown, SRT, WebVTT, TXT and JSON output.">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/transcribe-meetings-without-a-bot/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/transcribe-meetings-without-a-bot/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/transcribe-meetings-without-a-bot/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/transcribe-meetings-without-a-bot/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transcribe a meeting without a bot joining the call (macOS)">
+<meta property="og:description" content="Record the meeting on your Mac, transcribe it on your Mac. No bot in the participant list, no audio uploaded — on-device transcription with timestamps, in Markdown, SRT, WebVTT, TXT or JSON.">
+<meta property="og:url" content="https://kilde.site/transcribe-meetings-without-a-bot/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon; transcription requires macOS 26 or later)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/transcribe-meetings-without-a-bot/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source macOS recorder that transcribes meeting recordings on-device — no bot joins the call and no audio is uploaded.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/#features">Features</a>
+      <a href="/#install">Install</a>
+      <a href="/compare/">Compare</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/ja/transcribe-meetings-without-a-bot/" hreflang="ja" lang="ja">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/">← Back to kilde</a>
+    <h1>Meeting transcripts without a bot in the participant list</h1>
+    <p class="updated">On-device transcription — nothing uploaded</p>
+
+    <p class="summary">
+      Most transcription services work by sending a <strong>bot</strong> that joins your call and
+      listens in. kilde takes another path: the meeting is recorded on your Mac (the audio never
+      leaves it), and transcription runs <strong>on your Mac</strong> too. No extra participant in
+      the list, no audio uploaded, no account to create — and the transcript is written next to the
+      recording.
+    </p>
+
+    <div class="section-head">
+      <h2>From recording to transcript</h2>
+    </div>
+    <ol class="guide-steps">
+      <li><strong>Record the meeting with both voices.</strong> A recording with the participants'
+        audio and your microphone is what makes a transcript worth reading —
+        <a href="/record-online-meetings-mac/">start here</a> if you are new to kilde.</li>
+      <li><strong>Transcribe.</strong> In the menu bar app, turn on “transcribe after recording” and
+        it happens automatically. From the command line:
+        <code>kilde transcribe meeting.mov</code></li>
+      <li><strong>Read or reuse it.</strong> The transcript lands next to the recording, with
+        timestamps, as Markdown, SRT, WebVTT, plain text or JSON.</li>
+    </ol>
+
+    <div class="section-head">
+      <h2>What “on-device” means here</h2>
+    </div>
+    <p>
+      Transcription uses the speech recognition built into macOS and runs entirely on your Mac
+      (<strong>macOS 26 or later</strong>). Your audio and the transcript text are never sent
+      anywhere — the only network connection it adds is downloading the transcription language model
+      for your language from Apple, which the system manages. This is described in detail in the
+      <a href="/privacy/">privacy policy</a>.
+    </p>
+
+    <div class="section-head">
+      <h2>When a bot-free transcript is the right call</h2>
+    </div>
+    <p>
+      A bot cannot join calls you record locally — webinars and client calls where inviting a
+      listener is awkward, or meetings on platforms with no bot integration at all. Recording on
+      your Mac has no such gate: if your Mac can play it, kilde can capture it and transcribe it.
+      And because nothing is uploaded, the recording and the transcript stay yours alone.
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-en-white.svg">
+          <img src="/assets/mac-app-store-badge-en-black.svg" alt="Download on the Mac App Store" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/#install">Install the CLI</a>
+      <a class="btn btn-ghost" href="/record-online-meetings-mac/">Record a meeting first</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">An open-source screen and audio recorder for macOS.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Product</b>
+          <a href="/#features">Features</a>
+          <a href="/#install">Install</a>
+          <a href="/compare/">Compare</a>
+          <a href="https://github.com/kilde-team/kilde/releases">Releases</a>
+        </div>
+        <div>
+          <b>Project</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde#readme">Documentation</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>Legal</b>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · Released under the MIT License</span>
+      <span><a href="/ja/transcribe-meetings-without-a-bot/" hreflang="ja" lang="ja">日本語</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -12,10 +12,18 @@ Cloudflare with [Workers Static Assets](https://developers.cloudflare.com/worker
 |---|---|
 | `/` | Top page (English) |
 | `/compare/` | Comparison with QuickTime Player / OBS Studio / Audio Hijack / Granola (English) |
+| `/record-system-audio-mac/` | Search landing: record system audio on a Mac (English) |
+| `/record-online-meetings-mac/` | Search landing: record an online meeting (English) |
+| `/transcribe-meetings-without-a-bot/` | Search landing: bot-free meeting transcription (English) |
+| `/record-without-notification-sounds/` | Search landing: keep notification sounds out (English) |
 | `/privacy/` | Privacy Policy (English) |
 | `/terms/` | Terms of Service (English) |
 | `/ja/` | トップページ (日本語) |
 | `/ja/compare/` | QuickTime Player / OBS Studio / Audio Hijack / Granola との比較 (日本語) |
+| `/ja/record-system-audio-mac/` | 検索流入: Mac でシステム音声を録る (日本語) |
+| `/ja/record-online-meetings-mac/` | 検索流入: オンライン会議を録る (日本語) |
+| `/ja/transcribe-meetings-without-a-bot/` | 検索流入: ボットなしの会議文字起こし (日本語) |
+| `/ja/record-without-notification-sounds/` | 検索流入: 通知音を録り込まない収録 (日本語) |
 | `/ja/privacy/` | プライバシーポリシー (日本語) |
 | `/ja/terms/` | 利用規約 (日本語) |
 | `/404.html` | Not-found page, served by `not_found_handling` |
@@ -26,9 +34,15 @@ Cloudflare with [Workers Static Assets](https://developers.cloudflare.com/worker
 public/            # everything served, verbatim
   index.html
   compare/index.html
+  record-system-audio-mac/index.html
+  record-online-meetings-mac/index.html
+  transcribe-meetings-without-a-bot/index.html
+  record-without-notification-sounds/index.html
+                   # the four search landing pages (kilde-site#3); each has a
+                   # Japanese counterpart under ja/ with the same slug
   privacy/index.html
   terms/index.html
-  ja/…             # includes ja/compare/index.html
+  ja/…             # includes ja/compare/index.html and the landing pages' JA versions
   404.html
   robots.txt
   sitemap.xml
@@ -55,8 +69,10 @@ wrangler.toml      # static-only Worker: no `main`, just [assets]
 ```
 
 There is no templating: each page carries its own header and footer. When you change the
-navigation or the footer, change it in all eight pages (the two legal pages have a
-minimal footer — the navigation is the part that must stay in sync everywhere).
+navigation or the footer, change it in all sixteen pages (the two legal pages have a
+minimal footer — the navigation is the part that must stay in sync everywhere). The four
+search landing pages are deliberately kept out of the navigation; their header and footer
+still mirror the site's, so include them when the shared chrome changes.
 
 ## Keeping the comparison page current
 

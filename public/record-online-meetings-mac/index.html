@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Record an online meeting on your Mac — both sides of the call, in one file</title>
+<meta name="description" content="Record a Zoom, Google Meet or Teams meeting on your Mac with both sides of the conversation: the participants' voices (system audio) and your microphone, in one file. No bot joins the call, and stopping the recording always finalizes the file.">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/record-online-meetings-mac/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/record-online-meetings-mac/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-online-meetings-mac/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/record-online-meetings-mac/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Record an online meeting on your Mac — both sides of the call, in one file">
+<meta property="og:description" content="The participants' voices and your microphone, one file, no bot in the participant list. Record Zoom, Google Meet and Teams meetings on your Mac with kilde.">
+<meta property="og:url" content="https://kilde.site/record-online-meetings-mac/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/record-online-meetings-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source macOS recorder that captures online meetings with both sides of the conversation — system audio and microphone in one file, with no bot joining the call.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/#features">Features</a>
+      <a href="/#install">Install</a>
+      <a href="/compare/">Compare</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/ja/record-online-meetings-mac/" hreflang="ja" lang="ja">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/">← Back to kilde</a>
+    <h1>Record online meetings with both sides of the call</h1>
+    <p class="updated">The participants and you, in one file — no bot joins the meeting</p>
+
+    <p class="summary">
+      A meeting recording is only useful if it keeps <strong>both sides of the conversation</strong>:
+      what the others said (the sound your Mac plays) and what you said (your microphone). kilde
+      puts both into one file, works with the meeting app you already use — Zoom, Google Meet,
+      Microsoft Teams, or anything else that plays sound — and never sends a bot into your call.
+    </p>
+
+    <div class="section-head">
+      <h2>Record a meeting in three steps</h2>
+    </div>
+    <ol class="guide-steps">
+      <li><strong>Join the meeting as usual.</strong> kilde records your Mac; the meeting service
+        sees no extra participant, because the audio is captured on your Mac, not inside the call.</li>
+      <li><strong>Start kilde with the meeting preset.</strong>
+        <code>kilde rec --preset meeting meeting.mov</code> prompts you to pick the meeting window,
+        then records that window while mixing the participants' audio and your microphone into one
+        track. In the menu bar app, choose the meeting window and start.</li>
+      <li><strong>Stop when the meeting ends.</strong> Ctrl+C or the stop button — either way the
+        file is always finalized and playable. When a meeting runs long, cap it with
+        <code>--duration 90m</code>.</li>
+    </ol>
+
+    <div class="section-head">
+      <h2>The details that matter for meetings</h2>
+    </div>
+    <p>
+      <strong>One window, not the whole desktop.</strong> Capture just the meeting window, so your
+      other work stays off the recording. The audio can be scoped to the meeting's app too — sounds
+      from other apps stay out.
+    </p>
+    <p>
+      <strong>Voices together, or apart.</strong> By default both voices land mixed in one track,
+      ready to share. With <code>--audio-tracks separate</code> they are kept apart, which makes
+      later transcription cleaner.
+    </p>
+    <p>
+      <strong>Transcripts, if you want them.</strong> On macOS 26 or later, kilde transcribes the
+      recording on your Mac — on-device, nothing uploaded — in Markdown, SRT, WebVTT, plain text or
+      JSON. See <a href="/transcribe-meetings-without-a-bot/">transcribing without a bot</a>.
+    </p>
+
+    <div class="section-head">
+      <h2>Why not the built-in screen recorder?</h2>
+    </div>
+    <p>
+      Because it records the microphone only — the participants' voices never reach the file. The
+      <a href="/record-system-audio-mac/">short version</a>: kilde captures system audio natively
+      with no virtual audio driver, which is exactly what a meeting needs. Free, open source,
+      MIT-licensed.
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-en-white.svg">
+          <img src="/assets/mac-app-store-badge-en-black.svg" alt="Download on the Mac App Store" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/#install">Install the CLI</a>
+      <a class="btn btn-ghost" href="/transcribe-meetings-without-a-bot/">Turn meetings into transcripts</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">An open-source screen and audio recorder for macOS.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Product</b>
+          <a href="/#features">Features</a>
+          <a href="/#install">Install</a>
+          <a href="/compare/">Compare</a>
+          <a href="https://github.com/kilde-team/kilde/releases">Releases</a>
+        </div>
+        <div>
+          <b>Project</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde#readme">Documentation</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>Legal</b>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · Released under the MIT License</span>
+      <span><a href="/ja/record-online-meetings-mac/" hreflang="ja" lang="ja">日本語</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
