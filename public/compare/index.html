@@ -86,7 +86,7 @@
             <th scope="row">Screen + system audio + mic, in one recording <sup><a href="#src-audio">2</a></sup></th>
             <td class="col-kilde"><b>Yes</b> — display or single window with system audio and your mic in one file, mixed or on separate tracks. No virtual audio device.</td>
             <td><b>Microphone only</b> — a screen recording captures the mic you choose; the audio your Mac plays is not recorded</td>
-            <td><b>Yes</b> — mic plus application audio capture on macOS (OBS 30 or later)</td>
+            <td><b>Yes</b> — mic plus app or desktop audio capture on macOS 13 or later (OBS 28 or later)</td>
             <td><b>Audio only</b> — system audio and mic; it does not record the screen</td>
             <td><b>Audio only, no recording file</b> — device-audio capture for meeting notes; no bot joins the call</td>
           </tr>
@@ -123,7 +123,7 @@
       <article class="card">
         <h3>OBS Studio</h3>
         <p>A broad studio for live streaming and scene compositing. Powerful, and heavier than a
-          meeting needs; per-application audio capture on macOS arrived with OBS 30.</p>
+          meeting needs; app audio capture on macOS needs macOS 13 or later and OBS 28 or later.</p>
       </article>
       <article class="card">
         <h3>Audio Hijack</h3>
@@ -162,8 +162,9 @@
         <b>Screen + system audio + microphone.</b>
         QuickTime Player: the macOS User Guide documents choosing a microphone for screen recordings
         and no system-audio input (<a href="https://support.apple.com/guide/mac-help/record-activities-on-your-screen-mh26782/mac" rel="noopener">Apple</a>) ·
-        OBS Studio: “Added application audio capture on macOS” in the OBS 30.0 release notes
-        (<a href="https://github.com/obsproject/obs-studio/releases/tag/30.0.0" rel="noopener">GitHub</a>) ·
+        OBS Studio: app and desktop audio capture via the macOS Screen Capture source (OBS 28 or
+        later), plus the dedicated macOS Audio Capture source (OBS 30); requires macOS 13 or later
+        (<a href="https://obsproject.com/kb/macos-desktop-audio-capture-guide" rel="noopener">obsproject.com KB</a>) ·
         Audio Hijack: “Use the System Audio source to capture all the audio heard on your Mac at once”
         (<a href="https://rogueamoeba.com/audiohijack/" rel="noopener">rogueamoeba.com</a>) ·
         Granola: “Bot-free, device-audio capture” (<a href="https://www.granola.ai/pricing" rel="noopener">granola.ai/pricing</a>) ·
