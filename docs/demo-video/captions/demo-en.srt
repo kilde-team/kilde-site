@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:05,000
+Capture the meeting. Read it back.
+
+2
+00:00:05,000 --> 00:00:13,000
+No bot. Both voices, captured on your Mac.
+
+3
+00:00:13,000 --> 00:00:20,000
+The meeting's sound, not the notifications.
+
+4
+00:00:20,000 --> 00:00:26,000
+Stop, and the file is always finalized.
+
+5
+00:00:26,000 --> 00:00:35,000
+Transcription starts when you stop — timestamped, by speaker.
+
+6
+00:00:35,000 --> 00:00:44,000
+A first-draft summary, ready to edit.
+
+7
+00:00:44,000 --> 00:00:52,000
+Every recording becomes searchable.
+
+8
+00:00:52,000 --> 00:01:00,000
+All on your Mac. — kilde
