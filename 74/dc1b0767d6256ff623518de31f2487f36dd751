@@ -1,0 +1,14 @@
+docs/demo-video/storyboard.md
+  h_33284c2ec569b2 33,52-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "74dc1b0767d6256ff623518de31f2487f36dd751",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
