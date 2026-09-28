@@ -85,7 +85,7 @@
             <th scope="row">画面 + システム音声 + マイクを 1 つの録音に <sup><a href="#src-audio">2</a></sup></th>
             <td class="col-kilde"><b>対応</b> — 画面または 1 つのウィンドウを、システム音声とマイクと一緒に 1 つのファイルへ (ミックスまたはトラック分離)。仮想オーディオデバイスは不要。</td>
             <td><b>マイクのみ</b> — 画面収録で選べるのはマイクで、Mac が再生している音は収められない</td>
-            <td><b>対応</b> — マイクに加えて、macOS のアプリケーション音声キャプチャ (OBS 30 以降)</td>
+            <td><b>対応</b> — マイクに加えて、macOS 13 以降ならアプリ・デスクトップ音声のキャプチャ (OBS 28 以降)</td>
             <td><b>音声のみ</b> — システム音声とマイクの録音が本業で、画面は収められない</td>
             <td><b>音声のみ・録音ファイルなし</b> — デバイスの音声から議事録を作る方式。会議にボットは入らない</td>
           </tr>
@@ -122,7 +122,7 @@
       <article class="card">
         <h3>OBS Studio</h3>
         <p>ライブ配信やシーン合成のための総合スタジオ。高機能なぶん、会議録音には重め。
-          macOS のアプリケーション音声キャプチャは OBS 30 で入りました。</p>
+          macOS のアプリ音声キャプチャは macOS 13 以降・OBS 28 以降で使えます。</p>
       </article>
       <article class="card">
         <h3>Audio Hijack</h3>
@@ -162,8 +162,9 @@
         <b>画面 + システム音声 + マイク。</b>
         QuickTime Player: macOS ユーザガイドは画面収録の音声としてマイクの選択のみを案内し、システム音声の
         入力は記載がない (<a href="https://support.apple.com/guide/mac-help/record-activities-on-your-screen-mh26782/mac" rel="noopener">Apple</a>) ·
-        OBS Studio: OBS 30.0 リリースノート «Added application audio capture on macOS»
-        (<a href="https://github.com/obsproject/obs-studio/releases/tag/30.0.0" rel="noopener">GitHub</a>) ·
+        OBS Studio: macOS Screen Capture ソースによるアプリ・デスクトップ音声の収録 (OBS 28 以降) と、
+        OBS 30 で追加された専用 «macOS Audio Capture» ソース。いずれも macOS 13 以降が必要
+        (<a href="https://obsproject.com/kb/macos-desktop-audio-capture-guide" rel="noopener">obsproject.com KB</a>) ·
         Audio Hijack: «Use the System Audio source to capture all the audio heard on your Mac at once»
         (<a href="https://rogueamoeba.com/audiohijack/" rel="noopener">rogueamoeba.com</a>) ·
         Granola: «Bot-free, device-audio capture» (<a href="https://www.granola.ai/pricing" rel="noopener">granola.ai/pricing</a>) ·

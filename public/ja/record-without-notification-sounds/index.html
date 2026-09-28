@@ -67,8 +67,9 @@
       <li><strong>ウィンドウを選ぶ。</strong> メニューバーアプリなら収録したいウィンドウを
         選びます。CLI なら名前で指定します:
         <code>kilde rec --window "Keynote" demo.mov</code> (タイトルや bundleID の部分一致)。
-        画面全体でよければ <code>--display</code> や <code>--region</code>。フルスクリーン収録から
-        特定のアプリの映像と音を外す <code>--exclude-app</code> もあります。</li>
+        音声をアプリ単位に絞れるのはウィンドウ収録です。<code>--display</code> や
+        <code>--region</code> は画面全体の収録で他アプリの音も入り、<code>--exclude-app</code> は
+        指定した 1 アプリの映像と音を除外するだけです。</li>
       <li><strong>音声はアプリに追従。</strong> 1 つのウィンドウを収録するとき、音声はそのアプリに
         スコープされます — メッセージの着信音も、他アプリの音楽も、カレンダーのチャイムも
         ファイルには入りません。</li>

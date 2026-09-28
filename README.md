@@ -128,8 +128,9 @@ repository secrets:
 
 The site's canonical URLs assume `https://kilde.site/`. After the first deploy, attach the
 domain in **Workers & Pages → kilde-site → Settings → Domains & Routes**. If a different
-domain is used, update the `canonical`, `hreflang`, `og:url` and `og:image` values in the
-eight HTML pages, plus `robots.txt` and `sitemap.xml`.
+domain is used, update the `canonical`, `hreflang`, `og:url` and `og:image` values in all
+sixteen HTML pages (top, comparison, four landing pages and legal, each EN and JA), plus
+`robots.txt` and `sitemap.xml`.
 
 ## License
 

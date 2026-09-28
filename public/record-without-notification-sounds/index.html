@@ -66,9 +66,9 @@
     <ol class="guide-steps">
       <li><strong>Pick the window.</strong> In the menu bar app, choose the window you want. From
         the CLI, name it: <code>kilde rec --window "Keynote" demo.mov</code> (a title or bundle-ID
-        partial match). Whole screen is fine too — <code>--display</code> or
-        <code>--region</code> — and <code>--exclude-app</code> keeps a specific app's picture and
-        sound out of a full-screen capture.</li>
+        partial match). Window capture is what keeps the audio per-app: <code>--display</code> and
+        <code>--region</code> record the whole screen, other apps' sounds included, and
+        <code>--exclude-app</code> removes only the one app you name from a full-screen capture.</li>
       <li><strong>The audio follows the app.</strong> When a single window is captured, its
         audio is scoped to that app — a message ping, music from another app, or a calendar chime
         never reaches the file.</li>
