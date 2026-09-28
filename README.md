@@ -68,9 +68,10 @@ are fresh, so re-check it **every six months (in April and October)**:
 2. Check each table cell against what the vendor's page says. Prices drift the most;
    feature claims must stay describable from the vendor's own words — never from review
    sites or assumptions.
-3. If anything changed, update the cells, move the confirmation date (the `updated` chip,
-   the "Confirmed" spans, and the `<lastmod>` entries in `public/sitemap.xml`) to the day
-   you re-checked, and note in the pull request what changed.
+3. Move the confirmation date (the `updated` chip, the "Confirmed" spans, and the
+   `<lastmod>` entries in `public/sitemap.xml`) to the day you re-checked — **even when
+   nothing changed**, the date is what records that the page was re-verified. Update the
+   cells themselves only where a fact changed, and note what changed in the pull request.
 4. Ship through a pull request as usual.
 
 If a vendor disappears or a source link rots, drop that row/column instead of leaving an
