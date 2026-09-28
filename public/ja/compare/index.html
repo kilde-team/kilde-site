@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kilde と QuickTime Player / OBS Studio / Audio Hijack / Granola の比較 — kilde</title>
+<meta name="description" content="macOS の会議録音ツールを正直に比較: 画面とシステム音声とマイクを 1 つのファイルに、文字起こし、そしてデータの置き場所。QuickTime Player の画面収録、OBS Studio、Audio Hijack、Granola と kilde を並べました。価格・機能は各社の公式ページで確認しています。">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/ja/compare/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/compare/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/compare/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/compare/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kilde と QuickTime Player / OBS Studio / Audio Hijack / Granola の比較 — kilde">
+<meta property="og:description" content="画面とシステム音声とマイクを 1 つのファイルに、文字起こしは手元の Mac で、録音はアップロードされない。QuickTime Player の画面収録、OBS Studio、Audio Hijack、Granola と kilde の違いをまとめました。">
+<meta property="og:url" content="https://kilde.site/ja/compare/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/ja/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/ja/#features">特徴</a>
+      <a href="/ja/#install">インストール</a>
+      <a href="/ja/compare/" aria-current="page">比較</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/compare/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="compare">
+  <div class="wrap">
+
+    <a class="back" href="/ja/">← kilde トップへ</a>
+    <h1>kilde と代表的な録音・文字起こしツールの比較</h1>
+    <p class="updated">価格・機能は 2026-09-28 に各社の公式ページで確認</p>
+
+    <p class="summary">
+      「Audio Hijack 代替」「Granola 代替」「QuickTime Player でシステム音声が録れない」と探して
+      たどり着いた方のために、kilde と代表的なツールを並べて比較しました。kilde は会議をその起き方の
+      まま録ります — 画面と、こちらと相手の両方の声を 1 つのファイルに、文字起こしまで手元の Mac で。
+      表の各行には根拠となった各社の公式ページへのリンクと確認日を付けてあります。掲載しているのは
+      会議の録音に関係する要点の要約で、全機能の網羅ではありません。用途によっては他のツールの方が
+      良いこともあります。
+    </p>
+
+    <div class="compare-scroll">
+      <table>
+        <caption class="skip">kilde / QuickTime Player / OBS Studio / Audio Hijack / Granola の比較</caption>
+        <thead>
+          <tr>
+            <th scope="col">比較項目</th>
+            <th scope="col" class="col-kilde">kilde</th>
+            <th scope="col">QuickTime Player</th>
+            <th scope="col">OBS Studio</th>
+            <th scope="col">Audio Hijack</th>
+            <th scope="col">Granola</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">価格 <sup><a href="#src-price">1</a></sup></th>
+            <td class="col-kilde"><b>無料</b> — メニューバーアプリも CLI も。MIT ライセンス</td>
+            <td>macOS に同梱 (追加費用なし)</td>
+            <td><b>無料</b>、オープンソース</td>
+            <td><b>69 USドル</b>の 1 ユーザー ライセンス。試用版は機能制限つき</td>
+            <td>無料プラン (ノート履歴 30 日) · Business <b>$14</b>/ユーザー/月 · Enterprise <b>$35</b>/ユーザー/月</td>
+          </tr>
+          <tr>
+            <th scope="row">画面 + システム音声 + マイクを 1 つの録音に <sup><a href="#src-audio">2</a></sup></th>
+            <td class="col-kilde"><b>対応</b> — 画面または 1 つのウィンドウを、システム音声とマイクと一緒に 1 つのファイルへ (ミックスまたはトラック分離)。仮想オーディオデバイスは不要。</td>
+            <td><b>マイクのみ</b> — 画面収録で選べるのはマイクで、Mac が再生している音は収められない</td>
+            <td><b>対応</b> — マイクに加えて、macOS のアプリケーション音声キャプチャ (OBS 30 以降)</td>
+            <td><b>音声のみ</b> — システム音声とマイクの録音が本業で、画面は収められない</td>
+            <td><b>音声のみ・録音ファイルなし</b> — デバイスの音声から議事録を作る方式。会議にボットは入らない</td>
+          </tr>
+          <tr>
+            <th scope="row">文字起こし <sup><a href="#src-transcribe">3</a></sup></th>
+            <td class="col-kilde"><b>内蔵、手元の Mac で実行</b> (macOS 26 以降) — トラック分離時は「自分 / 相手」をセグメントに付与</td>
+            <td>—</td>
+            <td>—</td>
+            <td><b>内蔵、手元の Mac で実行</b> — 追加課金なし</td>
+            <td><b>AI 要約つきの議事録</b> — 音声認識はデスクトップ アプリ上、要約はクラウド AI</td>
+          </tr>
+          <tr>
+            <th scope="row">録音とテキストの置き場所 <sup><a href="#src-data">4</a></sup></th>
+            <td class="col-kilde"><b>手元の Mac</b> — 録音・文字起こし・要約はアップロードされない</td>
+            <td><b>手元の Mac</b> — ローカル ファイル</td>
+            <td><b>手元の Mac</b> — ローカル ファイル</td>
+            <td><b>手元の Mac</b> — ローカル ファイル</td>
+            <td><b>クラウド (米国)</b> — 音声は文字起こし後に破棄、文字起こしとノートは AWS で暗号化保存、要約はサードパーティ AI が生成</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-foot">価格は確認日時点で各社が掲げている米ドルの表示価格です。</p>
+
+    <div class="section-head">
+      <h2>どんな人にどの道具か</h2>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>QuickTime Player</h3>
+        <p>無音の画面デモを素早く録るなら一番の手軽さ。すでに入っていて追加費用もありません。
+          Mac の外に出ている音をファイルに収める経路はありません。</p>
+      </article>
+      <article class="card">
+        <h3>OBS Studio</h3>
+        <p>ライブ配信やシーン合成のための総合スタジオ。高機能なぶん、会議録音には重め。
+          macOS のアプリケーション音声キャプチャは OBS 30 で入りました。</p>
+      </article>
+      <article class="card">
+        <h3>Audio Hijack</h3>
+        <p>音声が主役の制作向け: アプリ単位の取り込み、エフェクト、ポッドキャストの録音チェーン。
+          画面を残す必要がないなら強い選択肢です。</p>
+      </article>
+      <article class="card">
+        <h3>Granola</h3>
+        <p>クラウド経由で複数デバイスに議事録を同期 — 録音そのものよりノートが欲しいときに。
+          文字起こしとノートは手元ではなくクラウドに置かれます。</p>
+      </article>
+      <article class="card">
+        <h3>kilde</h3>
+        <p>会議のための道具: 画面と、こちらと相手の両方の声を 1 つのファイルに、文字起こしまで
+          手元の Mac で。ボットは会議に入らず、アップロードもされず、仮想オーディオドライバの
+          インストールも不要です。</p>
+      </article>
+    </div>
+
+    <div class="section-head">
+      <h2>出典</h2>
+      <p>各行の根拠は、次の各社の公式ページです。</p>
+    </div>
+    <ol class="sources">
+      <li id="src-price" data-n="1">
+        <b>価格。</b>
+        kilde: 無料・MIT ライセンス (<a href="https://github.com/kilde-team/kilde/blob/main/LICENSE" rel="noopener">ライセンス</a>、
+        <a href="https://apps.apple.com/app/id6812783176" rel="noopener">Mac App Store</a>) ·
+        OBS Studio: 無料・オープンソース (<a href="https://obsproject.com" rel="noopener">obsproject.com</a>) ·
+        Audio Hijack: 69 USドルの 1 ユーザー ライセンス (<a href="https://rogueamoeba.com/audiohijack/buy.php" rel="noopener">rogueamoeba.com</a>) ·
+        Granola: Basic 無料 (ノート履歴 30 日)、Business $14/ユーザー/月、Enterprise $35/ユーザー/月
+        (<a href="https://www.granola.ai/pricing" rel="noopener">granola.ai/pricing</a>) ·
+        QuickTime Player: macOS に同梱 (<a href="https://support.apple.com/guide/quicktime-player/welcome/mac" rel="noopener">Apple</a>)。
+        <span class="checked">2026-09-28 確認。</span>
+      </li>
+      <li id="src-audio" data-n="2">
+        <b>画面 + システム音声 + マイク。</b>
+        QuickTime Player: macOS ユーザガイドは画面収録の音声としてマイクの選択のみを案内し、システム音声の
+        入力は記載がない (<a href="https://support.apple.com/guide/mac-help/record-activities-on-your-screen-mh26782/mac" rel="noopener">Apple</a>) ·
+        OBS Studio: OBS 30.0 リリースノート «Added application audio capture on macOS»
+        (<a href="https://github.com/obsproject/obs-studio/releases/tag/30.0.0" rel="noopener">GitHub</a>) ·
+        Audio Hijack: «Use the System Audio source to capture all the audio heard on your Mac at once»
+        (<a href="https://rogueamoeba.com/audiohijack/" rel="noopener">rogueamoeba.com</a>) ·
+        Granola: «Bot-free, device-audio capture» (<a href="https://www.granola.ai/pricing" rel="noopener">granola.ai/pricing</a>) ·
+        kilde: 本サイトの <a href="/ja/#features">機能一覧</a>。
+        <span class="checked">2026-09-28 確認。</span>
+      </li>
+      <li id="src-transcribe" data-n="3">
+        <b>文字起こし。</b>
+        Audio Hijack: 文字起こしは «all done locally, with zero ongoing charges»
+        (<a href="https://rogueamoeba.com/audiohijack/" rel="noopener">rogueamoeba.com</a>) ·
+        Granola: «it transcribes in real time on macOS/Windows»、要約はサードパーティ AI を利用
+        (<a href="https://www.granola.ai/security" rel="noopener">granola.ai/security</a>) ·
+        kilde: オンデバイス文字起こしは <a href="/ja/privacy/">プライバシーポリシー</a> に記載
+        (macOS 26 以降)。
+        <span class="checked">2026-09-28 確認。</span>
+      </li>
+      <li id="src-data" data-n="4">
+        <b>録音とテキストの置き場所。</b>
+        Granola: 会議の音声は保存せず、文字起こしとノートは米国の AWS Virtual Private Cloud に暗号化して保存、
+        要約は OpenAI / Anthropic などのプロバイダが処理
+        (<a href="https://www.granola.ai/security" rel="noopener">granola.ai/security</a>) ·
+        QuickTime Player / OBS Studio / Audio Hijack: 録音はローカル ファイルとして書き出される
+        (各社の上記ページ) ·
+        kilde: すべて手元の Mac に留まる (<a href="/ja/privacy/">プライバシーポリシー</a>)。
+        <span class="checked">2026-09-28 確認。</span>
+      </li>
+    </ol>
+
+    <p class="trademarks">
+      QuickTime Player および Mac App Store は、米国その他の国や地域で登録された Apple Inc. の商標です。
+      Audio Hijack は Rogue Amoeba Software, LLC の商標です。OBS Studio、Granola およびその他の製品名は
+      各権利者の商標です。本ページでの言及は識別のみを目的としたもので、各権利者との提携や、各権利者による
+      推奨を意味するものではありません。このページは独立した比較であり、掲載のツールの提供元は内容を
+      確認していません。
+    </p>
+
+    <div class="section-head">
+      <h2>最後の列が自分の会議の姿なら</h2>
+    </div>
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-ja-white.svg">
+          <img src="/assets/mac-app-store-badge-ja-black.svg" alt="Mac App Store からダウンロード" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/ja/#install">CLI をインストール</a>
+      <a class="btn btn-ghost" href="/ja/#features">kilde で録れるものを見る</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/ja/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">macOS 向けオープンソースの画面・音声録音ツール。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>プロダクト</b>
+          <a href="/ja/#features">特徴</a>
+          <a href="/ja/#install">インストール</a>
+          <a href="/ja/compare/">比較</a>
+          <a href="https://github.com/kilde-team/kilde/releases">リリース</a>
+        </div>
+        <div>
+          <b>プロジェクト</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/README.ja.md">ドキュメント</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>規約</b>
+          <a href="/ja/privacy/">プライバシーポリシー</a>
+          <a href="/ja/terms/">利用規約</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT ライセンス</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · MIT License のもとで公開</span>
+      <span><a href="/compare/" hreflang="en" lang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
