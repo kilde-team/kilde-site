@@ -1,0 +1,40 @@
+public/compare/index.html
+  h_33284c2ec569b2 38
+public/ja/compare/index.html
+  h_33284c2ec569b2 38
+public/ja/privacy/index.html
+  h_33284c2ec569b2 35
+public/ja/record-online-meetings-mac/index.html
+  h_33284c2ec569b2 41
+public/ja/record-system-audio-mac/index.html
+  h_33284c2ec569b2 41
+public/ja/record-without-notification-sounds/index.html
+  h_33284c2ec569b2 41
+public/ja/terms/index.html
+  h_33284c2ec569b2 35
+public/ja/transcribe-meetings-without-a-bot/index.html
+  h_33284c2ec569b2 41
+public/privacy/index.html
+  h_33284c2ec569b2 35
+public/record-online-meetings-mac/index.html
+  h_33284c2ec569b2 41
+public/record-system-audio-mac/index.html
+  h_33284c2ec569b2 41
+public/record-without-notification-sounds/index.html
+  h_33284c2ec569b2 41
+public/terms/index.html
+  h_33284c2ec569b2 35
+public/transcribe-meetings-without-a-bot/index.html
+  h_33284c2ec569b2 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e63a36135c457b364d4c02de2d5082a32a2d58f7",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
