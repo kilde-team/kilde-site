@@ -15,7 +15,11 @@
 (function () {
   'use strict';
 
-  var GA_MEASUREMENT_ID = 'G-0SRWK1ZCSC';
+  // The web stream "kilde-site" (stream 16109385729) of the GA4 property
+  // "kilde-a1ae7" (555463514) -- the same property the macOS app reports to, so
+  // web and app live in one property. The former ID G-0SRWK1ZCSC (issue #11)
+  // was never attached to any stream and delivered nothing.
+  var GA_MEASUREMENT_ID = 'G-L24Z769ZEQ';
 
   // Not configured yet -- do nothing.
   if (!/^G-[A-Z0-9]+$/.test(GA_MEASUREMENT_ID) || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
