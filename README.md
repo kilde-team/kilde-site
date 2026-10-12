@@ -3,7 +3,9 @@
 The website for [**kilde**](https://github.com/kilde-team/kilde) — an open-source screen
 and audio recorder for macOS.
 
-A hand-written static site (no build step, no framework, no JavaScript), deployed to
+A hand-written static site (no build step, no framework, and no application
+JavaScript — the single script is the cookieless GA4 bootstrap in
+`public/assets/analytics.js`, see [Measurement](#measurement-ga4)), deployed to
 Cloudflare with [Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/).
 
 ## Pages
@@ -131,6 +133,36 @@ domain in **Workers & Pages → kilde-site → Settings → Domains & Routes**. 
 domain is used, update the `canonical`, `hreflang`, `og:url` and `og:image` values in all
 sixteen HTML pages (top, comparison, four landing pages and legal, each EN and JA), plus
 `robots.txt` and `sitemap.xml`.
+
+## Measurement (GA4)
+
+Pages load `public/assets/analytics.js`, a cookieless Google Analytics 4 bootstrap.
+It reports to the web stream *kilde-site* (`G-L24Z769ZEQ`, stream 16109385729) of the
+GA4 property **kilde-a1ae7** (555463514) — the same property the menu bar app reports
+to via Firebase, so web and app data live side by side. Consent Mode denies
+`analytics_storage`, so no cookies or localStorage are written; visitors sending
+Do Not Track / Global Privacy Control are skipped entirely (issue #11). The
+[privacy policy](public/privacy/index.html) documents this setup — keep the two in
+sync when touching `analytics.js`.
+
+### Campaign URLs (UTM)
+
+Any URL we publish elsewhere gets UTM parameters so GA4 separates it from Direct
+traffic (kilde-site#12):
+
+- `utm_source` — where the link lives: `producthunt`, `x`, `reddit`, `hackernews`, `blog`, `release-notes`, …
+- `utm_medium` — kind of placement: `social`, `referral`, `announcement`, `email`
+- `utm_campaign` — the initiative, kebab-case: `ph-launch-2026q4`, `v0.12-release`
+
+Example: `https://kilde.site/?utm_source=x&utm_medium=social&utm_campaign=v0.12-release`
+
+### Reading store clicks
+
+The Mac App Store buttons are outbound links, so GA4's enhanced measurement records
+them automatically as `click` events (`outbound = true`, `link_url` containing
+`apps.apple.com`). App Store links themselves cannot carry UTM parameters (Apple
+strips them), so the click event is the measurement of the site → store step. In
+GA4 look at Reports → Engagement → Events → `click`, filtered on `link_url`.
 
 ## License
 
