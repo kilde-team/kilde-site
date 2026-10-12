@@ -3,7 +3,9 @@
 The website for [**kilde**](https://github.com/kilde-team/kilde) — an open-source screen
 and audio recorder for macOS.
 
-A hand-written static site (no build step, no framework, no JavaScript), deployed to
+A hand-written static site (no build step, no framework, and no application
+JavaScript — the single script is the cookieless GA4 bootstrap in
+`public/assets/analytics.js`, see [Measurement](#measurement-ga4)), deployed to
 Cloudflare with [Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/).
 
 ## Pages
