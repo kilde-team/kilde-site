@@ -137,11 +137,16 @@ sixteen HTML pages (top, comparison, four landing pages and legal, each EN and J
 ## Measurement (GA4)
 
 Pages load `public/assets/analytics.js`, a cookieless Google Analytics 4 bootstrap.
-It reports to the web stream *kilde-site* (`G-L24Z769ZEQ`, stream 16109385729) of the
-GA4 property **kilde-a1ae7** (555463514) — the same property the menu bar app reports
-to via Firebase, so web and app data live side by side. Consent Mode denies
+It reports to the GA4 property **kilde-a1ae7** (555463514) — the same property the
+menu bar app reports to via Firebase, so web and app data live side by side. The
+`GA_MEASUREMENT_ID` in the file (`G-0SRWK1ZCSC`) is the site's Google tag, which
+carries the web stream *kilde-site* (stream 16109385729) as a destination: one load
+feeds both that stream and the stream of the same name in the old "kilde" property
+(554727401, harmless duplicate). Do NOT switch the constant to the stream's own
+measurement ID — that tag does not initialize when loaded directly (verified
+2026-10-12, issue #11) and measurement stops silently. Consent Mode denies
 `analytics_storage`, so no cookies or localStorage are written; visitors sending
-Do Not Track / Global Privacy Control are skipped entirely (issue #11). The
+Do Not Track / Global Privacy Control are skipped entirely. The
 [privacy policy](public/privacy/index.html) documents this setup — keep the two in
 sync when touching `analytics.js`.
 
