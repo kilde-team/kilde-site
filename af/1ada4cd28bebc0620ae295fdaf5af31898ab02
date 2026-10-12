@@ -1,0 +1,16 @@
+README.md
+  h_33284c2ec569b2 140-147,149
+public/assets/analytics.js
+  h_33284c2ec569b2 18-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "af1ada4cd28bebc0620ae295fdaf5af31898ab02",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
