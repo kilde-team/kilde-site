@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mac でアプリの音だけを録る方法 — 会議アプリの音声をほかの音なしで — kilde</title>
+<meta name="description" content="会議アプリの音だけを録りたいのに、録画すると通知音やほかのアプリの音まで入ってしまう — macOS で録音の音声を 1 つのアプリに絞る 2 つの方法 (ウィンドウ収録 / アプリ別の音声収録・macOS 15+) を、仮想オーディオドライバなしで解説します。">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/ja/record-app-audio-mac/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/record-app-audio-mac/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-app-audio-mac/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/record-app-audio-mac/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac でアプリの音だけを録る方法 — 会議アプリの音声をほかの音なしで — kilde">
+<meta property="og:description" content="録音の音声を会議アプリなど 1 つのアプリだけに絞れます。ウィンドウ収録 (macOS 14+) とアプリ別の音声収録 (macOS 15+) の 2 つの方法。通知音もほかのアプリの音も入りません。仮想オーディオドライバは不要です。">
+<meta property="og:url" content="https://kilde.site/ja/record-app-audio-mac/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon; app-specific audio capture requires macOS 15 or later)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/ja/record-app-audio-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"録画の音声を 1 つのアプリに絞って収録できるオープンソースの macOS 録画・録音ツール。通知音やほかのアプリの音を入れずに、会議アプリの音だけを録れます。","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/ja/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/ja/#features">特徴</a>
+      <a href="/ja/#install">インストール</a>
+      <a href="/ja/#guides">ガイド</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/record-app-audio-mac/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/ja/">← kilde トップへ</a>
+    <h1>会議アプリの音だけを録る</h1>
+    <p class="updated">アプリに絞った音声収録 — ドライバの追加インストールは不要</p>
+
+    <p class="summary">
+      <strong>やりたいことはひとつ:</strong> 録画ファイルには会議アプリの音 — 参加者の声 — だけが
+      入っていて、デスクトップのほかの音は入っていてほしくない。ところが、ふだんのシステム音声収録は
+      Mac が再生している<strong>すべての音</strong>を拾います。通知のチャイム、音楽、別のウィンドウの
+      動画も。<strong>kilde</strong> は録音の音声を 1 つのアプリに絞る方法を 2 つ持っています。
+      音声がそのアプリに紐づくウィンドウ収録と、macOS 15 以降で使える実行中アプリの音声を
+      直接収録する方法です。仮想オーディオドライバは不要です。
+    </p>
+
+    <div class="section-head">
+      <h2>デスクトップ全体の音声収録は、欲しくない音まで入る</h2>
+    </div>
+    <p>
+      一般的なシステム音声の収録は、<strong>Mac から出る音をすべて</strong>録ります。あとで議事録や
+      文字起こしにするつもりの会議録音では、漏れ出てくるのはまさに要らなかった音 — 発言の途中に鳴る
+      カレンダーのリマインダー、チャットの通知音、別アプリで再生しっぱなしだった音です。声はファイルに
+      入っています。それ以外の音も、一緒に。
+    </p>
+    <p>
+      手動でミュートして回るのは脆いやり方です。覚えていたアプリは消せても、忘れた 1 つが鳴ってしまいます。
+      本当に欲しいのは「このアプリの音だけ」と指差して指定することです。
+    </p>
+
+    <div class="section-head">
+      <h2>方法 1: ウィンドウを収録すると、音声もそのアプリに絞られる</h2>
+    </div>
+    <p><code>kilde rec --no-video --window zoom 会議.m4a</code></p>
+    <p>
+      <code>--window</code> はウィンドウをタイトルの部分一致・bundle ID・ウィンドウ ID で指定します
+      (<code>kilde devices</code> で一覧できます)。選んだウィンドウだけを収録し、システム音声も
+      <strong>そのウィンドウのアプリの音だけ</strong>に絞られるため、通知音もほかのアプリの音も入りません。
+      メニューバーアプリなら収録対象として会議のウィンドウを選ぶだけで、同じ絞り込みが効きます。
+      この方法は macOS 14 以降で使えます。
+    </p>
+
+    <div class="section-head">
+      <h2>方法 2: 実行中アプリの音を直接収録する (macOS 15+)</h2>
+    </div>
+    <p><code>kilde rec --no-video --audio app:zoom --audio mic 会議.m4a</code></p>
+    <p>
+      <strong>macOS 15 以降</strong>では <code>--audio app:</code> で、実行中のアプリの音声を直接
+      収録できます。指定は名前の部分一致か、bundle ID の完全一致 (大文字小文字は区別しない) です。
+      上の例ではマイクを並べて収録しており、<code>--audio-tracks separate</code> を付けると
+      ソースごとにトラックを分けられます。知っておくべき点が 2 つあります。<code>--audio system</code>
+      とは併用できないこと、そして指定したアプリを解決できなかったときはシステム音声へ静かにフォールバック
+      せず<strong>録画の開始前に失敗する</strong>こと — 気づくのが会議の後ではなく、録る前です。
+      メニューバーアプリでも音声ソースとしてアプリ別の音声収録を選べます (macOS 15 以降で表示される
+      オプションです)。
+    </p>
+
+    <div class="section-head">
+      <h2>録るのが会議なら</h2>
+    </div>
+    <p>
+      アプリに絞った音声収録は、会議の録画にぴったりの組み合わせです。参加者の声と自分のマイクを
+      1 本のファイルに混ぜるところまで含めた手順は
+      <a href="/ja/record-online-meetings-mac/">オンライン会議の録画ガイド</a> で解説しています。
+    </p>
+
+    <div class="section-head">
+      <h2>録った音を議事録へ</h2>
+    </div>
+    <p>
+      <strong>macOS 26 以降</strong>では、録画をこの Mac の中だけで文字起こしできます (音声も
+      書き起こしテキストも送信されません)。文字起こしは録画ファイルの隣に Markdown / SRT / WebVTT /
+      テキスト / JSON で書き出され、<strong>Apple Intelligence が有効な環境</strong>では要約も作れます。
+      文字起こしも要約も端末内で完結し、現時点では無料で使えます。kilde 自体はオープンソース
+      (MIT ライセンス) です。詳細は
+      <a href="/ja/transcribe-meetings-without-a-bot/">ボットなしの会議文字起こし</a> をどうぞ。
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-ja-white.svg">
+          <img src="/assets/mac-app-store-badge-ja-black.svg" alt="Mac App Store からダウンロード" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/ja/#install">CLI をインストール</a>
+      <a class="btn btn-ghost" href="/ja/record-online-meetings-mac/">会議を録る手順を見る</a>
+    </div>
+
+    <p class="note">
+      録音の同意は利用者の責任で取得してください。会議を録音する際は、お住まいの地域の法令に従い、
+      参加者に録音を伝えて同意を得てください。
+    </p>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/ja/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">macOS 向けオープンソースの画面・音声録音ツール。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>プロダクト</b>
+          <a href="/ja/#features">特徴</a>
+          <a href="/ja/#install">インストール</a>
+          <a href="/ja/compare/">比較</a>
+          <a href="https://github.com/kilde-team/kilde/releases">リリース</a>
+        </div>
+        <div>
+          <b>プロジェクト</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/README.ja.md">ドキュメント</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>規約</b>
+          <a href="/ja/privacy/">プライバシーポリシー</a>
+          <a href="/ja/terms/">利用規約</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT ライセンス</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · MIT License のもとで公開</span>
+      <span><a href="/record-app-audio-mac/" hreflang="en" lang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

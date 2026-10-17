@@ -18,6 +18,7 @@ Cloudflare with [Workers Static Assets](https://developers.cloudflare.com/worker
 | `/record-online-meetings-mac/` | Search landing: record an online meeting (English) |
 | `/transcribe-meetings-without-a-bot/` | Search landing: bot-free meeting transcription (English) |
 | `/record-without-notification-sounds/` | Search landing: keep notification sounds out (English) |
+| `/record-app-audio-mac/` | Search landing: record only one app's audio (English) |
 | `/privacy/` | Privacy Policy (English) |
 | `/terms/` | Terms of Service (English) |
 | `/ja/` | トップページ (日本語) |
@@ -26,6 +27,7 @@ Cloudflare with [Workers Static Assets](https://developers.cloudflare.com/worker
 | `/ja/record-online-meetings-mac/` | 検索流入: オンライン会議を録る (日本語) |
 | `/ja/transcribe-meetings-without-a-bot/` | 検索流入: ボットなしの会議文字起こし (日本語) |
 | `/ja/record-without-notification-sounds/` | 検索流入: 通知音を録り込まない収録 (日本語) |
+| `/ja/record-app-audio-mac/` | 検索流入: アプリの音だけを録る (日本語) |
 | `/ja/privacy/` | プライバシーポリシー (日本語) |
 | `/ja/terms/` | 利用規約 (日本語) |
 | `/404.html` | Not-found page, served by `not_found_handling` |
@@ -40,7 +42,8 @@ public/            # everything served, verbatim
   record-online-meetings-mac/index.html
   transcribe-meetings-without-a-bot/index.html
   record-without-notification-sounds/index.html
-                   # the four search landing pages (kilde-site#3); each has a
+  record-app-audio-mac/index.html
+                   # the five search landing pages (kilde-site#3); each has a
                    # Japanese counterpart under ja/ with the same slug
   privacy/index.html
   terms/index.html
@@ -71,8 +74,8 @@ wrangler.toml      # static-only Worker: no `main`, just [assets]
 ```
 
 There is no templating: each page carries its own header and footer. When you change the
-navigation or the footer, change it in all sixteen pages (the two legal pages have a
-minimal footer — the navigation is the part that must stay in sync everywhere). The four
+navigation or the footer, change it in all eighteen pages (the two legal pages have a
+minimal footer — the navigation is the part that must stay in sync everywhere). The five
 search landing pages are deliberately kept out of the navigation; their header and footer
 still mirror the site's, so include them when the shared chrome changes.
 
@@ -131,7 +134,7 @@ repository secrets:
 The site's canonical URLs assume `https://kilde.site/`. After the first deploy, attach the
 domain in **Workers & Pages → kilde-site → Settings → Domains & Routes**. If a different
 domain is used, update the `canonical`, `hreflang`, `og:url` and `og:image` values in all
-sixteen HTML pages (top, comparison, four landing pages and legal, each EN and JA), plus
+eighteen HTML pages (top, comparison, five landing pages and legal, each EN and JA), plus
 `robots.txt` and `sitemap.xml`.
 
 ## Measurement (GA4)
