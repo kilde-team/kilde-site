@@ -15,14 +15,14 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac でアプリの音だけを録る方法 — 会議アプリの音声をほかの音なしで — kilde">
-<meta property="og:description" content="録音の音声を会議アプリなど 1 つのアプリだけに絞れます。ウィンドウ収録 (macOS 14+) とアプリ別の音声収録 (macOS 15+) の 2 つの方法。通知音もほかのアプリの音も入りません。仮想オーディオドライバは不要です。">
+<meta property="og:description" content="録音の音声を会議アプリなど 1 つのアプリだけに絞れます。ウィンドウ収録 (macOS 14+) とアプリ別の音声収録 (macOS 15+) の 2 つの方法。ほかのアプリの音 (その通知音も) はファイルに入りません。仮想オーディオドライバは不要です。">
 <meta property="og:url" content="https://kilde.site/ja/record-app-audio-mac/">
 <meta property="og:image" content="https://kilde.site/assets/og.png">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon; app-specific audio capture requires macOS 15 or later)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/ja/record-app-audio-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"録画の音声を 1 つのアプリに絞って収録できるオープンソースの macOS 録画・録音ツール。通知音やほかのアプリの音を入れずに、会議アプリの音だけを録れます。","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon; app-specific audio capture requires macOS 15 or later)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/ja/record-app-audio-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"録画の音声を 1 つのアプリに絞って収録できるオープンソースの macOS 録画・録音ツール。ほかのアプリの音やその通知音を入れずに、会議アプリの音だけを録れます。","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <script src="/assets/analytics.js" defer></script>
 </head>
@@ -84,7 +84,8 @@
     <p>
       <code>--window</code> はウィンドウをタイトルの部分一致・bundle ID・ウィンドウ ID で指定します
       (<code>kilde devices</code> で一覧できます)。選んだウィンドウだけを収録し、システム音声も
-      <strong>そのウィンドウのアプリの音だけ</strong>に絞られるため、通知音もほかのアプリの音も入りません。
+      <strong>そのウィンドウのアプリの音だけ</strong>に絞られます。ほかのアプリの音 — その通知音も
+      含めて — はファイルに入らず、収録したアプリ自身の音 (入室チャイムなど) は入ります。
       メニューバーアプリなら収録対象として会議のウィンドウを選ぶだけで、同じ絞り込みが効きます。
       この方法は macOS 14 以降で使えます。
     </p>

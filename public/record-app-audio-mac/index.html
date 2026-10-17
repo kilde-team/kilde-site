@@ -15,14 +15,14 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to record just one app's audio on a Mac — and nothing else">
-<meta property="og:description" content="Scope a Mac recording's audio to one app — just the meeting app's sound, without notification chimes or other apps. Window capture (macOS 14+) or app-specific audio (macOS 15+), no virtual audio driver.">
+<meta property="og:description" content="Scope a Mac recording's audio to one app — just the meeting app's sound, without other apps' audio or their notification chimes. Window capture (macOS 14+) or app-specific audio (macOS 15+), no virtual audio driver.">
 <meta property="og:url" content="https://kilde.site/record-app-audio-mac/">
 <meta property="og:image" content="https://kilde.site/assets/og.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon; app-specific audio capture requires macOS 15 or later)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/record-app-audio-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source macOS recorder that can scope a recording's audio to a single app — the meeting app's sound without notification sounds or other apps — with no virtual audio driver.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon; app-specific audio capture requires macOS 15 or later)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/record-app-audio-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source macOS recorder that can scope a recording's audio to a single app — the meeting app's sound without other apps' audio or their notification sounds — with no virtual audio driver.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <script src="/assets/analytics.js" defer></script>
 </head>
@@ -84,9 +84,10 @@
     <p>
       <code>--window</code> matches a window by partial title, bundle ID, or window ID (run
       <code>kilde devices</code> to list them), records just that window, and scopes the system
-      audio to <strong>that window's app</strong> — notification sounds and other apps' audio stay
-      out. In the menu bar app, choose the meeting window as the capture target and the audio
-      follows the same rule. This works on macOS 14 or later.
+      audio to <strong>that window's app</strong>: sounds from other apps — their notification
+      chimes included — stay out of the file, while the captured app's own sounds (its join chime
+      included) stay in. In the menu bar app, choose the meeting window as the capture target and
+      the audio follows the same rule. This works on macOS 14 or later.
     </p>
 
     <div class="section-head">
