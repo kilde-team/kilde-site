@@ -1,0 +1,16 @@
+public/ja/record-app-audio-mac/index.html
+  h_33284c2ec569b2 18,25,87-88
+public/record-app-audio-mac/index.html
+  h_33284c2ec569b2 18,25,87-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "884399db0a59a0858c24a5cdbd17c2b61e588308",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
