@@ -1,0 +1,50 @@
+README.md
+  h_33284c2ec569b2 3-5
+public/compare/index.html
+  h_33284c2ec569b2 270
+public/index.html
+  h_33284c2ec569b2 24,335
+public/ja/compare/index.html
+  h_33284c2ec569b2 270
+public/ja/index.html
+  h_33284c2ec569b2 329
+public/ja/privacy/index.html
+  h_33284c2ec569b2 397
+public/ja/record-app-audio-mac/index.html
+  h_33284c2ec569b2 25,182
+public/ja/record-online-meetings-mac/index.html
+  h_33284c2ec569b2 25,157
+public/ja/record-system-audio-mac/index.html
+  h_33284c2ec569b2 25,164
+public/ja/record-without-notification-sounds/index.html
+  h_33284c2ec569b2 25,153
+public/ja/terms/index.html
+  h_33284c2ec569b2 208
+public/ja/transcribe-meetings-without-a-bot/index.html
+  h_33284c2ec569b2 25,146
+public/privacy/index.html
+  h_33284c2ec569b2 395
+public/record-app-audio-mac/index.html
+  h_33284c2ec569b2 25,182
+public/record-online-meetings-mac/index.html
+  h_33284c2ec569b2 25,157
+public/record-system-audio-mac/index.html
+  h_33284c2ec569b2 25,165
+public/record-without-notification-sounds/index.html
+  h_33284c2ec569b2 25,153
+public/terms/index.html
+  h_33284c2ec569b2 205
+public/transcribe-meetings-without-a-bot/index.html
+  h_33284c2ec569b2 25,148
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "783815b8664beadc72fc12b9b3ee0898c9526ddf",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
