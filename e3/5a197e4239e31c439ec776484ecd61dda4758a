@@ -1,0 +1,32 @@
+README.md
+  h_33284c2ec569b2 21,30,45-46,77-78,137
+public/compare/index.html
+  h_33284c2ec569b2 216
+public/index.html
+  h_33284c2ec569b2 290-295
+public/ja/compare/index.html
+  h_33284c2ec569b2 216
+public/ja/index.html
+  h_33284c2ec569b2 284-289
+public/ja/record-app-audio-mac/index.html
+  h_33284c2ec569b2 1-188
+public/ja/record-online-meetings-mac/index.html
+  h_33284c2ec569b2 85-86
+public/record-app-audio-mac/index.html
+  h_33284c2ec569b2 1-188
+public/record-online-meetings-mac/index.html
+  h_33284c2ec569b2 85-86
+public/sitemap.xml
+  h_33284c2ec569b2 100-115
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e35a197e4239e31c439ec776484ecd61dda4758a",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
