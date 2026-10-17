@@ -1,7 +1,8 @@
 # kilde-site
 
-The website for [**kilde**](https://github.com/kilde-team/kilde) — an open-source screen
-and audio recorder for macOS.
+The website for [**kilde**](https://github.com/kilde-team/kilde), a screen and audio
+recorder for macOS — the menu bar app is open source (MIT), built on the local
+recording engine.
 
 A hand-written static site (no build step, no framework, and no application
 JavaScript — the single script is the cookieless GA4 bootstrap in
