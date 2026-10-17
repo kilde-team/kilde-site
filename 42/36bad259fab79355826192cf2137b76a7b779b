@@ -1,0 +1,18 @@
+public/compare/index.html
+  h_33284c2ec569b2 52,160,173,186,196
+public/ja/compare/index.html
+  h_33284c2ec569b2 52,160,173,186,196
+public/sitemap.xml
+  h_33284c2ec569b2 22,30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4236bad259fab79355826192cf2137b76a7b779b",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
