@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to record just one app's audio on a Mac — and nothing else</title>
+<meta name="description" content="A whole-system recording sweeps in every sound your Mac plays — notification chimes, music, other apps. Scope a Mac recording's audio to a single app instead: window capture (macOS 14+) or app-specific audio capture (macOS 15+), with no virtual audio driver.">
+<meta name="google-site-verification" content="5Kv6TbMoIjh0npJNL61tnJVmnw5rrKfZeViQ3trh8iQ">
+<link rel="canonical" href="https://kilde.site/record-app-audio-mac/">
+<link rel="alternate" hreflang="en" href="https://kilde.site/record-app-audio-mac/">
+<link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-app-audio-mac/">
+<link rel="alternate" hreflang="x-default" href="https://kilde.site/record-app-audio-mac/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to record just one app's audio on a Mac — and nothing else">
+<meta property="og:description" content="Scope a Mac recording's audio to one app — just the meeting app's sound, without other apps' audio or their notification chimes. Window capture (macOS 14+) or app-specific audio (macOS 15+), no virtual audio driver.">
+<meta property="og:url" content="https://kilde.site/record-app-audio-mac/">
+<meta property="og:image" content="https://kilde.site/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"kilde","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple silicon; app-specific audio capture requires macOS 15 or later)","license":"https://opensource.org/licenses/MIT","url":"https://kilde.site/record-app-audio-mac/","installUrl":"https://apps.apple.com/app/id6812783176","codeRepository":"https://github.com/kilde-team/kilde","description":"An open-source macOS recorder that can scope a recording's audio to a single app — the meeting app's sound without other apps' audio or their notification sounds — with no virtual audio driver.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+      kilde
+    </a>
+    <nav class="nav">
+      <a href="/#features">Features</a>
+      <a href="/#install">Install</a>
+      <a href="/#guides">Guides</a>
+      <a href="/compare/">Compare</a>
+      <a href="https://github.com/kilde-team/kilde">GitHub</a>
+      <a class="lang-switch" href="/ja/record-app-audio-mac/" hreflang="ja" lang="ja">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="guide">
+  <div class="wrap">
+
+    <a class="back" href="/">← Back to kilde</a>
+    <h1>Record one app's audio, and nothing else</h1>
+    <p class="updated">App-scoped audio capture — no virtual audio driver</p>
+
+    <p class="summary">
+      <strong>The wish is simple:</strong> the recording should carry the meeting app's sound — the
+      participants' voices — and none of the rest of your desktop. Yet a normal system-audio
+      recording sweeps in <em>everything</em> your Mac plays: notification chimes, music, a video
+      from another window. <strong>kilde</strong> can scope the audio to a single app instead, with
+      two mechanisms: capturing a window whose audio stays with its app, and — on macOS 15 or
+      later — recording one running app's audio directly. No virtual audio driver anywhere.
+    </p>
+
+    <div class="section-head">
+      <h2>Why whole-desktop audio leaks into the take</h2>
+    </div>
+    <p>
+      System-audio capture, done the general way, records <strong>every sound your Mac plays</strong>.
+      For a meeting recording that becomes a transcript or minutes later, the leaks are exactly the
+      sounds you did not want: a calendar reminder mid-sentence, chat pings, whatever was paused in
+      another app. The voices are in the file — and so is everything else.
+    </p>
+    <p>
+      Muting the rest by hand is fragile: you silence what you remember, and the one app you forgot
+      chimes anyway. What you actually want is to point at one app and say “this app's sound, only.”
+    </p>
+
+    <div class="section-head">
+      <h2>Way 1: capture the app's window — the audio follows it</h2>
+    </div>
+    <p><code>kilde rec --no-video --window zoom meeting.m4a</code></p>
+    <p>
+      <code>--window</code> matches a window by partial title, bundle ID, or window ID (run
+      <code>kilde devices</code> to list them), records just that window, and scopes the system
+      audio to <strong>that window's app</strong>: sounds from other apps — their notification
+      chimes included — stay out of the file, while the captured app's own sounds (its join chime
+      included) stay in. In the menu bar app, choose the meeting window as the capture target and
+      the audio follows the same rule. This works on macOS 14 or later.
+    </p>
+
+    <div class="section-head">
+      <h2>Way 2: record one app's audio directly (macOS 15+)</h2>
+    </div>
+    <p><code>kilde rec --no-video --audio app:zoom --audio mic meeting.m4a</code></p>
+    <p>
+      On <strong>macOS 15 or later</strong>, <code>--audio app:</code> records a running app's audio
+      directly, by name (partial match) or bundle ID (exact, case-insensitive). The example above
+      keeps your microphone alongside it; with <code>--audio-tracks separate</code> the sources stay
+      on their own tracks. Two things to know: it cannot be combined with <code>--audio system</code>,
+      and if the app you name cannot be resolved, kilde fails before recording starts rather than
+      silently falling back to whole-system audio — you find out before the meeting, not after.
+      The menu bar app can pick app-specific audio as a source too (the option appears on macOS 15
+      or later).
+    </p>
+
+    <div class="section-head">
+      <h2>If the recording is a meeting</h2>
+    </div>
+    <p>
+      App-scoped audio is exactly what a meeting take needs — the
+      <a href="/record-online-meetings-mac/">meeting recording guide</a> covers the full setup,
+      including mixing the participants' audio and your microphone into one file.
+    </p>
+
+    <div class="section-head">
+      <h2>From the take to minutes</h2>
+    </div>
+    <p>
+      On <strong>macOS 26 or later</strong>, kilde can transcribe the recording entirely on your Mac
+      — nothing is uploaded — and write the transcript next to the file as Markdown, SRT, WebVTT,
+      plain text, or JSON. On Macs with <strong>Apple Intelligence enabled</strong>, it can also
+      draft a summary. Transcription and summaries are on-device and free to use today; kilde itself
+      is open source, MIT-licensed. See
+      <a href="/transcribe-meetings-without-a-bot/">transcribing without a bot</a>.
+    </p>
+
+    <div class="cta-row">
+      <a class="store-badge" href="https://apps.apple.com/app/id6812783176" rel="noopener">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/mac-app-store-badge-en-white.svg">
+          <img src="/assets/mac-app-store-badge-en-black.svg" alt="Download on the Mac App Store" width="156" height="40">
+        </picture>
+      </a>
+      <a class="btn btn-ghost" href="/#install">Install the CLI</a>
+      <a class="btn btn-ghost" href="/record-online-meetings-mac/">Record a meeting</a>
+    </div>
+
+    <p class="note">
+      Recording consent is your responsibility: when you record a meeting, make sure every
+      participant is informed and has consented, in accordance with the laws of your region.
+    </p>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#58c4f0" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 21.5a10.5 10.5 0 0 1 21 0"/><path d="M10.5 21.5a5.5 5.5 0 0 1 11 0"/></g><circle cx="16" cy="21.5" r="2.6" fill="#58c4f0"/></svg>
+          kilde
+        </a>
+        <p class="footer-tag">An open-source screen and audio recorder for macOS.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Product</b>
+          <a href="/#features">Features</a>
+          <a href="/#install">Install</a>
+          <a href="/compare/">Compare</a>
+          <a href="https://github.com/kilde-team/kilde/releases">Releases</a>
+        </div>
+        <div>
+          <b>Project</b>
+          <a href="https://github.com/kilde-team/kilde">GitHub</a>
+          <a href="https://github.com/kilde-team/kilde#readme">Documentation</a>
+          <a href="https://github.com/kilde-team/kilde/issues">Issues</a>
+        </div>
+        <div>
+          <b>Legal</b>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="https://github.com/kilde-team/kilde/blob/main/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 kilde · Released under the MIT License</span>
+      <span><a href="/ja/record-app-audio-mac/" hreflang="ja" lang="ja">日本語</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

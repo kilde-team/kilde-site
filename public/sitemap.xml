@@ -97,6 +97,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-without-notification-sounds/"/>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://kilde.site/record-app-audio-mac/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/record-app-audio-mac/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-app-audio-mac/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-app-audio-mac/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kilde.site/ja/record-app-audio-mac/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kilde.site/record-app-audio-mac/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kilde.site/ja/record-app-audio-mac/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kilde.site/record-app-audio-mac/"/>
+    <priority>0.7</priority>
+  </url>
   <url><loc>https://kilde.site/privacy/</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
   <url><loc>https://kilde.site/terms/</loc><lastmod>2026-09-17</lastmod><priority>0.5</priority></url>
   <url><loc>https://kilde.site/ja/privacy/</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
