@@ -305,7 +305,9 @@ a:hover { text-decoration: underline; }
   width: 100%; max-width: 880px;
 }
 .demo-video::before {
-  content: ""; position: absolute; inset: 5% -8% 9%;
+  /* 横のはみ出しは控えめに — 大きく出すと phone 幅で viewport を超え
+     横スクロールの原因になる (cubic レビュー指摘) */
+  content: ""; position: absolute; inset: 5% -3% 9%;
   background: radial-gradient(closest-side, var(--accent-glow), transparent);
   filter: blur(24px);
   z-index: -1;
