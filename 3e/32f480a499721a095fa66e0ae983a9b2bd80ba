@@ -1,0 +1,14 @@
+public/_headers
+  h_33284c2ec569b2 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3e32f480a499721a095fa66e0ae983a9b2bd80ba",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
