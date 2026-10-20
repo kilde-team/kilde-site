@@ -1,0 +1,20 @@
+README.md
+  h_33284c2ec569b2 73-86
+public/assets/styles.css
+  h_33284c2ec569b2 298-326
+public/index.html
+  h_33284c2ec569b2 103-120
+public/ja/index.html
+  h_33284c2ec569b2 99-116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eadf4b16585feedd907854787c0da1f36dddff71",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
