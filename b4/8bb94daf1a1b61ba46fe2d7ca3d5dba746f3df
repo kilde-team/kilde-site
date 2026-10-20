@@ -1,0 +1,14 @@
+public/assets/styles.css
+  h_33284c2ec569b2 308-310
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b48bb94daf1a1b61ba46fe2d7ca3d5dba746f3df",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
