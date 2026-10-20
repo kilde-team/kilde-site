@@ -295,6 +295,37 @@ a:hover { text-decoration: underline; }
 .terminal .o { color: #9fb0c6; }
 .terminal .g { color: #7fd6a0; }
 
+/* ---------- demo video ---------- */
+
+/* preload="none" + poster: the ~2.5 MB mp4 is not fetched until the visitor
+   presses play, so the landing page stays light on mobile (issue #1). */
+.demo-video {
+  position: relative;
+  margin: 0 auto;
+  width: 100%; max-width: 880px;
+}
+.demo-video::before {
+  /* 横のはみ出しは控えめに — 大きく出すと phone 幅で viewport を超え
+     横スクロールの原因になる (cubic レビュー指摘) */
+  content: ""; position: absolute; inset: 5% -3% 9%;
+  background: radial-gradient(closest-side, var(--accent-glow), transparent);
+  filter: blur(24px);
+  z-index: -1;
+}
+.demo-video video {
+  display: block; width: 100%; height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: #000;
+  box-shadow: var(--shadow), 0 40px 80px -40px rgba(0, 0, 0, 0.6);
+}
+.demo-video figcaption {
+  margin: 16px auto 0; max-width: 58ch;
+  font-size: 0.84rem; line-height: 1.6;
+  color: var(--text-faint);
+  text-align: center;
+}
+
 /* ---------- sections ---------- */
 
 section { padding: 96px 0; border-bottom: 1px solid var(--border); }
