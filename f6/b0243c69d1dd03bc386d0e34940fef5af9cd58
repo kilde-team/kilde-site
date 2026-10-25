@@ -1,0 +1,14 @@
+public/sitemap.xml
+  h_33284c2ec569b2 116,118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f6b0243c69d1dd03bc386d0e34940fef5af9cd58",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
