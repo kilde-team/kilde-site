@@ -1,0 +1,16 @@
+public/ja/privacy/index.html
+  h_33284c2ec569b2 47,140-143,164-165,364-367
+public/privacy/index.html
+  h_33284c2ec569b2 47,139-142,165-166,362-365
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7830a0376f46b44731aacc72c92d6023d4076ae8",
+  "prompts": {},
+  "humans": {
+    "h_33284c2ec569b2": {
+      "author": "Takeshi <takezou621@gmail.com>"
+    }
+  }
+}
