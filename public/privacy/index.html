@@ -44,7 +44,7 @@
   <div class="wrap">
     <a class="back" href="/">← Back to kilde</a>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: September 25, 2026</p>
+    <p class="updated">Last updated: October 26, 2026</p>
 
     <p class="summary">
       <strong>In short:</strong> kilde runs entirely on your Mac. Your recordings are written to your
@@ -136,6 +136,10 @@
         <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The developer only
         sees aggregated statistics. Advertising features are disabled and the data is not used for
         advertising.</li>
+      <li><strong>How to turn it off:</strong> version 0.24.0 and later have a setting for this.
+        In the menu bar panel, under "Privacy", uncheck "Send app usage statistics and crash
+        reports" — this stops both usage statistics and crash reports immediately, and when the
+        app is launched with the setting off, the analytics SDK is not initialized at all.</li>
       <li>The <code>kilde</code> command-line tool contains no analytics or crash reporting and sends nothing apart from
         transcription language-model downloads from Apple.</li>
     </ul>
@@ -158,6 +162,8 @@
       <li><strong>Who sees it:</strong> the report is sent to Google's servers and processed under
         <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The developer uses
         it only to fix bugs.</li>
+      <li><strong>How to turn it off:</strong> the same "Privacy" setting (version 0.24.0 or later)
+        stops crash reports immediately and deletes any reports still waiting on your Mac.</li>
     </ul>
 
     <h3 id="app-network">Other network access</h3>
@@ -353,9 +359,10 @@
       Apple Account — so the developer cannot tell whose Mac a report came from, and for the same
       reason cannot single out the reports from your Mac on request. After 90 days, Google
       automatically starts removing crash reports from its systems. If you do not want the menu bar app to send usage statistics or
-      crash reports, use the <code>kilde</code> command-line tool — it sends neither usage
-      statistics nor crash reports, and its only network connection is the transcription
-      language-model download — or block the app's outbound connections with a firewall. The data kilde produces is on your own machine and
+      crash reports, turn them off in the app itself: the "Privacy" setting in the menu bar
+      panel (version 0.24.0 or later) stops both immediately. The <code>kilde</code>
+      command-line tool sends neither — its only network connection is the transcription
+      language-model download. The data kilde produces is on your own machine and
       under your control, and you can remove it at any time. Website measurement is aggregate and
       contains no identifier that could be traced back to you, so there is nothing for us to look up
       on request — but you can stop it being collected at any time using the opt-out options in
